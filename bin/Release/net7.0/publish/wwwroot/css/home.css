@@ -1,0 +1,95 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+@font-face {
+    font-family: 'Poppins';
+    src: url('/fonts/Poppins/Poppins-Regular.ttf') format('truetype'),  /* For modern browsers */
+    /* Add more src declarations for other font formats if needed */
+}
+body{
+    background-color: aqua;
+    font-family: 'Poppins', sans-serif ;
+}
+nav{
+    
+    background-color: #0090D4;
+    color: #fff;
+    box-shadow: inset;
+    padding-right: 30px;
+}
+nav ul{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+nav li{
+    height: 50px;
+}
+nav a{
+    height: 100%;
+    padding-left:30px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+nav a:hover{
+    color: #f0f0f0;
+}
+nav li:first-child{
+    margin-right: auto;
+}
+.header li:last-child{
+    margin-left: auto;
+}
+.button{
+    width: 100px;
+    height: 30px;
+    background-color: #0E51FD;
+    text-align: center;
+    padding-top: 0px;
+    border-radius: 10px;
+}
+.menu{
+    fill: #fff;
+}
+.menu-btn{
+    display: none;
+}
+.sidebar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: 999;
+    background-color: rgba(50, 34, 221, 0.349);
+    backdrop-filter: blur(10px);
+    box-shadow: -10px 0px 10px rgba(0, 0, 0, 0.2);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.sidebar li{
+    width: 100%;
+}
+
+@media(max-width:800px){
+    .hideOnMobile{
+        display: none;
+    }
+    .menu-btn{
+        display: block;
+    }
+}
+@media(max-width:400px){
+    .sidebar{
+        width: 100%;
+    }
+}
+

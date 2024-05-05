@@ -1,0 +1,7 @@
+C:\Users\USER\Desktop\SurveyApp\bin\Release\net7.0\publish\SurveyApp.exe
+C:\Users\USER\Desktop\SurveyApp\bin\Release\net7.0\publish\appsettings.Development.json
+C:\Users\USER\Desktop\SurveyApp\bin\Release\net7.0\publish\appsettings.json
+C:\Users\USER\Desktop\SurveyApp\bin\Release\net7.0\publish\SurveyApp.dll
+C:\Users\USER\Desktop\SurveyApp\bin\Release\net7.0\publish\SurveyApp.deps.json
+C:\Users\USER\Desktop\SurveyApp\bin\Release\net7.0\publish\SurveyApp.runtimeconfig.json
+C:\Users\USER\Desktop\SurveyApp\bin\Release\net7.0\publish\SurveyApp.pdb
