@@ -14,27 +14,178 @@
             <li><a href="#">About</a></li>
             <li><a href="#">Contact</a></li>
             <li><a href="#">Survey</a></li>
+            <li><a href="Login/Index">Login</a></li>
         </ul>
         <ul class="header">
-            <li ><a href="#">SurveyApp</a></li>
+            <li class="appname" ><a href="#">SurveyApp</a></li>
             <li class="hideOnMobile"><a href="#">About</a></li>
             <li class="hideOnMobile"><a href="#">Contact</a></li>
-            <li class="hideOnMobile"><a href="#">Survey</a></li>
-            <li class="menu-btn" onclick=showSidebar()><a href="#"><svg class="menu" xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 -960 960 960" width="26"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
-            <li class=" hideOnMobile button"><a href="#">Login</a></li>
-        </ul> 
-    </nav>
-    
+            <li class="hideOnMobile hideOnLogin "><a href="#">Survey</a></li>
 
+            <li class="menu-btn" onclick=showSidebar()>
+                <a href="#">
+                    <svg class="menu" xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 -960 960 960" width="26"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+                </a>
+            </li>
+            
+        </ul> 
+        <ul class="logging-btns hideOnMobile">
+            <li class=" hideOnLogin "><a href="Login/Index">Sign Up</a></li>
+            <li class=" hideOnLogin"><a href="Login/Index">Login</a></li>
+            <li class="profile hideOnLogOut" onclick=showSubmenu()>
+                <a  href="#">
+                    <svg class="profile-icon" xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#e8eaed"><path d="M234-276q51-39 114-61.5T480-360q69 0 132 22.5T726-276q35-41 54.5-93T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 59 19.5 111t54.5 93Zm246-164q-59 0-99.5-40.5T340-580q0-59 40.5-99.5T480-720q59 0 99.5 40.5T620-580q0 59-40.5 99.5T480-440Zm0 360q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q53 0 100-15.5t86-44.5q-39-29-86-44.5T480-280q-53 0-100 15.5T294-220q39 29 86 44.5T480-160Zm0-360q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17Zm0-60Zm0 360Z"/></svg>
+                </a>
+                <div class="sub-menu">
+                    <ul class="sm-ul">
+                        <li>General info</li>
+                        <li>Surveys</li>
+                        <li>Security</li>
+                        <li>Logout</li>
+                    </ul>
+                </div> 
+            </li>
+        </ul>
+    </nav>
+
+    <div class="main">
+        <div class="card1">
+            <img class="img hideOnMobile" src="~/images/survey.jpg"/>
+            <h1>Enhance a Safe and Bully-Free Environment with Us!</h1>
+            <p>Mari bersama-sama menciptakan lingkungan yang aman dan bebas dari perundungan.</p>
+            <div class="apply">Apply Now<svg class="menu" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="m560-240-56-58 142-142H160v-80h486L504-662l56-58 240 240-240 240Z"/></svg>
+            </div>
+            <div class="stat">
+                <div class="responded">
+                    <p>Responded</p>
+                    <p class="num">3,565</p>
+                </div>
+                <div class="survey">
+                    <p>Survey</p>
+                    <p class="num">41+</p>
+                </div>
+            </div>
+        </div>
+        <div class="card2">
+            <h1 class="heading">Survey</h1>
+            <div class="btns">
+                <p class="btn1">Perundungan</p>
+                <div class="btn2">Rasis</div>
+            </div>
+            <div class="grid-container">
+                <div class="grid-item">
+                    <p>Survey Perundungan</p>
+                    <p>Feedback Survey</p>
+                    <p class="margin">42 Respon</p>
+                </div>
+                <div class="grid-item">
+                    <p>Survey Perundungan</p>
+                    <p>Feedback Survey</p>
+                    <p class="margin">42 Respon</p>
+                </div>
+                <div class="grid-item">
+                    <p>Survey Perundungan</p>
+                    <p>Feedback Survey</p>
+                    <p class="margin">42 Respon</p>
+                </div>
+                <div class="grid-item">
+                    <p>Survey Perundungan</p>
+                    <p>Feedback Survey</p>
+                    <p class="margin">42 Respon</p>
+                </div>
+                <div class="grid-item">
+                    <p>Survey Perundungan</p>
+                    <p>Feedback Survey</p>
+                    <p class="margin">42 Respon</p>
+                </div>
+                <div class="grid-item">
+                    <p>Survey Perundungan</p>
+                    <p>Feedback Survey</p>
+                    <p class="margin">42 Respon</p>
+                </div>
+                <div class="grid-item">
+                    <p>Survey Perundungan</p>
+                    <p>Feedback Survey</p>
+                    <p class="margin">42 Respon</p>
+                </div>
+                <div class="grid-item">
+                    <p>Survey Perundungan</p>
+                    <p>Feedback Survey</p>
+                    <p class="margin">42 Respon</p>
+                </div>
+            </div>
+              
+        </div>
+        <div class="card3">
+            <h1>Join Our Survey</h1>
+            <p style="margin-top: 20px;">"Tolak Perundungan: Bersama-sama Kita Hentikan Tindakan Merugikan Ini!"</p>
+            <div class="login-now">Login Now</div>
+        </div>
+        <div class="footer">
+            <div class="inner-div">
+                <h2>Bebaskan Perundungan Bersama Kami</h2>
+                <p style="margin-top: 50px;">"Mari bersama-sama menciptakan lingkungan yang aman dan bebas dari perundungan."</p>
+                <div class="bottom-div">
+                    <h3>SurveyApp</h3>
+                    <p>© 2023 SurveyApp. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
     <script>
-        function showSidebar(){
-            const sidebar = document.querySelector('.sidebar')
-            sidebar.style.display = 'flex'
-        }
+        function showSidebar() {
+    const sidebar = document.querySelector('.sidebar');
+    sidebar.style.display = 'flex';
+
+    // Add event listener to close sidebar when clicking outside of it
+    document.addEventListener('click', closeSidebarOnClickOutside);
+
+    // Prevent the click event on the button from propagating
+    const button = document.querySelector('.menu-btn');
+    button.addEventListener('click', stopPropagation);
+}
+
+function closeSidebarOnClickOutside(event) {
+    const sidebar = document.querySelector('.sidebar');
+
+    if (!sidebar.contains(event.target)) {
+        sidebar.style.display = 'none';
+        // Remove the event listener after hiding the sidebar
+        document.removeEventListener('click', closeSidebarOnClickOutside);
+    }
+}
+
+function stopPropagation(event) {
+    event.stopPropagation();
+}
+
         function hideSidebar(){
             const sidebar = document.querySelector('.sidebar')
             sidebar.style.display = 'none'
         }
+        function showSubmenu() {
+            const submenu = document.querySelector('.sub-menu');
+            const smul = document.querySelector('.sm-ul');
+            submenu.style.display = 'block';
+            smul.style.display = 'block';
+
+            // Add event listener to document to close submenu when clicking outside of it
+            document.addEventListener('click', closeSubmenuOnClickOutside);
+        }
+
+        function closeSubmenuOnClickOutside(event) {
+            const submenu = document.querySelector('.sub-menu');
+            const button = document.querySelector('.profile-icon');
+
+            // Check if the click target is not within the submenu or the button
+            if (!submenu.contains(event.target) && event.target !== button) {
+               submenu.style.display = 'none';
+               // Remove the event listener after hiding the submenu
+               document.removeEventListener('click', closeSubmenuOnClickOutside);
+            }
+        }
+
     </script>
 </body>
 </html>

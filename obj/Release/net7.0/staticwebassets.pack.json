@@ -5,6 +5,14 @@
       "PackagePath": "staticwebassets\\css\\home.css"
     },
     {
+      "Id": "C:\\Users\\USER\\Desktop\\SurveyApp\\wwwroot\\css\\login.css",
+      "PackagePath": "staticwebassets\\css\\login.css"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\SurveyApp\\wwwroot\\css\\register.css",
+      "PackagePath": "staticwebassets\\css\\register.css"
+    },
+    {
       "Id": "C:\\Users\\USER\\Desktop\\SurveyApp\\wwwroot\\fonts\\Poppins\\OFL.txt",
       "PackagePath": "staticwebassets\\fonts\\Poppins\\OFL.txt"
     },
@@ -81,12 +89,36 @@
       "PackagePath": "staticwebassets\\fonts\\Poppins\\Poppins-ThinItalic.ttf"
     },
     {
+      "Id": "C:\\Users\\USER\\Desktop\\SurveyApp\\wwwroot\\images\\ad1.jpg",
+      "PackagePath": "staticwebassets\\images\\ad1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\SurveyApp\\wwwroot\\images\\arrow_right_alt_FILL0_wght400_GRAD0_opsz24.svg",
+      "PackagePath": "staticwebassets\\images\\arrow_right_alt_FILL0_wght400_GRAD0_opsz24.svg"
+    },
+    {
       "Id": "C:\\Users\\USER\\Desktop\\SurveyApp\\wwwroot\\images\\close_FILL0_wght400_GRAD0_opsz24.svg",
       "PackagePath": "staticwebassets\\images\\close_FILL0_wght400_GRAD0_opsz24.svg"
     },
     {
+      "Id": "C:\\Users\\USER\\Desktop\\SurveyApp\\wwwroot\\images\\login.png",
+      "PackagePath": "staticwebassets\\images\\login.png"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\SurveyApp\\wwwroot\\images\\logo.jpg",
+      "PackagePath": "staticwebassets\\images\\logo.jpg"
+    },
+    {
       "Id": "C:\\Users\\USER\\Desktop\\SurveyApp\\wwwroot\\images\\menu_FILL0_wght400_GRAD0_opsz24.svg",
       "PackagePath": "staticwebassets\\images\\menu_FILL0_wght400_GRAD0_opsz24.svg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\SurveyApp\\wwwroot\\images\\signup.png",
+      "PackagePath": "staticwebassets\\images\\signup.png"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\SurveyApp\\wwwroot\\images\\survey.jpg",
+      "PackagePath": "staticwebassets\\images\\survey.jpg"
     },
     {
       "Id": "obj\\Release\\net7.0\\staticwebassets\\msbuild.SurveyApp.Microsoft.AspNetCore.StaticWebAssets.props",

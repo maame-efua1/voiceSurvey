@@ -1,8 +1,56 @@
 {
   "Files": [
     {
+      "Id": "C:\\Users\\USER\\Desktop\\SurveyApp\\wwwroot\\css\\dashboard.css",
+      "PackagePath": "staticwebassets\\css\\dashboard.css"
+    },
+    {
       "Id": "C:\\Users\\USER\\Desktop\\SurveyApp\\wwwroot\\css\\home.css",
       "PackagePath": "staticwebassets\\css\\home.css"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\SurveyApp\\wwwroot\\css\\login.css",
+      "PackagePath": "staticwebassets\\css\\login.css"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\SurveyApp\\wwwroot\\css\\register.css",
+      "PackagePath": "staticwebassets\\css\\register.css"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\SurveyApp\\wwwroot\\fonts\\Inter\\Inter-Black.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Inter\\Inter-Black.ttf"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\SurveyApp\\wwwroot\\fonts\\Inter\\Inter-Bold.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Inter\\Inter-Bold.ttf"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\SurveyApp\\wwwroot\\fonts\\Inter\\Inter-ExtraBold.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Inter\\Inter-ExtraBold.ttf"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\SurveyApp\\wwwroot\\fonts\\Inter\\Inter-ExtraLight.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Inter\\Inter-ExtraLight.ttf"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\SurveyApp\\wwwroot\\fonts\\Inter\\Inter-Light.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Inter\\Inter-Light.ttf"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\SurveyApp\\wwwroot\\fonts\\Inter\\Inter-Medium.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Inter\\Inter-Medium.ttf"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\SurveyApp\\wwwroot\\fonts\\Inter\\Inter-Regular.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Inter\\Inter-Regular.ttf"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\SurveyApp\\wwwroot\\fonts\\Inter\\Inter-SemiBold.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Inter\\Inter-SemiBold.ttf"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\SurveyApp\\wwwroot\\fonts\\Inter\\Inter-Thin.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Inter\\Inter-Thin.ttf"
     },
     {
       "Id": "C:\\Users\\USER\\Desktop\\SurveyApp\\wwwroot\\fonts\\Poppins\\OFL.txt",
@@ -81,12 +129,60 @@
       "PackagePath": "staticwebassets\\fonts\\Poppins\\Poppins-ThinItalic.ttf"
     },
     {
+      "Id": "C:\\Users\\USER\\Desktop\\SurveyApp\\wwwroot\\images\\account_circle_24dp_FILL0_wght400_GRAD0_opsz24 (1).svg",
+      "PackagePath": "staticwebassets\\images\\account_circle_24dp_FILL0_wght400_GRAD0_opsz24 (1).svg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\SurveyApp\\wwwroot\\images\\ad1.jpg",
+      "PackagePath": "staticwebassets\\images\\ad1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\SurveyApp\\wwwroot\\images\\arrow_right_alt_FILL0_wght400_GRAD0_opsz24.svg",
+      "PackagePath": "staticwebassets\\images\\arrow_right_alt_FILL0_wght400_GRAD0_opsz24.svg"
+    },
+    {
       "Id": "C:\\Users\\USER\\Desktop\\SurveyApp\\wwwroot\\images\\close_FILL0_wght400_GRAD0_opsz24.svg",
       "PackagePath": "staticwebassets\\images\\close_FILL0_wght400_GRAD0_opsz24.svg"
     },
     {
+      "Id": "C:\\Users\\USER\\Desktop\\SurveyApp\\wwwroot\\images\\fact-check.svg",
+      "PackagePath": "staticwebassets\\images\\fact-check.svg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\SurveyApp\\wwwroot\\images\\login.png",
+      "PackagePath": "staticwebassets\\images\\login.png"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\SurveyApp\\wwwroot\\images\\logo.jpg",
+      "PackagePath": "staticwebassets\\images\\logo.jpg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\SurveyApp\\wwwroot\\images\\logout.svg",
+      "PackagePath": "staticwebassets\\images\\logout.svg"
+    },
+    {
       "Id": "C:\\Users\\USER\\Desktop\\SurveyApp\\wwwroot\\images\\menu_FILL0_wght400_GRAD0_opsz24.svg",
       "PackagePath": "staticwebassets\\images\\menu_FILL0_wght400_GRAD0_opsz24.svg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\SurveyApp\\wwwroot\\images\\notification.svg",
+      "PackagePath": "staticwebassets\\images\\notification.svg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\SurveyApp\\wwwroot\\images\\overview.svg",
+      "PackagePath": "staticwebassets\\images\\overview.svg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\SurveyApp\\wwwroot\\images\\security.svg",
+      "PackagePath": "staticwebassets\\images\\security.svg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\SurveyApp\\wwwroot\\images\\signup.png",
+      "PackagePath": "staticwebassets\\images\\signup.png"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\SurveyApp\\wwwroot\\images\\survey.jpg",
+      "PackagePath": "staticwebassets\\images\\survey.jpg"
     },
     {
       "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.SurveyApp.Microsoft.AspNetCore.StaticWebAssets.props",

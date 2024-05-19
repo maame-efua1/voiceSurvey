@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="~/css/login.css" asp-append-version="true">
+    <title>Document</title>
+</head>
+<body>
+    <img class="login hideOnMobile" src="~/images/login.png"/>
+    <div class="register">
+        <img class="logo" src="~/images/logo.jpg"/>
+        <h2>Welcome Back!😀</h2>
+        <h6 style="font-weight: lighter;">please enter your details</h6>
+        <form action="@Url.Action("Index", "Home")"" method="post">
+            <label for="email">Email:</label><br>
+            <input class="input" placeholder="johndoe@example.com" type="email" id="email" name="email" required><br>
+    
+            <label for="password">Password:</label><br>
+            <input class="input" type="password" id="password" name="password" required><br>
+
+            <input type="submit" value="Login">
+            <p>Don't have an account? <a href="/Register/Index">Sign Up</a></p>
+        </form>
+        
+    </div>
+</body>
+</html>
