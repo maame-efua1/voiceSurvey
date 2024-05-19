@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "D0zRX+Xzv7NJLGKp/XwsyZtYDDPSizEIX1SeAjMjTrbibSDmRcAFoF1C2UPMCsWH7o0SQRRXPTy+n2AjMImEEQ==",
+  "dgSpecHash": "10r50mRO0sOudMq7Eins+EXz/4A8GL9x6ZKRjFDHriT8SdM0iRrQTAR7fxnCvSJRMS21qEj6AyXyp3+RKs4IUg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\USER\\Desktop\\SurveyApp\\SurveyApp.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "D:\\surveyapp\\SurveyApp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Eugenia Efua Quartey\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.14\\microsoft.netcore.app.ref.7.0.14.nupkg.sha512",
+    "C:\\Users\\Eugenia Efua Quartey\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.14\\microsoft.windowsdesktop.app.ref.7.0.14.nupkg.sha512",
+    "C:\\Users\\Eugenia Efua Quartey\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.14\\microsoft.aspnetcore.app.ref.7.0.14.nupkg.sha512",
+    "C:\\Users\\Eugenia Efua Quartey\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\7.0.14\\microsoft.netcore.app.host.win-x64.7.0.14.nupkg.sha512"
+  ],
   "logs": []
 }

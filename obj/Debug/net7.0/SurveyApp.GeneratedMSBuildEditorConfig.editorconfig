@@ -9,25 +9,27 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = SurveyApp
 build_property.RootNamespace = SurveyApp
-build_property.ProjectDir = C:\Users\USER\Desktop\SurveyApp\
+build_property.ProjectDir = D:\surveyapp\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\USER\Desktop\SurveyApp
+build_property.MSBuildProjectDirectory = D:\surveyapp
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/USER/Desktop/SurveyApp/Views/Dashboard/Index.cshtml]
+[D:/surveyapp/Views/Dashboard/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/USER/Desktop/SurveyApp/Views/Home/Index.cshtml]
+[D:/surveyapp/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/USER/Desktop/SurveyApp/Views/Login/Index.cshtml]
+[D:/surveyapp/Views/Login/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/USER/Desktop/SurveyApp/Views/Register/Index.cshtml]
+[D:/surveyapp/Views/Register/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVnaXN0ZXJcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
