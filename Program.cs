@@ -1,7 +1,18 @@
+using Microsoft.AspNetCore.Identity;
+using TALKPOLL.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(5);
+});
+
+builder.Services.AddScoped<IPasswordHasher<Register>, PasswordHasher<Register>>();
 
 var app = builder.Build();
 
