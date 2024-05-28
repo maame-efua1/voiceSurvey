@@ -13,7 +13,6 @@ public class RegisterController : Controller
 
     public IActionResult Index(Register User)
     {
-        //HttpContext.Session.SetString("firstname", "");
 
     string connectionString = "Server=LAPTOP-LIL017KH\\SQLEXPRESS;Database=TALKPOLL;Trusted_Connection=True;MultipleActiveResultSets=True;TrustServerCertificate=True";
     
