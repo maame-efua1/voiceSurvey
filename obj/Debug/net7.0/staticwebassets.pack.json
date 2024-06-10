@@ -1,187 +1,187 @@
 {
   "Files": [
     {
-      "Id": "D:\\surveyapp\\wwwroot\\css\\dashboard.css",
+      "Id": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\css\\dashboard.css",
       "PackagePath": "staticwebassets\\css\\dashboard.css"
     },
     {
-      "Id": "D:\\surveyapp\\wwwroot\\css\\home.css",
+      "Id": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\css\\home.css",
       "PackagePath": "staticwebassets\\css\\home.css"
     },
     {
-      "Id": "D:\\surveyapp\\wwwroot\\css\\login.css",
+      "Id": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\css\\login.css",
       "PackagePath": "staticwebassets\\css\\login.css"
     },
     {
-      "Id": "D:\\surveyapp\\wwwroot\\css\\register.css",
+      "Id": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\css\\register.css",
       "PackagePath": "staticwebassets\\css\\register.css"
     },
     {
-      "Id": "D:\\surveyapp\\wwwroot\\fonts\\Inter\\Inter-Black.ttf",
+      "Id": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\fonts\\Inter\\Inter-Black.ttf",
       "PackagePath": "staticwebassets\\fonts\\Inter\\Inter-Black.ttf"
     },
     {
-      "Id": "D:\\surveyapp\\wwwroot\\fonts\\Inter\\Inter-Bold.ttf",
+      "Id": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\fonts\\Inter\\Inter-Bold.ttf",
       "PackagePath": "staticwebassets\\fonts\\Inter\\Inter-Bold.ttf"
     },
     {
-      "Id": "D:\\surveyapp\\wwwroot\\fonts\\Inter\\Inter-ExtraBold.ttf",
+      "Id": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\fonts\\Inter\\Inter-ExtraBold.ttf",
       "PackagePath": "staticwebassets\\fonts\\Inter\\Inter-ExtraBold.ttf"
     },
     {
-      "Id": "D:\\surveyapp\\wwwroot\\fonts\\Inter\\Inter-ExtraLight.ttf",
+      "Id": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\fonts\\Inter\\Inter-ExtraLight.ttf",
       "PackagePath": "staticwebassets\\fonts\\Inter\\Inter-ExtraLight.ttf"
     },
     {
-      "Id": "D:\\surveyapp\\wwwroot\\fonts\\Inter\\Inter-Light.ttf",
+      "Id": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\fonts\\Inter\\Inter-Light.ttf",
       "PackagePath": "staticwebassets\\fonts\\Inter\\Inter-Light.ttf"
     },
     {
-      "Id": "D:\\surveyapp\\wwwroot\\fonts\\Inter\\Inter-Medium.ttf",
+      "Id": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\fonts\\Inter\\Inter-Medium.ttf",
       "PackagePath": "staticwebassets\\fonts\\Inter\\Inter-Medium.ttf"
     },
     {
-      "Id": "D:\\surveyapp\\wwwroot\\fonts\\Inter\\Inter-Regular.ttf",
+      "Id": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\fonts\\Inter\\Inter-Regular.ttf",
       "PackagePath": "staticwebassets\\fonts\\Inter\\Inter-Regular.ttf"
     },
     {
-      "Id": "D:\\surveyapp\\wwwroot\\fonts\\Inter\\Inter-SemiBold.ttf",
+      "Id": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\fonts\\Inter\\Inter-SemiBold.ttf",
       "PackagePath": "staticwebassets\\fonts\\Inter\\Inter-SemiBold.ttf"
     },
     {
-      "Id": "D:\\surveyapp\\wwwroot\\fonts\\Inter\\Inter-Thin.ttf",
+      "Id": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\fonts\\Inter\\Inter-Thin.ttf",
       "PackagePath": "staticwebassets\\fonts\\Inter\\Inter-Thin.ttf"
     },
     {
-      "Id": "D:\\surveyapp\\wwwroot\\fonts\\Poppins\\OFL.txt",
+      "Id": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\fonts\\Poppins\\OFL.txt",
       "PackagePath": "staticwebassets\\fonts\\Poppins\\OFL.txt"
     },
     {
-      "Id": "D:\\surveyapp\\wwwroot\\fonts\\Poppins\\Poppins-Black.ttf",
+      "Id": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\fonts\\Poppins\\Poppins-Black.ttf",
       "PackagePath": "staticwebassets\\fonts\\Poppins\\Poppins-Black.ttf"
     },
     {
-      "Id": "D:\\surveyapp\\wwwroot\\fonts\\Poppins\\Poppins-BlackItalic.ttf",
+      "Id": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\fonts\\Poppins\\Poppins-BlackItalic.ttf",
       "PackagePath": "staticwebassets\\fonts\\Poppins\\Poppins-BlackItalic.ttf"
     },
     {
-      "Id": "D:\\surveyapp\\wwwroot\\fonts\\Poppins\\Poppins-Bold.ttf",
+      "Id": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\fonts\\Poppins\\Poppins-Bold.ttf",
       "PackagePath": "staticwebassets\\fonts\\Poppins\\Poppins-Bold.ttf"
     },
     {
-      "Id": "D:\\surveyapp\\wwwroot\\fonts\\Poppins\\Poppins-BoldItalic.ttf",
+      "Id": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\fonts\\Poppins\\Poppins-BoldItalic.ttf",
       "PackagePath": "staticwebassets\\fonts\\Poppins\\Poppins-BoldItalic.ttf"
     },
     {
-      "Id": "D:\\surveyapp\\wwwroot\\fonts\\Poppins\\Poppins-ExtraBold.ttf",
+      "Id": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\fonts\\Poppins\\Poppins-ExtraBold.ttf",
       "PackagePath": "staticwebassets\\fonts\\Poppins\\Poppins-ExtraBold.ttf"
     },
     {
-      "Id": "D:\\surveyapp\\wwwroot\\fonts\\Poppins\\Poppins-ExtraBoldItalic.ttf",
+      "Id": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\fonts\\Poppins\\Poppins-ExtraBoldItalic.ttf",
       "PackagePath": "staticwebassets\\fonts\\Poppins\\Poppins-ExtraBoldItalic.ttf"
     },
     {
-      "Id": "D:\\surveyapp\\wwwroot\\fonts\\Poppins\\Poppins-ExtraLight.ttf",
+      "Id": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\fonts\\Poppins\\Poppins-ExtraLight.ttf",
       "PackagePath": "staticwebassets\\fonts\\Poppins\\Poppins-ExtraLight.ttf"
     },
     {
-      "Id": "D:\\surveyapp\\wwwroot\\fonts\\Poppins\\Poppins-ExtraLightItalic.ttf",
+      "Id": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\fonts\\Poppins\\Poppins-ExtraLightItalic.ttf",
       "PackagePath": "staticwebassets\\fonts\\Poppins\\Poppins-ExtraLightItalic.ttf"
     },
     {
-      "Id": "D:\\surveyapp\\wwwroot\\fonts\\Poppins\\Poppins-Italic.ttf",
+      "Id": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\fonts\\Poppins\\Poppins-Italic.ttf",
       "PackagePath": "staticwebassets\\fonts\\Poppins\\Poppins-Italic.ttf"
     },
     {
-      "Id": "D:\\surveyapp\\wwwroot\\fonts\\Poppins\\Poppins-Light.ttf",
+      "Id": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\fonts\\Poppins\\Poppins-Light.ttf",
       "PackagePath": "staticwebassets\\fonts\\Poppins\\Poppins-Light.ttf"
     },
     {
-      "Id": "D:\\surveyapp\\wwwroot\\fonts\\Poppins\\Poppins-LightItalic.ttf",
+      "Id": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\fonts\\Poppins\\Poppins-LightItalic.ttf",
       "PackagePath": "staticwebassets\\fonts\\Poppins\\Poppins-LightItalic.ttf"
     },
     {
-      "Id": "D:\\surveyapp\\wwwroot\\fonts\\Poppins\\Poppins-Medium.ttf",
+      "Id": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\fonts\\Poppins\\Poppins-Medium.ttf",
       "PackagePath": "staticwebassets\\fonts\\Poppins\\Poppins-Medium.ttf"
     },
     {
-      "Id": "D:\\surveyapp\\wwwroot\\fonts\\Poppins\\Poppins-MediumItalic.ttf",
+      "Id": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\fonts\\Poppins\\Poppins-MediumItalic.ttf",
       "PackagePath": "staticwebassets\\fonts\\Poppins\\Poppins-MediumItalic.ttf"
     },
     {
-      "Id": "D:\\surveyapp\\wwwroot\\fonts\\Poppins\\Poppins-Regular.ttf",
+      "Id": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\fonts\\Poppins\\Poppins-Regular.ttf",
       "PackagePath": "staticwebassets\\fonts\\Poppins\\Poppins-Regular.ttf"
     },
     {
-      "Id": "D:\\surveyapp\\wwwroot\\fonts\\Poppins\\Poppins-SemiBold.ttf",
+      "Id": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\fonts\\Poppins\\Poppins-SemiBold.ttf",
       "PackagePath": "staticwebassets\\fonts\\Poppins\\Poppins-SemiBold.ttf"
     },
     {
-      "Id": "D:\\surveyapp\\wwwroot\\fonts\\Poppins\\Poppins-SemiBoldItalic.ttf",
+      "Id": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\fonts\\Poppins\\Poppins-SemiBoldItalic.ttf",
       "PackagePath": "staticwebassets\\fonts\\Poppins\\Poppins-SemiBoldItalic.ttf"
     },
     {
-      "Id": "D:\\surveyapp\\wwwroot\\fonts\\Poppins\\Poppins-Thin.ttf",
+      "Id": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\fonts\\Poppins\\Poppins-Thin.ttf",
       "PackagePath": "staticwebassets\\fonts\\Poppins\\Poppins-Thin.ttf"
     },
     {
-      "Id": "D:\\surveyapp\\wwwroot\\fonts\\Poppins\\Poppins-ThinItalic.ttf",
+      "Id": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\fonts\\Poppins\\Poppins-ThinItalic.ttf",
       "PackagePath": "staticwebassets\\fonts\\Poppins\\Poppins-ThinItalic.ttf"
     },
     {
-      "Id": "D:\\surveyapp\\wwwroot\\images\\account_circle_24dp_FILL0_wght400_GRAD0_opsz24 (1).svg",
+      "Id": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\images\\account_circle_24dp_FILL0_wght400_GRAD0_opsz24 (1).svg",
       "PackagePath": "staticwebassets\\images\\account_circle_24dp_FILL0_wght400_GRAD0_opsz24 (1).svg"
     },
     {
-      "Id": "D:\\surveyapp\\wwwroot\\images\\ad1.jpg",
+      "Id": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\images\\ad1.jpg",
       "PackagePath": "staticwebassets\\images\\ad1.jpg"
     },
     {
-      "Id": "D:\\surveyapp\\wwwroot\\images\\arrow_right_alt_FILL0_wght400_GRAD0_opsz24.svg",
+      "Id": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\images\\arrow_right_alt_FILL0_wght400_GRAD0_opsz24.svg",
       "PackagePath": "staticwebassets\\images\\arrow_right_alt_FILL0_wght400_GRAD0_opsz24.svg"
     },
     {
-      "Id": "D:\\surveyapp\\wwwroot\\images\\close_FILL0_wght400_GRAD0_opsz24.svg",
+      "Id": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\images\\close_FILL0_wght400_GRAD0_opsz24.svg",
       "PackagePath": "staticwebassets\\images\\close_FILL0_wght400_GRAD0_opsz24.svg"
     },
     {
-      "Id": "D:\\surveyapp\\wwwroot\\images\\fact-check.svg",
+      "Id": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\images\\fact-check.svg",
       "PackagePath": "staticwebassets\\images\\fact-check.svg"
     },
     {
-      "Id": "D:\\surveyapp\\wwwroot\\images\\login.png",
+      "Id": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\images\\login.png",
       "PackagePath": "staticwebassets\\images\\login.png"
     },
     {
-      "Id": "D:\\surveyapp\\wwwroot\\images\\logo.jpg",
+      "Id": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\images\\logo.jpg",
       "PackagePath": "staticwebassets\\images\\logo.jpg"
     },
     {
-      "Id": "D:\\surveyapp\\wwwroot\\images\\logout.svg",
+      "Id": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\images\\logout.svg",
       "PackagePath": "staticwebassets\\images\\logout.svg"
     },
     {
-      "Id": "D:\\surveyapp\\wwwroot\\images\\menu_FILL0_wght400_GRAD0_opsz24.svg",
+      "Id": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\images\\menu_FILL0_wght400_GRAD0_opsz24.svg",
       "PackagePath": "staticwebassets\\images\\menu_FILL0_wght400_GRAD0_opsz24.svg"
     },
     {
-      "Id": "D:\\surveyapp\\wwwroot\\images\\notification.svg",
+      "Id": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\images\\notification.svg",
       "PackagePath": "staticwebassets\\images\\notification.svg"
     },
     {
-      "Id": "D:\\surveyapp\\wwwroot\\images\\overview.svg",
+      "Id": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\images\\overview.svg",
       "PackagePath": "staticwebassets\\images\\overview.svg"
     },
     {
-      "Id": "D:\\surveyapp\\wwwroot\\images\\security.svg",
+      "Id": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\images\\security.svg",
       "PackagePath": "staticwebassets\\images\\security.svg"
     },
     {
-      "Id": "D:\\surveyapp\\wwwroot\\images\\signup.png",
+      "Id": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\images\\signup.png",
       "PackagePath": "staticwebassets\\images\\signup.png"
     },
     {
-      "Id": "D:\\surveyapp\\wwwroot\\images\\survey.jpg",
+      "Id": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\images\\survey.jpg",
       "PackagePath": "staticwebassets\\images\\survey.jpg"
     },
     {
