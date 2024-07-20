@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/survey.css" asp-append-version="true"/>
+    <title>Dashboard</title>
+</head>
+<body>
+    <nav>
+        <ul class="sidebar">
+            <li onclick=hideSidebar()><a href="#"><svg class="menu" xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 -960 960 960" width="26"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+                <p class="itm-1">SurveyApp</p>
+                <li tabindex="0">
+                    <a href="../Home/Index">
+                        <svg class="icons" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M120-200q-33 0-56.5-23.5T40-280v-400q0-33 23.5-56.5T120-760h400q33 0 56.5 23.5T600-680v400q0 33-23.5 56.5T520-200H120Zm0-80h400v-400H120v400Zm560 80v-560h80v560h-80Zm160 0v-560h80v560h-80Zm-720-80v-400 400Z"/></svg>
+                        Home
+                    </a>
+                </li>
+                    <li tabindex="0">
+                        <a href="../Dashboard/Index">
+                            <svg class="icons" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M120-200q-33 0-56.5-23.5T40-280v-400q0-33 23.5-56.5T120-760h400q33 0 56.5 23.5T600-680v400q0 33-23.5 56.5T520-200H120Zm0-80h400v-400H120v400Zm560 80v-560h80v560h-80Zm160 0v-560h80v560h-80Zm-720-80v-400 400Z"/></svg>
+                            General info
+                        </a>
+                    </li>
+                    <li tabindex="0">
+                        <a href="../Dashboard/Surveylist">
+                            <svg class="icons" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M160-120q-33 0-56.5-23.5T80-200v-560q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v560q0 33-23.5 56.5T800-120H160Zm0-80h640v-560H160v560Zm40-80h200v-80H200v80Zm382-80 198-198-57-57-141 142-57-57-56 57 113 113Zm-382-80h200v-80H200v80Zm0-160h200v-80H200v80Zm-40 400v-560 560Z"/></svg>
+                            Surveys
+                        </a>
+                    </li>
+                    <li tabindex="0">
+                        <a href="#">
+                            <svg class="icons" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-80q-139-35-229.5-159.5T160-516v-244l320-120 320 120v244q0 152-90.5 276.5T480-80Zm0-84q97-30 162-118.5T718-480H480v-315l-240 90v207q0 7 2 18h238v316Z"/></svg>
+                            Security
+                        </a>
+                    </li>
+                    <li tabindex="0">
+                        <a href="../About/Index">
+                            <svg class="icons" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z"/></svg>
+                            About Us
+                        </a>
+                    </li>
+                    <li tabindex="0">
+                        <a href="#">
+                            <svg class="icons" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z"/></svg>
+                            Contact Us
+                        </a>
+                    </li>
+                    <li tabindex="0">
+                        <a href="../Login/Index">
+                            <svg class="icons" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z"/></svg>
+                            Logout
+                        </a>
+                    </li>
+
+                <div class="cont-us">
+                    <h6>Have any problem with how to manage your dashboard?</h6>
+                    <div>Contact Us</div>
+                </div>
+
+        </ul>
+        <ul class="header">
+            <li class="appname" ><a href="../Home/Index">SurveyApp</a></li>
+            <li class="hideOnMobile"><a href="../About/Index">About</a></li>
+            <li class="hideOnMobile"><a href="#">Contact</a></li>
+            <li class="hideOnMobile"><a href="../Dashboard/Surveylist">Survey</a></li>
+            <li class="hideOnMobile"><a href="../Dashboard/Index">Dashboard</a></li>
+
+            <li class="menu-btn" onclick=showSidebar()>
+                <a href="#">
+                    <svg class="menu" xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 -960 960 960" width="26"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+                </a>
+            </li>
+            
+        </ul> 
+        <ul class="logging-btns hideOnMobile">
+            <li class=" hideOnLogin"><a href="../Login/Index">Login</a></li>
+        </ul>
+    </nav>
+
+    <div class="survey">
+        <h2>Childhood Trauma: Understanding Your Experiences</h2>
+        <div id="questionnaire-form">
+             Questions will be dynamically inserted here 
+        </div>
+        <div class="counter">
+            <span id="page-counter">Page 1/3</span>
+        </div>
+        <div class="navigation">
+            <button id="prev" onclick="prevPage()">Prev</button>
+            <button id="next" onclick="nextPage()">Next</button>
+            <button id="submit" onclick="submitForm()" style="display: none;">Submit</button>
+        </div>
+    </div> 
+
+    <script>
+        function showSidebar() {
+    const sidebar = document.querySelector('.sidebar');
+    sidebar.style.display = 'flex';
+
+    // Add event listener to close sidebar when clicking outside of it
+    document.addEventListener('click', closeSidebarOnClickOutside);
+
+    // Prevent the click event on the button from propagating
+    const button = document.querySelector('.menu-btn');
+    button.addEventListener('click', stopPropagation);
+}
+
+function closeSidebarOnClickOutside(event) {
+    const sidebar = document.querySelector('.sidebar');
+
+    if (!sidebar.contains(event.target)) {
+        sidebar.style.display = 'none';
+        // Remove the event listener after hiding the sidebar
+        document.removeEventListener('click', closeSidebarOnClickOutside);
+    }
+}
+
+function stopPropagation(event) {
+    event.stopPropagation();
+}
+
+        function hideSidebar(){
+            const sidebar = document.querySelector('.sidebar')
+            sidebar.style.display = 'none'
+        }
+        function showSubmenu() {
+            const submenu = document.querySelector('.sub-menu');
+            const smul = document.querySelector('.sm-ul');
+            submenu.style.display = 'block';
+            smul.style.display = 'block';
+
+            // Add event listener to document to close submenu when clicking outside of it
+            document.addEventListener('click', closeSubmenuOnClickOutside);
+        }
+
+        function closeSubmenuOnClickOutside(event) {
+            const submenu = document.querySelector('.sub-menu');
+            const button = document.querySelector('.profile-icon');
+
+            // Check if the click target is not within the submenu or the button
+            if (!submenu.contains(event.target) && event.target !== button) {
+               submenu.style.display = 'none';
+               // Remove the event listener after hiding the submenu
+               document.removeEventListener('click', closeSubmenuOnClickOutside);
+            }
+        }
+
+        const questions = [
+        { type: 'text', question: "Please describe any traumatic events you experienced during your childhood that you believe have had a significant impact on your life." },
+            { type: 'radio', question: "Did you have access to emotional support from family or friends during difficult times in your childhood?", options: ["Yes, always", "Sometimes", "Rarely", "Never"] },
+            { type: 'checkbox', question: "Which of the following symptoms have you experienced as a result of your childhood trauma?", options: ["Anxiety", "Depression", "Nightmares", "Flashbacks", "Dissociation"] },
+            { type: 'text', question: "How have these traumatic events affected your mental health and emotional well-being?" },
+            { type: 'radio', question: "Were there any adults in your life who you felt you could trust and rely on for support?", options: ["Yes, multiple adults", "One or two adults", "No, none"] },
+            { type: 'text', question: "What coping mechanisms did you develop as a result of your childhood experiences?" },
+            { type: 'text', question: "Can you recall any specific instances where you felt particularly unsupported or alone as a child?" },
+            { type: 'radio', question: "Did you ever seek professional help or counseling for your trauma during childhood?", options: ["Yes", "No"] },
+            { type: 'text', question: "In what ways do you feel your childhood experiences have shaped your personality and outlook on life?" },
+            { type: 'radio', question: "Do you believe your childhood trauma has impacted your relationships with others in adulthood?", options: ["Yes, significantly", "Somewhat", "No, not really"] },
+            { type: 'text', question: "Please share any additional thoughts or feelings you have about your childhood and how it has affected you." },
+            { type: 'text', question: "Have you found any effective strategies or therapies that have helped you cope with your childhood trauma?" },
+            { type: 'radio', question: "Do you feel you have healed from the trauma you experienced in your childhood?", options: ["Yes, fully healed", "Partially healed", "Not healed at all"] },
+            { type: 'checkbox', question: "Have you experienced ongoing challenges related to your childhood trauma? Select all that apply.", options: ["Trust issues", "Difficulty in relationships", "Emotional numbness", "Self-harm tendencies", "Panic attacks"] },
+        ];
+
+        const questionsPerPage = 10;
+        let currentPageIndex = 0;
+
+        document.addEventListener("DOMContentLoaded", () => {
+            updatePage();
+        });
+
+        function updatePage() {
+            const formElement = document.getElementById("questionnaire-form");
+            const pageCounterElement = document.getElementById("page-counter");
+            formElement.innerHTML = '';
+
+            const start = currentPageIndex * questionsPerPage;
+            const end = start + questionsPerPage;
+            const currentQuestions = questions.slice(start, end);
+
+            currentQuestions.forEach((questionObj, index) => {
+                const questionContainer = document.createElement('div');
+                questionContainer.className = 'question-container';
+
+                const questionElement = document.createElement('p');
+                questionElement.className = 'question';
+                questionElement.textContent = `${start + index + 1}. ${questionObj.question}`;
+                questionContainer.appendChild(questionElement);
+
+                if (questionObj.type === 'text') {
+                    const textarea = document.createElement('textarea');
+                    textarea.name = `question-${start + index}`;
+                    questionContainer.appendChild(textarea);
+                    
+                } else if (questionObj.type === 'radio') {
+                    questionObj.options.forEach(option => {
+                        const label = document.createElement('label');
+                        const radio = document.createElement('input');
+                        radio.type = 'radio';
+                        radio.name = `question-${start + index}`;
+                        radio.value = option;
+                        label.appendChild(radio);
+                        label.appendChild(document.createTextNode(option));
+                        questionContainer.appendChild(label);
+                        questionContainer.appendChild(document.createElement('br'));
+                    });
+                } else if (questionObj.type === 'checkbox') {
+                    questionObj.options.forEach(option => {
+                        const label = document.createElement('label');
+                        const checkbox = document.createElement('input');
+                        checkbox.type = 'checkbox';
+                        checkbox.name = `question-${start + index}`;
+                        checkbox.value = option;
+                        label.appendChild(checkbox);
+                        label.appendChild(document.createTextNode(option));
+                        questionContainer.appendChild(label);
+                        questionContainer.appendChild(document.createElement('br'));
+                    });
+                }
+
+                formElement.appendChild(questionContainer);
+            });
+
+            pageCounterElement.textContent = `Page ${currentPageIndex + 1}/${Math.ceil(questions.length / questionsPerPage)}`;
+
+            document.getElementById("prev").disabled = currentPageIndex === 0;
+            document.getElementById("next").style.display = currentPageIndex === Math.ceil(questions.length / questionsPerPage) - 1 ? 'none' : 'inline';
+            document.getElementById("submit").style.display = currentPageIndex === Math.ceil(questions.length / questionsPerPage) - 1 ? 'inline' : 'none';
+        }
+
+        function prevPage() {
+            if (currentPageIndex > 0) {
+                currentPageIndex--;
+                updatePage();
+            }
+        }
+
+        function nextPage() {
+            if (currentPageIndex < Math.ceil(questions.length / questionsPerPage) - 1) {
+                currentPageIndex++;
+                updatePage();
+            }
+        }
+
+        function submitForm() {
+            alert('Form submitted!');
+        }
+
+    </script>
+</body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionnaire Form</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+        }
+
+        .form-container {
+            margin-top: 600px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 600px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .question-container {
+            margin-bottom: 20px;
+        }
+
+        .navigation button {
+            background-color: #0090D4;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 0 5px;
+        }
+
+        .navigation button:disabled {
+            background-color: #cccccc;
+        }
+
+        .counter {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <div id="questionnaire-form">
+            Questions will be dynamically inserted here 
+        </div>
+        <div class="counter">
+            <span id="page-counter">Page 1/3</span>
+        </div>
+        <div class="navigation">
+            <button id="prev" onclick="prevPage()">Prev</button>
+            <button id="next" onclick="nextPage()">Next</button>
+            <button id="submit" onclick="submitForm()" style="display: none;">Submit</button>
+        </div>
+    </div>
+    <script>
+        const questions = [
+            { type: 'text', question: "What is your name?" },
+            { type: 'radio', question: "What is your favorite color?", options: ["Red", "Blue", "Green", "Yellow"] },
+            { type: 'text', question: "What is your quest?" },
+            { type: 'radio', question: "What is the airspeed velocity of an unladen swallow?", options: ["24 mph", "20 mph", "18 mph", "15 mph"] },
+            { type: 'text', question: "What is your favorite programming language?" },
+            { type: 'text', question: "Where are you from?" },
+            { type: 'radio', question: "Do you like ice cream?", options: ["Yes", "No"] },
+            { type: 'text', question: "What is your hobby?" },
+            { type: 'radio', question: "Do you like coding?", options: ["Yes", "No"] },
+            { type: 'text', question: "What is your favorite book?" },
+            { type: 'text', question: "What is your dream job?" },
+            { type: 'radio', question: "Do you have a pet?", options: ["Yes", "No"] }
+        ];
+
+        const questionsPerPage = 10;
+        let currentPageIndex = 0;
+
+        document.addEventListener("DOMContentLoaded", () => {
+            updatePage();
+        });
+
+        function updatePage() {
+            const formElement = document.getElementById("questionnaire-form");
+            const pageCounterElement = document.getElementById("page-counter");
+            formElement.innerHTML = '';
+
+            const start = currentPageIndex * questionsPerPage;
+            const end = start + questionsPerPage;
+            const currentQuestions = questions.slice(start, end);
+
+            currentQuestions.forEach((questionObj, index) => {
+                const questionContainer = document.createElement('div');
+                questionContainer.className = 'question-container';
+
+                const questionElement = document.createElement('p');
+                questionElement.className = 'question';
+                questionElement.textContent = questionObj.question;
+                questionContainer.appendChild(questionElement);
+
+                if (questionObj.type === 'text') {
+                    const input = document.createElement('input');
+                    input.type = 'text';
+                    input.name = `question-${start + index}`;
+                    questionContainer.appendChild(input);
+                } else if (questionObj.type === 'radio') {
+                    questionObj.options.forEach(option => {
+                        const label = document.createElement('label');
+                        const radio = document.createElement('input');
+                        radio.type = 'radio';
+                        radio.name = `question-${start + index}`;
+                        radio.value = option;
+                        label.appendChild(radio);
+                        label.appendChild(document.createTextNode(option));
+                        questionContainer.appendChild(label);
+                        questionContainer.appendChild(document.createElement('br'));
+                    });
+                }
+
+                formElement.appendChild(questionContainer);
+            });
+
+            pageCounterElement.textContent = `Page ${currentPageIndex + 1}/${Math.ceil(questions.length / questionsPerPage)}`;
+
+            document.getElementById("prev").disabled = currentPageIndex === 0;
+            document.getElementById("next").style.display = currentPageIndex === Math.ceil(questions.length / questionsPerPage) - 1 ? 'none' : 'inline';
+            document.getElementById("submit").style.display = currentPageIndex === Math.ceil(questions.length / questionsPerPage) - 1 ? 'inline' : 'none';
+        }
+
+        function prevPage() {
+            if (currentPageIndex > 0) {
+                currentPageIndex--;
+                updatePage();
+            }
+        }
+
+        function nextPage() {
+            if (currentPageIndex < Math.ceil(questions.length / questionsPerPage) - 1) {
+                currentPageIndex++;
+                updatePage();
+            }
+        }
+
+        function submitForm() {
+            alert('Form submitted!');
+        }
+    </script>
+</body>
+</html> -->

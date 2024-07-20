@@ -1,6 +1,10 @@
 {
   "Files": [
     {
+      "Id": "D:\\surveyapp\\wwwroot\\css\\about.css",
+      "PackagePath": "staticwebassets\\css\\about.css"
+    },
+    {
       "Id": "D:\\surveyapp\\wwwroot\\css\\dashboard.css",
       "PackagePath": "staticwebassets\\css\\dashboard.css"
     },
@@ -15,6 +19,18 @@
     {
       "Id": "D:\\surveyapp\\wwwroot\\css\\register.css",
       "PackagePath": "staticwebassets\\css\\register.css"
+    },
+    {
+      "Id": "D:\\surveyapp\\wwwroot\\css\\survey.css",
+      "PackagePath": "staticwebassets\\css\\survey.css"
+    },
+    {
+      "Id": "D:\\surveyapp\\wwwroot\\css\\surveylist.css",
+      "PackagePath": "staticwebassets\\css\\surveylist.css"
+    },
+    {
+      "Id": "D:\\surveyapp\\wwwroot\\css\\template.css",
+      "PackagePath": "staticwebassets\\css\\template.css"
     },
     {
       "Id": "D:\\surveyapp\\wwwroot\\fonts\\Inter\\Inter-Black.ttf",
@@ -183,6 +199,10 @@
     {
       "Id": "D:\\surveyapp\\wwwroot\\images\\survey.jpg",
       "PackagePath": "staticwebassets\\images\\survey.jpg"
+    },
+    {
+      "Id": "D:\\surveyapp\\wwwroot\\images\\sv.jpg",
+      "PackagePath": "staticwebassets\\images\\sv.jpg"
     },
     {
       "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.SurveyApp.Microsoft.AspNetCore.StaticWebAssets.props",
