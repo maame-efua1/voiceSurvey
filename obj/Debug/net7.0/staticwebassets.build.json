@@ -1,6 +1,10 @@
 {
   "Version": 1,
+<<<<<<< HEAD
   "Hash": "t4y66f/tOSAWzg6m1puuW9Ql/2nx8X+henjXu9QLS28=",
+=======
+  "Hash": "t2ANkFvpTdwJTPla35ZFOiKnY0vILSiFq31EjC70TEg=",
+>>>>>>> c1495feb570db468bf44c45fcf8fca52e7f9bee1
   "Source": "SurveyApp",
   "BasePath": "_content/SurveyApp",
   "Mode": "Default",
@@ -10,13 +14,14 @@
     {
       "Name": "SurveyApp\\wwwroot",
       "Source": "SurveyApp",
-      "ContentRoot": "D:\\surveyapp\\wwwroot\\",
+      "ContentRoot": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\",
       "BasePath": "_content/SurveyApp",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
+<<<<<<< HEAD
       "Identity": "D:\\surveyapp\\wwwroot\\css\\about.css",
       "SourceId": "SurveyApp",
       "SourceType": "Discovered",
@@ -37,9 +42,12 @@
     },
     {
       "Identity": "D:\\surveyapp\\wwwroot\\css\\dashboard.css",
+=======
+      "Identity": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\css\\dashboard.css",
+>>>>>>> c1495feb570db468bf44c45fcf8fca52e7f9bee1
       "SourceId": "SurveyApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\surveyapp\\wwwroot\\",
+      "ContentRoot": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\",
       "BasePath": "_content/SurveyApp",
       "RelativePath": "css/dashboard.css",
       "AssetKind": "All",
@@ -55,6 +63,7 @@
       "OriginalItemSpec": "wwwroot\\css\\dashboard.css"
     },
     {
+<<<<<<< HEAD
       "Identity": "D:\\surveyapp\\wwwroot\\css\\details.css",
       "SourceId": "SurveyApp",
       "SourceType": "Discovered",
@@ -75,9 +84,12 @@
     },
     {
       "Identity": "D:\\surveyapp\\wwwroot\\css\\home.css",
+=======
+      "Identity": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\css\\home.css",
+>>>>>>> c1495feb570db468bf44c45fcf8fca52e7f9bee1
       "SourceId": "SurveyApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\surveyapp\\wwwroot\\",
+      "ContentRoot": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\",
       "BasePath": "_content/SurveyApp",
       "RelativePath": "css/home.css",
       "AssetKind": "All",
@@ -93,10 +105,10 @@
       "OriginalItemSpec": "wwwroot\\css\\home.css"
     },
     {
-      "Identity": "D:\\surveyapp\\wwwroot\\css\\login.css",
+      "Identity": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\css\\login.css",
       "SourceId": "SurveyApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\surveyapp\\wwwroot\\",
+      "ContentRoot": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\",
       "BasePath": "_content/SurveyApp",
       "RelativePath": "css/login.css",
       "AssetKind": "All",
@@ -112,10 +124,10 @@
       "OriginalItemSpec": "wwwroot\\css\\login.css"
     },
     {
-      "Identity": "D:\\surveyapp\\wwwroot\\css\\register.css",
+      "Identity": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\css\\register.css",
       "SourceId": "SurveyApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\surveyapp\\wwwroot\\",
+      "ContentRoot": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\",
       "BasePath": "_content/SurveyApp",
       "RelativePath": "css/register.css",
       "AssetKind": "All",
@@ -131,6 +143,7 @@
       "OriginalItemSpec": "wwwroot\\css\\register.css"
     },
     {
+<<<<<<< HEAD
       "Identity": "D:\\surveyapp\\wwwroot\\css\\survey.css",
       "SourceId": "SurveyApp",
       "SourceType": "Discovered",
@@ -189,9 +202,12 @@
     },
     {
       "Identity": "D:\\surveyapp\\wwwroot\\fonts\\Inter\\Inter-Black.ttf",
+=======
+      "Identity": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\fonts\\Inter\\Inter-Black.ttf",
+>>>>>>> c1495feb570db468bf44c45fcf8fca52e7f9bee1
       "SourceId": "SurveyApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\surveyapp\\wwwroot\\",
+      "ContentRoot": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\",
       "BasePath": "_content/SurveyApp",
       "RelativePath": "fonts/Inter/Inter-Black.ttf",
       "AssetKind": "All",
@@ -207,10 +223,10 @@
       "OriginalItemSpec": "wwwroot\\fonts\\Inter\\Inter-Black.ttf"
     },
     {
-      "Identity": "D:\\surveyapp\\wwwroot\\fonts\\Inter\\Inter-Bold.ttf",
+      "Identity": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\fonts\\Inter\\Inter-Bold.ttf",
       "SourceId": "SurveyApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\surveyapp\\wwwroot\\",
+      "ContentRoot": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\",
       "BasePath": "_content/SurveyApp",
       "RelativePath": "fonts/Inter/Inter-Bold.ttf",
       "AssetKind": "All",
@@ -226,10 +242,10 @@
       "OriginalItemSpec": "wwwroot\\fonts\\Inter\\Inter-Bold.ttf"
     },
     {
-      "Identity": "D:\\surveyapp\\wwwroot\\fonts\\Inter\\Inter-ExtraBold.ttf",
+      "Identity": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\fonts\\Inter\\Inter-ExtraBold.ttf",
       "SourceId": "SurveyApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\surveyapp\\wwwroot\\",
+      "ContentRoot": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\",
       "BasePath": "_content/SurveyApp",
       "RelativePath": "fonts/Inter/Inter-ExtraBold.ttf",
       "AssetKind": "All",
@@ -245,10 +261,10 @@
       "OriginalItemSpec": "wwwroot\\fonts\\Inter\\Inter-ExtraBold.ttf"
     },
     {
-      "Identity": "D:\\surveyapp\\wwwroot\\fonts\\Inter\\Inter-ExtraLight.ttf",
+      "Identity": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\fonts\\Inter\\Inter-ExtraLight.ttf",
       "SourceId": "SurveyApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\surveyapp\\wwwroot\\",
+      "ContentRoot": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\",
       "BasePath": "_content/SurveyApp",
       "RelativePath": "fonts/Inter/Inter-ExtraLight.ttf",
       "AssetKind": "All",
@@ -264,10 +280,10 @@
       "OriginalItemSpec": "wwwroot\\fonts\\Inter\\Inter-ExtraLight.ttf"
     },
     {
-      "Identity": "D:\\surveyapp\\wwwroot\\fonts\\Inter\\Inter-Light.ttf",
+      "Identity": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\fonts\\Inter\\Inter-Light.ttf",
       "SourceId": "SurveyApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\surveyapp\\wwwroot\\",
+      "ContentRoot": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\",
       "BasePath": "_content/SurveyApp",
       "RelativePath": "fonts/Inter/Inter-Light.ttf",
       "AssetKind": "All",
@@ -283,10 +299,10 @@
       "OriginalItemSpec": "wwwroot\\fonts\\Inter\\Inter-Light.ttf"
     },
     {
-      "Identity": "D:\\surveyapp\\wwwroot\\fonts\\Inter\\Inter-Medium.ttf",
+      "Identity": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\fonts\\Inter\\Inter-Medium.ttf",
       "SourceId": "SurveyApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\surveyapp\\wwwroot\\",
+      "ContentRoot": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\",
       "BasePath": "_content/SurveyApp",
       "RelativePath": "fonts/Inter/Inter-Medium.ttf",
       "AssetKind": "All",
@@ -302,10 +318,10 @@
       "OriginalItemSpec": "wwwroot\\fonts\\Inter\\Inter-Medium.ttf"
     },
     {
-      "Identity": "D:\\surveyapp\\wwwroot\\fonts\\Inter\\Inter-Regular.ttf",
+      "Identity": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\fonts\\Inter\\Inter-Regular.ttf",
       "SourceId": "SurveyApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\surveyapp\\wwwroot\\",
+      "ContentRoot": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\",
       "BasePath": "_content/SurveyApp",
       "RelativePath": "fonts/Inter/Inter-Regular.ttf",
       "AssetKind": "All",
@@ -321,10 +337,10 @@
       "OriginalItemSpec": "wwwroot\\fonts\\Inter\\Inter-Regular.ttf"
     },
     {
-      "Identity": "D:\\surveyapp\\wwwroot\\fonts\\Inter\\Inter-SemiBold.ttf",
+      "Identity": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\fonts\\Inter\\Inter-SemiBold.ttf",
       "SourceId": "SurveyApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\surveyapp\\wwwroot\\",
+      "ContentRoot": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\",
       "BasePath": "_content/SurveyApp",
       "RelativePath": "fonts/Inter/Inter-SemiBold.ttf",
       "AssetKind": "All",
@@ -340,10 +356,10 @@
       "OriginalItemSpec": "wwwroot\\fonts\\Inter\\Inter-SemiBold.ttf"
     },
     {
-      "Identity": "D:\\surveyapp\\wwwroot\\fonts\\Inter\\Inter-Thin.ttf",
+      "Identity": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\fonts\\Inter\\Inter-Thin.ttf",
       "SourceId": "SurveyApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\surveyapp\\wwwroot\\",
+      "ContentRoot": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\",
       "BasePath": "_content/SurveyApp",
       "RelativePath": "fonts/Inter/Inter-Thin.ttf",
       "AssetKind": "All",
@@ -359,10 +375,10 @@
       "OriginalItemSpec": "wwwroot\\fonts\\Inter\\Inter-Thin.ttf"
     },
     {
-      "Identity": "D:\\surveyapp\\wwwroot\\fonts\\Poppins\\OFL.txt",
+      "Identity": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\fonts\\Poppins\\OFL.txt",
       "SourceId": "SurveyApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\surveyapp\\wwwroot\\",
+      "ContentRoot": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\",
       "BasePath": "_content/SurveyApp",
       "RelativePath": "fonts/Poppins/OFL.txt",
       "AssetKind": "All",
@@ -378,10 +394,10 @@
       "OriginalItemSpec": "wwwroot\\fonts\\Poppins\\OFL.txt"
     },
     {
-      "Identity": "D:\\surveyapp\\wwwroot\\fonts\\Poppins\\Poppins-Black.ttf",
+      "Identity": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\fonts\\Poppins\\Poppins-Black.ttf",
       "SourceId": "SurveyApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\surveyapp\\wwwroot\\",
+      "ContentRoot": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\",
       "BasePath": "_content/SurveyApp",
       "RelativePath": "fonts/Poppins/Poppins-Black.ttf",
       "AssetKind": "All",
@@ -397,10 +413,10 @@
       "OriginalItemSpec": "wwwroot\\fonts\\Poppins\\Poppins-Black.ttf"
     },
     {
-      "Identity": "D:\\surveyapp\\wwwroot\\fonts\\Poppins\\Poppins-BlackItalic.ttf",
+      "Identity": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\fonts\\Poppins\\Poppins-BlackItalic.ttf",
       "SourceId": "SurveyApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\surveyapp\\wwwroot\\",
+      "ContentRoot": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\",
       "BasePath": "_content/SurveyApp",
       "RelativePath": "fonts/Poppins/Poppins-BlackItalic.ttf",
       "AssetKind": "All",
@@ -416,10 +432,10 @@
       "OriginalItemSpec": "wwwroot\\fonts\\Poppins\\Poppins-BlackItalic.ttf"
     },
     {
-      "Identity": "D:\\surveyapp\\wwwroot\\fonts\\Poppins\\Poppins-Bold.ttf",
+      "Identity": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\fonts\\Poppins\\Poppins-Bold.ttf",
       "SourceId": "SurveyApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\surveyapp\\wwwroot\\",
+      "ContentRoot": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\",
       "BasePath": "_content/SurveyApp",
       "RelativePath": "fonts/Poppins/Poppins-Bold.ttf",
       "AssetKind": "All",
@@ -435,10 +451,10 @@
       "OriginalItemSpec": "wwwroot\\fonts\\Poppins\\Poppins-Bold.ttf"
     },
     {
-      "Identity": "D:\\surveyapp\\wwwroot\\fonts\\Poppins\\Poppins-BoldItalic.ttf",
+      "Identity": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\fonts\\Poppins\\Poppins-BoldItalic.ttf",
       "SourceId": "SurveyApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\surveyapp\\wwwroot\\",
+      "ContentRoot": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\",
       "BasePath": "_content/SurveyApp",
       "RelativePath": "fonts/Poppins/Poppins-BoldItalic.ttf",
       "AssetKind": "All",
@@ -454,10 +470,10 @@
       "OriginalItemSpec": "wwwroot\\fonts\\Poppins\\Poppins-BoldItalic.ttf"
     },
     {
-      "Identity": "D:\\surveyapp\\wwwroot\\fonts\\Poppins\\Poppins-ExtraBold.ttf",
+      "Identity": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\fonts\\Poppins\\Poppins-ExtraBold.ttf",
       "SourceId": "SurveyApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\surveyapp\\wwwroot\\",
+      "ContentRoot": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\",
       "BasePath": "_content/SurveyApp",
       "RelativePath": "fonts/Poppins/Poppins-ExtraBold.ttf",
       "AssetKind": "All",
@@ -473,10 +489,10 @@
       "OriginalItemSpec": "wwwroot\\fonts\\Poppins\\Poppins-ExtraBold.ttf"
     },
     {
-      "Identity": "D:\\surveyapp\\wwwroot\\fonts\\Poppins\\Poppins-ExtraBoldItalic.ttf",
+      "Identity": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\fonts\\Poppins\\Poppins-ExtraBoldItalic.ttf",
       "SourceId": "SurveyApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\surveyapp\\wwwroot\\",
+      "ContentRoot": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\",
       "BasePath": "_content/SurveyApp",
       "RelativePath": "fonts/Poppins/Poppins-ExtraBoldItalic.ttf",
       "AssetKind": "All",
@@ -492,10 +508,10 @@
       "OriginalItemSpec": "wwwroot\\fonts\\Poppins\\Poppins-ExtraBoldItalic.ttf"
     },
     {
-      "Identity": "D:\\surveyapp\\wwwroot\\fonts\\Poppins\\Poppins-ExtraLight.ttf",
+      "Identity": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\fonts\\Poppins\\Poppins-ExtraLight.ttf",
       "SourceId": "SurveyApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\surveyapp\\wwwroot\\",
+      "ContentRoot": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\",
       "BasePath": "_content/SurveyApp",
       "RelativePath": "fonts/Poppins/Poppins-ExtraLight.ttf",
       "AssetKind": "All",
@@ -511,10 +527,10 @@
       "OriginalItemSpec": "wwwroot\\fonts\\Poppins\\Poppins-ExtraLight.ttf"
     },
     {
-      "Identity": "D:\\surveyapp\\wwwroot\\fonts\\Poppins\\Poppins-ExtraLightItalic.ttf",
+      "Identity": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\fonts\\Poppins\\Poppins-ExtraLightItalic.ttf",
       "SourceId": "SurveyApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\surveyapp\\wwwroot\\",
+      "ContentRoot": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\",
       "BasePath": "_content/SurveyApp",
       "RelativePath": "fonts/Poppins/Poppins-ExtraLightItalic.ttf",
       "AssetKind": "All",
@@ -530,10 +546,10 @@
       "OriginalItemSpec": "wwwroot\\fonts\\Poppins\\Poppins-ExtraLightItalic.ttf"
     },
     {
-      "Identity": "D:\\surveyapp\\wwwroot\\fonts\\Poppins\\Poppins-Italic.ttf",
+      "Identity": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\fonts\\Poppins\\Poppins-Italic.ttf",
       "SourceId": "SurveyApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\surveyapp\\wwwroot\\",
+      "ContentRoot": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\",
       "BasePath": "_content/SurveyApp",
       "RelativePath": "fonts/Poppins/Poppins-Italic.ttf",
       "AssetKind": "All",
@@ -549,10 +565,10 @@
       "OriginalItemSpec": "wwwroot\\fonts\\Poppins\\Poppins-Italic.ttf"
     },
     {
-      "Identity": "D:\\surveyapp\\wwwroot\\fonts\\Poppins\\Poppins-Light.ttf",
+      "Identity": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\fonts\\Poppins\\Poppins-Light.ttf",
       "SourceId": "SurveyApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\surveyapp\\wwwroot\\",
+      "ContentRoot": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\",
       "BasePath": "_content/SurveyApp",
       "RelativePath": "fonts/Poppins/Poppins-Light.ttf",
       "AssetKind": "All",
@@ -568,10 +584,10 @@
       "OriginalItemSpec": "wwwroot\\fonts\\Poppins\\Poppins-Light.ttf"
     },
     {
-      "Identity": "D:\\surveyapp\\wwwroot\\fonts\\Poppins\\Poppins-LightItalic.ttf",
+      "Identity": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\fonts\\Poppins\\Poppins-LightItalic.ttf",
       "SourceId": "SurveyApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\surveyapp\\wwwroot\\",
+      "ContentRoot": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\",
       "BasePath": "_content/SurveyApp",
       "RelativePath": "fonts/Poppins/Poppins-LightItalic.ttf",
       "AssetKind": "All",
@@ -587,10 +603,10 @@
       "OriginalItemSpec": "wwwroot\\fonts\\Poppins\\Poppins-LightItalic.ttf"
     },
     {
-      "Identity": "D:\\surveyapp\\wwwroot\\fonts\\Poppins\\Poppins-Medium.ttf",
+      "Identity": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\fonts\\Poppins\\Poppins-Medium.ttf",
       "SourceId": "SurveyApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\surveyapp\\wwwroot\\",
+      "ContentRoot": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\",
       "BasePath": "_content/SurveyApp",
       "RelativePath": "fonts/Poppins/Poppins-Medium.ttf",
       "AssetKind": "All",
@@ -606,10 +622,10 @@
       "OriginalItemSpec": "wwwroot\\fonts\\Poppins\\Poppins-Medium.ttf"
     },
     {
-      "Identity": "D:\\surveyapp\\wwwroot\\fonts\\Poppins\\Poppins-MediumItalic.ttf",
+      "Identity": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\fonts\\Poppins\\Poppins-MediumItalic.ttf",
       "SourceId": "SurveyApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\surveyapp\\wwwroot\\",
+      "ContentRoot": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\",
       "BasePath": "_content/SurveyApp",
       "RelativePath": "fonts/Poppins/Poppins-MediumItalic.ttf",
       "AssetKind": "All",
@@ -625,10 +641,10 @@
       "OriginalItemSpec": "wwwroot\\fonts\\Poppins\\Poppins-MediumItalic.ttf"
     },
     {
-      "Identity": "D:\\surveyapp\\wwwroot\\fonts\\Poppins\\Poppins-Regular.ttf",
+      "Identity": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\fonts\\Poppins\\Poppins-Regular.ttf",
       "SourceId": "SurveyApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\surveyapp\\wwwroot\\",
+      "ContentRoot": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\",
       "BasePath": "_content/SurveyApp",
       "RelativePath": "fonts/Poppins/Poppins-Regular.ttf",
       "AssetKind": "All",
@@ -644,10 +660,10 @@
       "OriginalItemSpec": "wwwroot\\fonts\\Poppins\\Poppins-Regular.ttf"
     },
     {
-      "Identity": "D:\\surveyapp\\wwwroot\\fonts\\Poppins\\Poppins-SemiBold.ttf",
+      "Identity": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\fonts\\Poppins\\Poppins-SemiBold.ttf",
       "SourceId": "SurveyApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\surveyapp\\wwwroot\\",
+      "ContentRoot": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\",
       "BasePath": "_content/SurveyApp",
       "RelativePath": "fonts/Poppins/Poppins-SemiBold.ttf",
       "AssetKind": "All",
@@ -663,10 +679,10 @@
       "OriginalItemSpec": "wwwroot\\fonts\\Poppins\\Poppins-SemiBold.ttf"
     },
     {
-      "Identity": "D:\\surveyapp\\wwwroot\\fonts\\Poppins\\Poppins-SemiBoldItalic.ttf",
+      "Identity": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\fonts\\Poppins\\Poppins-SemiBoldItalic.ttf",
       "SourceId": "SurveyApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\surveyapp\\wwwroot\\",
+      "ContentRoot": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\",
       "BasePath": "_content/SurveyApp",
       "RelativePath": "fonts/Poppins/Poppins-SemiBoldItalic.ttf",
       "AssetKind": "All",
@@ -682,10 +698,10 @@
       "OriginalItemSpec": "wwwroot\\fonts\\Poppins\\Poppins-SemiBoldItalic.ttf"
     },
     {
-      "Identity": "D:\\surveyapp\\wwwroot\\fonts\\Poppins\\Poppins-Thin.ttf",
+      "Identity": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\fonts\\Poppins\\Poppins-Thin.ttf",
       "SourceId": "SurveyApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\surveyapp\\wwwroot\\",
+      "ContentRoot": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\",
       "BasePath": "_content/SurveyApp",
       "RelativePath": "fonts/Poppins/Poppins-Thin.ttf",
       "AssetKind": "All",
@@ -701,10 +717,10 @@
       "OriginalItemSpec": "wwwroot\\fonts\\Poppins\\Poppins-Thin.ttf"
     },
     {
-      "Identity": "D:\\surveyapp\\wwwroot\\fonts\\Poppins\\Poppins-ThinItalic.ttf",
+      "Identity": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\fonts\\Poppins\\Poppins-ThinItalic.ttf",
       "SourceId": "SurveyApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\surveyapp\\wwwroot\\",
+      "ContentRoot": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\",
       "BasePath": "_content/SurveyApp",
       "RelativePath": "fonts/Poppins/Poppins-ThinItalic.ttf",
       "AssetKind": "All",
@@ -720,10 +736,10 @@
       "OriginalItemSpec": "wwwroot\\fonts\\Poppins\\Poppins-ThinItalic.ttf"
     },
     {
-      "Identity": "D:\\surveyapp\\wwwroot\\images\\account_circle_24dp_FILL0_wght400_GRAD0_opsz24 (1).svg",
+      "Identity": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\images\\account_circle_24dp_FILL0_wght400_GRAD0_opsz24 (1).svg",
       "SourceId": "SurveyApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\surveyapp\\wwwroot\\",
+      "ContentRoot": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\",
       "BasePath": "_content/SurveyApp",
       "RelativePath": "images/account_circle_24dp_FILL0_wght400_GRAD0_opsz24 (1).svg",
       "AssetKind": "All",
@@ -739,10 +755,10 @@
       "OriginalItemSpec": "wwwroot\\images\\account_circle_24dp_FILL0_wght400_GRAD0_opsz24 (1).svg"
     },
     {
-      "Identity": "D:\\surveyapp\\wwwroot\\images\\ad1.jpg",
+      "Identity": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\images\\ad1.jpg",
       "SourceId": "SurveyApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\surveyapp\\wwwroot\\",
+      "ContentRoot": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\",
       "BasePath": "_content/SurveyApp",
       "RelativePath": "images/ad1.jpg",
       "AssetKind": "All",
@@ -758,10 +774,10 @@
       "OriginalItemSpec": "wwwroot\\images\\ad1.jpg"
     },
     {
-      "Identity": "D:\\surveyapp\\wwwroot\\images\\arrow_right_alt_FILL0_wght400_GRAD0_opsz24.svg",
+      "Identity": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\images\\arrow_right_alt_FILL0_wght400_GRAD0_opsz24.svg",
       "SourceId": "SurveyApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\surveyapp\\wwwroot\\",
+      "ContentRoot": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\",
       "BasePath": "_content/SurveyApp",
       "RelativePath": "images/arrow_right_alt_FILL0_wght400_GRAD0_opsz24.svg",
       "AssetKind": "All",
@@ -777,10 +793,10 @@
       "OriginalItemSpec": "wwwroot\\images\\arrow_right_alt_FILL0_wght400_GRAD0_opsz24.svg"
     },
     {
-      "Identity": "D:\\surveyapp\\wwwroot\\images\\close_FILL0_wght400_GRAD0_opsz24.svg",
+      "Identity": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\images\\close_FILL0_wght400_GRAD0_opsz24.svg",
       "SourceId": "SurveyApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\surveyapp\\wwwroot\\",
+      "ContentRoot": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\",
       "BasePath": "_content/SurveyApp",
       "RelativePath": "images/close_FILL0_wght400_GRAD0_opsz24.svg",
       "AssetKind": "All",
@@ -796,10 +812,10 @@
       "OriginalItemSpec": "wwwroot\\images\\close_FILL0_wght400_GRAD0_opsz24.svg"
     },
     {
-      "Identity": "D:\\surveyapp\\wwwroot\\images\\fact-check.svg",
+      "Identity": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\images\\fact-check.svg",
       "SourceId": "SurveyApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\surveyapp\\wwwroot\\",
+      "ContentRoot": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\",
       "BasePath": "_content/SurveyApp",
       "RelativePath": "images/fact-check.svg",
       "AssetKind": "All",
@@ -815,10 +831,10 @@
       "OriginalItemSpec": "wwwroot\\images\\fact-check.svg"
     },
     {
-      "Identity": "D:\\surveyapp\\wwwroot\\images\\login.png",
+      "Identity": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\images\\login.png",
       "SourceId": "SurveyApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\surveyapp\\wwwroot\\",
+      "ContentRoot": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\",
       "BasePath": "_content/SurveyApp",
       "RelativePath": "images/login.png",
       "AssetKind": "All",
@@ -834,10 +850,10 @@
       "OriginalItemSpec": "wwwroot\\images\\login.png"
     },
     {
-      "Identity": "D:\\surveyapp\\wwwroot\\images\\logo.jpg",
+      "Identity": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\images\\logo.jpg",
       "SourceId": "SurveyApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\surveyapp\\wwwroot\\",
+      "ContentRoot": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\",
       "BasePath": "_content/SurveyApp",
       "RelativePath": "images/logo.jpg",
       "AssetKind": "All",
@@ -853,10 +869,10 @@
       "OriginalItemSpec": "wwwroot\\images\\logo.jpg"
     },
     {
-      "Identity": "D:\\surveyapp\\wwwroot\\images\\logout.svg",
+      "Identity": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\images\\logout.svg",
       "SourceId": "SurveyApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\surveyapp\\wwwroot\\",
+      "ContentRoot": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\",
       "BasePath": "_content/SurveyApp",
       "RelativePath": "images/logout.svg",
       "AssetKind": "All",
@@ -872,10 +888,10 @@
       "OriginalItemSpec": "wwwroot\\images\\logout.svg"
     },
     {
-      "Identity": "D:\\surveyapp\\wwwroot\\images\\menu_FILL0_wght400_GRAD0_opsz24.svg",
+      "Identity": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\images\\menu_FILL0_wght400_GRAD0_opsz24.svg",
       "SourceId": "SurveyApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\surveyapp\\wwwroot\\",
+      "ContentRoot": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\",
       "BasePath": "_content/SurveyApp",
       "RelativePath": "images/menu_FILL0_wght400_GRAD0_opsz24.svg",
       "AssetKind": "All",
@@ -891,10 +907,10 @@
       "OriginalItemSpec": "wwwroot\\images\\menu_FILL0_wght400_GRAD0_opsz24.svg"
     },
     {
-      "Identity": "D:\\surveyapp\\wwwroot\\images\\notification.svg",
+      "Identity": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\images\\notification.svg",
       "SourceId": "SurveyApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\surveyapp\\wwwroot\\",
+      "ContentRoot": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\",
       "BasePath": "_content/SurveyApp",
       "RelativePath": "images/notification.svg",
       "AssetKind": "All",
@@ -910,10 +926,10 @@
       "OriginalItemSpec": "wwwroot\\images\\notification.svg"
     },
     {
-      "Identity": "D:\\surveyapp\\wwwroot\\images\\overview.svg",
+      "Identity": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\images\\overview.svg",
       "SourceId": "SurveyApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\surveyapp\\wwwroot\\",
+      "ContentRoot": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\",
       "BasePath": "_content/SurveyApp",
       "RelativePath": "images/overview.svg",
       "AssetKind": "All",
@@ -929,10 +945,10 @@
       "OriginalItemSpec": "wwwroot\\images\\overview.svg"
     },
     {
-      "Identity": "D:\\surveyapp\\wwwroot\\images\\security.svg",
+      "Identity": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\images\\security.svg",
       "SourceId": "SurveyApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\surveyapp\\wwwroot\\",
+      "ContentRoot": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\",
       "BasePath": "_content/SurveyApp",
       "RelativePath": "images/security.svg",
       "AssetKind": "All",
@@ -948,10 +964,10 @@
       "OriginalItemSpec": "wwwroot\\images\\security.svg"
     },
     {
-      "Identity": "D:\\surveyapp\\wwwroot\\images\\signup.png",
+      "Identity": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\images\\signup.png",
       "SourceId": "SurveyApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\surveyapp\\wwwroot\\",
+      "ContentRoot": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\",
       "BasePath": "_content/SurveyApp",
       "RelativePath": "images/signup.png",
       "AssetKind": "All",
@@ -967,10 +983,10 @@
       "OriginalItemSpec": "wwwroot\\images\\signup.png"
     },
     {
-      "Identity": "D:\\surveyapp\\wwwroot\\images\\survey.jpg",
+      "Identity": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\images\\survey.jpg",
       "SourceId": "SurveyApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\surveyapp\\wwwroot\\",
+      "ContentRoot": "D:\\fff\\mabre\\voiceSurvey\\wwwroot\\",
       "BasePath": "_content/SurveyApp",
       "RelativePath": "images/survey.jpg",
       "AssetKind": "All",
