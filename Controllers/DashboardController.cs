@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Data.SqlClient;
 using TALKPOLL.Models;
+using Newtonsoft.Json;
 
 
 public class DashboardController : Controller
@@ -17,13 +18,12 @@ public class DashboardController : Controller
             gender = HttpContext.Session.GetString("Gender"),
             date_of_birth = DateTime.Parse(HttpContext.Session.GetString("DateOfBirth"))
         };
-
+        
         return View(Register);
     }
 
     public IActionResult Surveylist()
     {
-       
         string connectionString = "Server=LAPTOP-LIL017KH\\SQLEXPRESS;Database=TALKPOLL;Trusted_Connection=True;MultipleActiveResultSets=True;TrustServerCertificate=True";
 
             SqlConnection connection = new SqlConnection(connectionString);

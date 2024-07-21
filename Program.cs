@@ -16,6 +16,9 @@ builder.Services.AddSession(options =>
 
 builder.Services.AddScoped<IPasswordHasher<Register>, PasswordHasher<Register>>();
 
+builder.Services.AddHttpClient();
+builder.Services.AddSingleton<IConfiguration>(builder.Configuration);
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

@@ -108,3 +108,11 @@ D:\surveyapp\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Windows.Extensions.
 D:\surveyapp\obj\Debug\net7.0\SurveyApp.csproj.AssemblyReference.cache
 D:\surveyapp\obj\Debug\net7.0\SurveyApp.csproj.CopyComplete
 D:\surveyapp\bin\Debug\net7.0\Newtonsoft.Json.dll
+D:\surveyapp\bin\Debug\net7.0\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\surveyapp\bin\Debug\net7.0\Microsoft.Extensions.DependencyInjection.dll
+D:\surveyapp\bin\Debug\net7.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\surveyapp\bin\Debug\net7.0\Microsoft.Extensions.Http.dll
+D:\surveyapp\bin\Debug\net7.0\Microsoft.Extensions.Logging.dll
+D:\surveyapp\bin\Debug\net7.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\surveyapp\bin\Debug\net7.0\Microsoft.Extensions.Options.dll
+D:\surveyapp\bin\Debug\net7.0\Microsoft.Extensions.Primitives.dll

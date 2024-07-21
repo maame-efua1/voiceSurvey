@@ -9,13 +9,15 @@ namespace TALKPOLL.Models
         
         public string description { get; set; }
 
-        public string cratorId { get; set; }
+        public string creatorName { get; set; }
 
-        public DateTime dateCreated { get; set; }
+        public string dateCreated { get; set; }
 
-        public DateTime expiryDate { get; set; }
+        public string expiryDate { get; set; }
 
         public string status { get; set; }
+
+        public string language { get; set; }
         
         public List<SurveyQuestions> Questions { get; set; }
         

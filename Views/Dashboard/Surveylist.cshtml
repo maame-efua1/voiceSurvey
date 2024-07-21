@@ -197,8 +197,7 @@ function stopPropagation(event) {
 
     // Data array containing survey information
     const surveys = @Html.Raw(JsonConvert.SerializeObject(
-        Model.Select(s => new { title = s.title, link = Url.Action("Index", "Survey", new { id = s.surveyId }) }).ToList()
-    ));
+        Model.Select(s => new { title = s.title, link = Url.Action("Details", "Survey", new { id = s.surveyId }) }).ToList()));
 
         // Function to render surveys
         function renderSurveys() {
