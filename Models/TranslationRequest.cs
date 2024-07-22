@@ -2,8 +2,8 @@ namespace TALKPOLL.Models
 {
     public class TranslationRequest
 {
-    public string In { get; set; }
-    public string Lang { get; set; }
+    public string @in { get; set; }
+    public string lang { get; set; }
 }
 
 }

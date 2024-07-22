@@ -1,0 +1,365 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+@font-face {
+    font-family: 'Poppins';
+    src: url('/fonts/Poppins/Poppins-Regular.ttf') format('truetype'),
+         url('/fonts/Poppins/Poppins-Light.ttf') format('truetype'),  /* For modern browsers */
+    /* Add more src declarations for other font formats if needed */
+}
+body{
+    background-color: #fff;
+    font-family: 'Poppins', sans-serif ;
+    width: 100%;
+}
+nav{
+    
+    background-color: #0090D4;
+    color: #fff;
+    box-shadow: inset;
+    top: 0;
+    position: fixed;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    
+}
+nav ul{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+nav li{
+    height: 50px;
+    padding-left:30px;
+}
+nav a{
+    height: 100%;  
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+nav a:hover{
+    color: #f0f0f0;
+}
+.appname{
+    margin-right: auto;
+    margin-left: 70px;
+}
+
+
+.logging-btns{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 1%;
+}
+.logging-btns li:first-child{
+    width: 12%;
+    height: 30px;
+    background-color: #0E51FD;
+    border-radius: 10px;
+    padding-left: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+}
+.logging-btns li:nth-child(2){
+    width: 10%;
+    height: 30px;
+    background-color: #0E51FD;
+    border-radius: 10px;
+    padding-left: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.menu, .arrow{
+    fill: #fff;
+}
+.sub-menu{
+    display: none;
+    position: absolute;
+    background: #fff;
+    border-radius: 5px;
+    margin-top: -10px;
+    margin-left: -170px;
+}
+.sm-ul{
+    display: none;
+    margin: 10px;
+    justify-content: center;
+    align-items: center;
+}
+.sub-menu ul li{
+    width: 150px;
+    padding: 0px 10px 0px 10px;
+    border-bottom: 1px dotted #000;
+    color: #000;
+    background: transparent;
+    border-radius: 0;
+    text-align: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.menu-btn{
+    display: none;
+}
+.sidebar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: 999;
+    background-color: rgba(50, 34, 221, 0.349);
+    backdrop-filter: blur(10px);
+    box-shadow: -10px 0px 10px rgba(0, 0, 0, 0.2);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.sidebar li{
+    width: 100%;
+}
+.hideOnLogin{
+    display: none;
+}
+.hideOnLogOut{
+    display: none;
+}
+.main{
+    width: 100%;
+    height:450px;
+    background-color: #0090D4;
+    padding-top: 150px;
+}
+.card1{
+    color: #fff;
+    width: 86%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 150px;
+}
+.img{
+    width: 50%;
+    height: 350px;
+    float: right;
+    border-radius: 20px;
+    margin-left: 20px;
+}
+.card1 h1{
+    margin-bottom: 20px;
+}
+.apply{
+    margin-top: 50px;
+    width: 150px;
+    height: 30px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #0E51FD;
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+.stat{
+    margin-top: 50px;
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    width: 200px;
+    justify-content: space-between;
+}
+
+.num{
+    font-weight: bold;
+    font-size: 30px;
+}
+.card2{
+    width: 86%;
+    height: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.heading{
+    text-align: center;
+}
+.btns{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    width: 300px;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+    margin-bottom: 40px;
+}
+.btn1{
+    padding-top: 6px;
+    text-align: center;
+    width: 130px;
+    height: 30px;
+    border-radius: 6px;
+    background-color: #E6E3E3;
+}
+.btn2{
+    padding-top: 6px;
+    width: 130px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: #E6E3E3;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns with equal width */
+    grid-template-rows: repeat(2, auto); /* 2 rows with automatic height */
+    gap: 15px; /* Adjust the gap between grid items */
+}
+  
+.grid-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ddd;
+  padding: 20px;
+  text-align: center;
+  height: 200px;
+  border-radius: 10px;
+  background-color: #C7FFDE;
+}
+.margin{
+    margin-top: 20px;
+    color: #0090D4;
+    font-size: 14px;
+}
+.card3{
+    color: #fff;
+    width: 86%;
+    height: 45%;
+    border-radius: 20px;
+    background-color: #0E51FD;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto; 
+}
+.login-now{
+    background-color: #fff;
+    color: #0062CE;
+    font-weight: bold;
+    font-size: 14px;
+    width: 100px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+.footer{
+    background-color: #000;
+    width: 100%;
+    height: 300px;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0;
+}
+.inner-div{
+    width: 86%;
+    height: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #fff;
+}
+.inner-div h2{
+    text-align: center;
+}
+.inner-div p{
+    text-align: center;
+    font-size: 12px;
+}
+.bottom-div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 110px;
+}
+
+@media(max-width:800px){
+    .hideOnMobile{
+        display: none;
+    }
+    nav li:first-child{
+        margin-left: 20px;
+    }
+    .menu-btn{
+        display: block;
+        margin-right: 20px;
+    }
+    .main{
+        padding-top: 110px;
+        height: 520px;
+    }
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns with equal width */
+        grid-template-rows: repeat(3, auto); /* 3 rows with automatic height */
+        gap: 15px; /* Adjust the gap between grid items */
+    }
+    .grid-item {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #ddd;
+      padding: 20px;
+      text-align: center;
+      height: 100px;
+      border-radius: 10px;
+      background-color: #C7FFDE;
+      font-size: 12px;
+    }
+    .margin{
+        margin-top: 20px;
+        color: #0090D4;
+        font-size: 10px;
+    }
+    .bottom-div{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 60px;
+    }
+    .card3 h1{
+        font-size: 20px;
+    }
+    .card3 p{
+        text-align: center;
+    }
+    .inner-div h2{
+        font-size: 14px;
+    }
+}
+@media(max-width:400px){
+    .sidebar{
+        width: 100%;
+    }
+}
+

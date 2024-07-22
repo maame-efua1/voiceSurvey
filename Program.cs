@@ -19,6 +19,11 @@ builder.Services.AddScoped<IPasswordHasher<Register>, PasswordHasher<Register>>(
 builder.Services.AddHttpClient();
 builder.Services.AddSingleton<IConfiguration>(builder.Configuration);
 
+builder.Services.AddHttpClient<TranslationService>(client =>
+{
+    client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", "your-api-key");
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

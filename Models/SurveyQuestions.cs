@@ -5,11 +5,11 @@ namespace TALKPOLL.Models
         
         public string questionId { get; set; }
     
-        public string SurveyId { get; set; }
+        public int surveyId { get; set; }
         
-        public int text { get; set; }
+        public string text { get; set; }
 
-        public int type { get; set; }
+        public string type { get; set; }
 
         public int position { get; set; }
         

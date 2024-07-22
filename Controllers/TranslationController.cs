@@ -6,79 +6,67 @@ using TALKPOLL.Models;
 
 [ApiController]
 [Route("api/[controller]")]
-public class TranslationController : ControllerBase
-{
-    private readonly IHttpClientFactory _httpClientFactory;
-    private readonly IConfiguration _configuration;
-
-    public TranslationController(IHttpClientFactory httpClientFactory, IConfiguration configuration)
+public class TranslationController : Controller
     {
-        _httpClientFactory = httpClientFactory;
-        _configuration = configuration;
+
+    private readonly HttpClient _httpClient;
+
+    public TranslationController(HttpClient httpClient)
+    {
+        _httpClient = httpClient;
+        _httpClient.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", "e9e02d0c1c83456ab5a1ce5858190459");
     }
 
-    [HttpPost("translate")]
-    public async Task<ActionResult<TranslationResponse>> Translate([FromBody] TranslationRequest request)
+    public async Task<string> Translate(string text, string lang)
     {
-        if (request == null || string.IsNullOrEmpty(request.In) || string.IsNullOrEmpty(request.Lang))
-        {
-            return BadRequest("Invalid request.");
-        }
+        var uri = "https://translation-api.ghananlp.org/v1/translate";
 
-        var translatedText = await TranslateTextAsync(request.In, request.Lang);
-
-        if (translatedText == null)
-        {
-            return StatusCode(500, "Translation service failed.");
-        }
-
-        var response = new TranslationResponse
-        {
-            TranslatedText = translatedText
-        };
-
-        return Ok(response);
-    }
-
-    private async Task<string> TranslateTextAsync(string text, string lang)
-    {
-        var client = _httpClientFactory.CreateClient();
-        var requestContent = new
+        var requestBody = new
         {
             @in = text,
             lang = lang
         };
 
-        // Correctly serialize the request content to a JSON string
-        var jsonContent = JsonConvert.SerializeObject(requestContent);
+        var jsonBody = JsonConvert.SerializeObject(requestBody);
 
-        // Create the StringContent with the serialized JSON string
-        var content = new StringContent(jsonContent, System.Text.Encoding.UTF8, "application/json");
+        HttpResponseMessage response;
 
-        // Get the API key and base URL from configuration
-        var apiKey = _configuration["TranslationService:ApiKey"];
-        var baseUrl = _configuration["TranslationService:BaseUrl"];
-
-        // Add the API key to the request headers
-        client.DefaultRequestHeaders.Add("Authorization", $"Bearer {apiKey}");
-
-        // Post the request and get the response
-        var response = await client.PostAsync($"{baseUrl}/translate", content);
-
-        if (!response.IsSuccessStatusCode)
+        using (var content = new StringContent(jsonBody, System.Text.Encoding.UTF8, "application/json"))
         {
-          // Handle unsuccessful response
-        var errorContent = await response.Content.ReadAsStringAsync();
-        // Optionally log the error or handle it as needed
-        return $"Error: {response.StatusCode}, {errorContent}";
+            response = await _httpClient.PostAsync(uri, content);
         }
 
-        // Read the response content as a string
-        var responseContent = await response.Content.ReadAsStringAsync();
+        if (response.IsSuccessStatusCode)
+            {
+                var responseBody = await response.Content.ReadAsStringAsync();
+                dynamic translation;
 
-        // Deserialize the response content to a TranslationResponse object
-        var translationResponse = JsonConvert.DeserializeObject<TranslationResponse>(responseContent);
+                try
+                {
+                    translation = JsonConvert.DeserializeObject<dynamic>(responseBody);
+                }
+                catch (JsonException ex)
+                {
+                    throw new Exception("Error parsing translation response: " + ex.Message);
+                }
 
-        return translationResponse?.TranslatedText;
+                // Check if the 'translation' object and 'translation.translation' are not null
+                if (translation != null && translation.translation != null)
+                {
+                    return (string)translation.translation;
+                }
+                else
+                {
+                    throw new Exception("Translation response is missing the expected 'translation' field.");
+                }
+            }
+            else
+            {
+                throw new Exception("Translation error: " + response.StatusCode);
+            }
+        }
     }
-}
+
+
+    
+

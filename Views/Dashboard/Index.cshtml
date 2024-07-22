@@ -74,7 +74,7 @@
                     </a>
                 </li>
                 <li tabindex="0">
-                    <a href="../Login/Index">
+                    <a id="logout-link" href="../Login/Index">
                         <svg class="icons" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z"/></svg>
                         Logout
                     </a>
@@ -119,8 +119,31 @@
         <div class="edit">Edit</div>
      </div>
 </div>
-
-
     </div>
+
+    
+
+<script>
+    document.getElementById('logout-link').addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent the default link behavior
+
+        // Send a POST request to the logout action
+        fetch('/Login/Logout', { 
+            method: 'POST', 
+            headers: {
+                'Content-Type': 'application/json',
+                'RequestVerificationToken': document.querySelector('input[name="__RequestVerificationToken"]').value // Anti-forgery token for security
+            }
+        })
+        .then(() => {
+            // Redirect to the login page
+            window.location.href = '/Login/Index';
+        })
+        .catch(error => {
+            console.error('Logout failed:', error);
+        });
+    });
+</script>
+
 </body>
 </html>

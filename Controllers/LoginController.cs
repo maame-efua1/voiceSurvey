@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Data.SqlClient;
 using TALKPOLL.Models;
+using Microsoft.AspNetCore.Authentication;
 
 
 public class LoginController : Controller
@@ -78,5 +79,14 @@ public class LoginController : Controller
     return View();
 }
 
-    
+    [HttpPost]
+    public async Task<IActionResult> Logout()
+    {
+        // Sign out the user
+        await HttpContext.SignOutAsync();
+
+        // Redirect to the login page
+        return RedirectToAction("Index", "Login");
+    }
+
 }

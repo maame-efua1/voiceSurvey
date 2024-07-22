@@ -1,0 +1,228 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+@font-face {
+    font-family: 'Poppins';
+    src: url('/fonts/Poppins/Poppins-Regular.ttf') format('truetype'),
+    /* Add more src declarations for other font formats if needed */
+}
+@font-face {
+    font-family: 'Inter';
+    src: url('/fonts/Inter/Inter-SemiBold.ttf') format('truetype'),
+    /* Add more src declarations for other font formats if needed */
+}
+body{
+    background-color: #fff;
+    font-family: 'Poppins';
+    width: 100%;
+}
+nav{
+    
+    background-color: #0090D4;
+    color: #fff;
+    box-shadow: inset;
+    top: 0;
+    position: fixed;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    
+}
+nav ul{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+nav li{
+    height: 50px;
+    padding-left:30px;
+}
+nav a{
+    height: 100%;  
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+nav a:hover{
+    color: #f0f0f0;
+}
+.appname{
+    margin-right: auto;
+    margin-left: 70px;
+}
+
+
+.logging-btns{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 1%;
+}
+.logging-btns li:first-child{
+    width: 12%;
+    height: 30px;
+    background-color: #0E51FD;
+    border-radius: 10px;
+    padding-left: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+}
+.logging-btns li:nth-child(2){
+    width: 10%;
+    height: 30px;
+    background-color: #0E51FD;
+    border-radius: 10px;
+    padding-left: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.menu, .arrow{
+    fill: #fff;
+}
+.sub-menu{
+    display: none;
+    position: absolute;
+    background: #fff;
+    border-radius: 5px;
+    margin-top: -10px;
+    margin-left: -170px;
+}
+.sm-ul{
+    display: none;
+    margin: 10px;
+    justify-content: center;
+    align-items: center;
+}
+.sub-menu ul li{
+    width: 150px;
+    padding: 0px 10px 0px 10px;
+    border-bottom: 1px dotted #000;
+    color: #000;
+    background: transparent;
+    border-radius: 0;
+    text-align: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.menu-btn{
+    display: none;
+}
+.sidebar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: 999;
+    backdrop-filter: blur(10px);
+    box-shadow: -10px 0px 10px rgba(0, 0, 0, 0.2);
+    display: none;
+    font-family: 'Inter';
+    background-color: #0090D4;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+
+}
+.itm-1{
+    color: #fff;
+    font-size: large;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 22px;
+    margin-top: 80px;
+    margin-bottom: 50px;
+}
+.sidebar ul{
+    margin-top: 30px;
+   list-style: none;
+   display: flex;
+   flex-direction: column;
+}
+.sidebar ul li{
+    width: 30%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    padding-left: 10px;
+    border-radius: 10px;
+    
+}
+.sidebar li:focus,.sidebar a:focus, .sidebar a:focus svg{
+    background-color:white ;
+    color: #000;
+    fill: #000;
+}
+.icons{
+    margin-right: 10px;
+}
+.sidebar a{
+    text-decoration: none;
+    width: 80%;
+    height: 100%;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    color: #fff;
+}
+.cont-us{
+    width: 90%;
+    height: 20%;
+    background-color: #ffffff5e;
+    margin-top: 70px;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    bottom: 0;
+}
+h6{
+    width: 75%;
+    color: white;
+    font-weight: normal;
+}
+.cont-us div{
+    width: 60%;
+    height: 30%;
+    background-color: #00F0FF;
+    border-radius: 10px;
+    color: #fff;
+    font-size: small;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+.sidebar li{
+    width: 100%;
+}
+.hideOnLogin{
+    display: none;
+}
+.hideOnLogOut{
+    display: none;
+}
+@media(max-width:800px){
+    .hideOnMobile{
+        display: none;
+    }
+    nav li:first-child{
+        margin-left: 20px;
+    }
+    .menu-btn{
+        display: block;
+        margin-right: 20px;
+    }
+}

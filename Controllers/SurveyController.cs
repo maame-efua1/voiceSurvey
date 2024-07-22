@@ -6,70 +6,111 @@ using TALKPOLL.Models;
 
 public class SurveyController : Controller
 {
-    
-    /*public IActionResult Index()
-        {
-            var surveyData = GetSurveyData();
-            return View(surveyData);
-        }
+     /*       public IActionResult Index()
+    {
 
-        private List<SurveyQuestion> GetSurveyData()
-        {
-            var surveyQuestions = new List<SurveyQuestion>();
+        return View();
+    }*/
 
-            using (var connection = new SqlConnection(_connectionString))
+    private readonly TranslationService _translationService;
+
+    public SurveyController(TranslationService translationService)
+    {
+        _translationService = translationService;
+    }
+
+    public async Task<IActionResult> Index(int id, string selectedLanguage)
+    {
+        string connectionString = "Server=LAPTOP-LIL017KH\\SQLEXPRESS;Database=TALKPOLL;Trusted_Connection=True;MultipleActiveResultSets=True;TrustServerCertificate=True";
+
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            string query = @"
+                SELECT 
+                    q.questionId,
+                    q.text AS question_text,
+                    q.type AS question_type,
+                    q.position AS question_position,
+                    q.isRequired AS question_is_required,
+                    o.optionId,
+                    o.text AS option_text,
+                    o.position AS option_position
+                FROM 
+                    Question q
+                LEFT JOIN 
+                    [Option] o ON q.questionId = o.questionId
+                WHERE 
+                    q.surveyId = @surveyId
+                ORDER BY 
+                    q.position, o.position";
+
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@surveyId", id);
+
+            connection.Open();
+
+            SqlDataReader reader = command.ExecuteReader();
+
+            List<SurveyQuestions> questionsList = new List<SurveyQuestions>();
+
+            while (reader.Read())
             {
-                connection.Open();
+                string questionId = reader["questionId"].ToString();
 
-                string queryQuestions = "SELECT Id, Question FROM SurveyQuestions";
-                using (var commandQuestions = new SqlCommand(queryQuestions, connection))
+                var question = questionsList.FirstOrDefault(q => q.questionId == questionId);
+                if (question == null)
                 {
-                    using (var readerQuestions = commandQuestions.ExecuteReader())
+                    question = new SurveyQuestions
                     {
-                        while (readerQuestions.Read())
-                        {
-                            var surveyQuestion = new SurveyQuestion
-                            {
-                                Id = readerQuestions.GetInt32(0),
-                                Question = readerQuestions.GetString(1),
-                                Options = new List<SurveyOption>()
-                            };
-
-                            surveyQuestions.Add(surveyQuestion);
-                        }
-                    }
+                        questionId = questionId,
+                        surveyId = id,
+                        text = reader["question_text"] != DBNull.Value ? reader["question_text"].ToString() : string.Empty,
+                        type = reader["question_type"] != DBNull.Value ? reader["question_type"].ToString() : string.Empty,
+                        position = reader["question_position"] != DBNull.Value ? Convert.ToInt32(reader["question_position"]) : 0,
+                        IsRequired = reader["question_is_required"] != DBNull.Value ? Convert.ToBoolean(reader["question_is_required"]) : false,
+                        Options = new List<SurveyOptions>()
+                    };
+                    questionsList.Add(question);
                 }
 
-                string queryOptions = "SELECT Id, OptionText, SurveyQuestionId FROM SurveyOptions";
-                using (var commandOptions = new SqlCommand(queryOptions, connection))
+                if (!reader.IsDBNull(reader.GetOrdinal("optionId")))
                 {
-                    using (var readerOptions = commandOptions.ExecuteReader())
+                    var option = new SurveyOptions
                     {
-                        while (readerOptions.Read())
-                        {
-                            var surveyOption = new SurveyOption
-                            {
-                                Id = readerOptions.GetInt32(0),
-                                OptionText = readerOptions.GetString(1),
-                                SurveyQuestionId = readerOptions.GetInt32(2)
-                            };
+                        optionId = reader["optionId"].ToString(),
+                        text = reader["option_text"] != DBNull.Value ? reader["option_text"].ToString() : string.Empty,
+                        position = reader["option_position"] != DBNull.Value ? Convert.ToInt32(reader["option_position"]) : 0
+                    };
+                    question.Options.Add(option);
+                }
+            }
 
-                            var question = surveyQuestions.Find(q => q.Id == surveyOption.SurveyQuestionId);
-                            if (question != null)
-                            {
-                                question.Options.Add(surveyOption);
-                            }
-                        }
+            connection.Close();
+
+            // Translate the questions and options if a language other than English is selected
+            if (!string.IsNullOrEmpty(selectedLanguage) && selectedLanguage != "en")
+            {
+                foreach (var question in questionsList)
+                {
+                    // Translate the question text
+                    question.text = await _translationService.Translate(question.text, selectedLanguage);
+
+                    // Translate the options text
+                    foreach (var option in question.Options)
+                    {
+                        option.text = await _translationService.Translate(option.text, selectedLanguage);
                     }
                 }
             }
 
-            return surveyQuestions;
-        }*/
-        public IActionResult Index()
-    {
-        return View();
+            ViewBag.QuestionsJson = JsonConvert.SerializeObject(questionsList);
+
+            return View(questionsList);
+        }
     }
+
+
+
 
     public IActionResult Details(int id)
 {

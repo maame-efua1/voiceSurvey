@@ -18,6 +18,9 @@ public class DashboardController : Controller
             gender = HttpContext.Session.GetString("Gender"),
             date_of_birth = DateTime.Parse(HttpContext.Session.GetString("DateOfBirth"))
         };
+
+        HttpContext.Session.SetString("FirstName", Register.firstname);
+        HttpContext.Session.SetString("LastName", Register.lastname);
         
         return View(Register);
     }
@@ -25,7 +28,7 @@ public class DashboardController : Controller
     public IActionResult Surveylist()
     {
         string connectionString = "Server=LAPTOP-LIL017KH\\SQLEXPRESS;Database=TALKPOLL;Trusted_Connection=True;MultipleActiveResultSets=True;TrustServerCertificate=True";
-
+        
             SqlConnection connection = new SqlConnection(connectionString);
 
             string query = "SELECT * FROM Survey WHERE status='Active' ";
@@ -48,6 +51,12 @@ public class DashboardController : Controller
                 surveyList.Add(surveys);
             }
             connection.Close();
+
+            string firstName = HttpContext.Session.GetString("FirstName");
+            string lastName = HttpContext.Session.GetString("LastName");
+
+            ViewBag.FirstName = firstName;
+            ViewBag.LastName = lastName;
 
             return View(surveyList);
     }
