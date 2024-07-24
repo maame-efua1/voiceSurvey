@@ -14,11 +14,12 @@ public class TranslationController : Controller
     public TranslationController(HttpClient httpClient)
     {
         _httpClient = httpClient;
-        _httpClient.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", "e9e02d0c1c83456ab5a1ce5858190459");
+        _httpClient.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", "d558be8089ad4bd3a603d4c88620d4c3");
     }
 
     public async Task<string> Translate(string text, string lang)
     {
+        _httpClient.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", "d558be8089ad4bd3a603d4c88620d4c3");
         var uri = "https://translation-api.ghananlp.org/v1/translate";
 
         var requestBody = new

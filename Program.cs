@@ -21,7 +21,7 @@ builder.Services.AddSingleton<IConfiguration>(builder.Configuration);
 
 builder.Services.AddHttpClient<TranslationService>(client =>
 {
-    client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", "your-api-key");
+    client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", "d558be8089ad4bd3a603d4c88620d4c3");
 });
 
 var app = builder.Build();

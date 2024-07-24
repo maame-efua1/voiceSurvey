@@ -88,3 +88,8 @@ D:\surveyapp\obj\Debug\net7.0\refint\SurveyApp.dll
 D:\surveyapp\obj\Debug\net7.0\SurveyApp.pdb
 D:\surveyapp\obj\Debug\net7.0\SurveyApp.genruntimeconfig.cache
 D:\surveyapp\obj\Debug\net7.0\ref\SurveyApp.dll
+D:\surveyapp\bin\Debug\net7.0\build\web.config
+D:\surveyapp\bin\Debug\net7.0\build\appsettings.Development.json
+D:\surveyapp\bin\Debug\net7.0\build\appsettings.json
+D:\surveyapp\bin\Debug\net7.0\build\SurveyApp.deps.json
+D:\surveyapp\bin\Debug\net7.0\build\SurveyApp.runtimeconfig.json
