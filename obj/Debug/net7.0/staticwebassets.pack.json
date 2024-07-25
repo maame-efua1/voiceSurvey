@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\css\\details.css"
     },
     {
+      "Id": "D:\\surveyapp\\wwwroot\\css\\edit.css",
+      "PackagePath": "staticwebassets\\css\\edit.css"
+    },
+    {
       "Id": "D:\\surveyapp\\wwwroot\\css\\home.css",
       "PackagePath": "staticwebassets\\css\\home.css"
     },

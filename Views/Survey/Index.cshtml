@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="~/css/survey.css" asp-append-version="true"/>
-    <title>Dashboard</title>
+    <title>Survey</title>
 </head>
 <body>
     <nav>
@@ -80,7 +80,7 @@
     </nav>
 
     <div class="survey">
-        <h2>Childhood Trauma: Understanding Your Experiences</h2>
+        <h2>@ViewBag.Title @ViewBag.Survey</h2>
         <div id="questionnaire-form">
              Questions will be dynamically inserted here 
         </div>
@@ -152,7 +152,7 @@
         Model.Select(q => new { type = q.type, question = q.text, options = q.Options.Any() ? q.Options.Select(o => o.text).ToArray() : null}).ToList()));
     
     
-            const questionsPerPage = 5;
+            const questionsPerPage = 2;
             let currentPageIndex = 0;
     
             document.addEventListener("DOMContentLoaded", () => {

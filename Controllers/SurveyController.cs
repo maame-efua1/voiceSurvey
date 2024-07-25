@@ -17,6 +17,12 @@ public class SurveyController : Controller
 
     public async Task<IActionResult> Index(int id, string selectedLanguage)
 {
+    string title = HttpContext.Session.GetString("Title");
+    string survey = HttpContext.Session.GetString("Survey");
+
+    ViewBag.Title = title;
+    ViewBag.Survey = survey;
+
     string connectionString = "Server=LAPTOP-LIL017KH\\SQLEXPRESS;Database=TALKPOLL;Trusted_Connection=True;MultipleActiveResultSets=True;TrustServerCertificate=True";
 
     using (SqlConnection connection = new SqlConnection(connectionString))
@@ -230,6 +236,9 @@ private async Task<string> GetTranslationAsync(string resourceType, int surveyId
                         status = reader["status"].ToString(),
                         language = reader["language"].ToString()
                     };
+
+                    HttpContext.Session.SetString("Title", survey.title);
+                     HttpContext.Session.SetString("Survey", "Survey");
 
                     return View(survey);
                 }

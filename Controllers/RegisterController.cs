@@ -25,6 +25,11 @@ public class RegisterController : Controller
         {
             // Hash the password using the injected PasswordHasher
             string hashedPassword = passwordHasher.HashPassword(User, User.password);
+
+            // Extract the last 9 digits of the phone number
+        string lastNineDigits = User.phonenumber.Length > 9
+            ? User.phonenumber.Substring(User.phonenumber.Length - 9)
+            : User.phonenumber;
         
         using (SqlConnection connection = new SqlConnection(connectionString))
         {
@@ -39,7 +44,7 @@ public class RegisterController : Controller
             command.Parameters.AddWithValue("@password", hashedPassword);  // Use hashed password
             command.Parameters.AddWithValue("@gender", User.gender);
             command.Parameters.AddWithValue("@date_of_birth", User.date_of_birth);
-            command.Parameters.AddWithValue("@phonenumber", User.phonenumber);
+            command.Parameters.AddWithValue("@phonenumber", lastNineDigits);
 
             try
             {

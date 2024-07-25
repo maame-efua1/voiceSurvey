@@ -376,3 +376,62 @@ h6{
         height: 100vh;
     } */
 }
+.info {
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    width: 30%;
+    font-weight: bold;
+    margin-right: 10px;
+    text-align: right;
+}
+
+.form-group input[type="text"],
+.form-group input[type="date"] {
+    width: 70%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-group input[type="text"]:readonly,
+.form-group input[type="date"]:readonly {
+    background-color: #e9e9e9;
+    cursor: not-allowed;
+}
+
+.edit {
+    text-align: center;
+}
+
+.edit button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.edit button:hover {
+    background-color: #0056b3;
+}

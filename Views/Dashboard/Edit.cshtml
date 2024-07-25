@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="~/css/dashboard.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/edit.css" asp-append-version="true"/>
     <title>Dashboard</title>
 </head>
 <body>
@@ -74,7 +74,7 @@
                     </a>
                 </li>
                 <li tabindex="0">
-                    <a id="logout-link" asp-action="/Login/Logout">
+                    <a id="logout-link" href="../Login/Index">
                         <svg class="icons" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z"/></svg>
                         Logout
                     </a>
@@ -90,7 +90,7 @@
     <div class="welcome">
         <div class="wlc">
             <p>Welcome Back,</p>
-            <h1>@Model.firstname @Model.lastname</h1>
+            <h1>@ViewBag.FirstName @ViewBag.LastName</h1>
         </div>
         <a href="#">
             <svg class="notification" xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#e8eaed">
@@ -99,27 +99,36 @@
         </a>
     </div>
     <div class="info">
-        <div class="container">
-            <div class="detail">First name</div>
-            <div class="response">@Model.firstname</div>
-            <div class="detail">Last name</div>
-            <div class="response">@Model.lastname</div>
-            <div class="detail">Date of birth</div>
-            <div class="response">@Model.date_of_birth.ToShortDateString()</div>
-            <div class="detail">Gender</div>
-            <div class="response">@Model.gender</div>
-            <div class="detail">Country</div>
-            <div class="response">Ghana</div>
-            <div class="detail">Language</div>
-            <div class="response">English</div>
-            <div class="detail">Mobile number(with country code)</div>
-            <div class="response">+233 @Model.phonenumber</div>
-        </div>
-
-        <div class="edit">Edit</div>
+        <form method="post" asp-action="/Dashboard/Edit">
+            <div class="container">
+                <div class="form-group">
+                    <label for="firstname">First name:</label>
+                    <input type="text" id="firstname" name="firstname" value="@ViewBag.FirstName" />
+                </div>
+                <div class="form-group">
+                    <label for="lastname">Last name:</label>
+                    <input type="text" id="lastname" name="lastname" value="@ViewBag.LastName" />
+                </div>
+                <div class="form-group">
+                    <label for="dob">Date of birth:</label>
+                    <input type="date" id="date_of_birth" name="date_of_birth" value="@ViewBag.DOB" />
+                </div>
+                <div class="form-group">
+                    <label for="gender">Gender:</label>
+                    <input type="text" id="gender" name="gender" value="@ViewBag.Gender" readonly />
+                </div>
+                <div class="form-group">
+                    <label for="phonenumber">Mobile number (with country code):</label>
+                    <input type="text" id="phonenumber" name="phonenumber" value="+233 @ViewBag.PNumber" />
+                </div>
+                <div class="edit">
+                    <button type="submit">Save</button>
+                </div>
+            </div>
+        </form>
+    </div>
      </div>
 </div>
-    </div>
 
     
 
