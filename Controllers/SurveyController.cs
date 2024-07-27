@@ -140,22 +140,19 @@ private async Task<string> GetTranslationAsync(string resourceType, int surveyId
 
     using (SqlConnection connection = new SqlConnection(connectionString))
     {
+        {
         string query = @"
             SELECT translatedText
             FROM Translation
-            WHERE 
-                resourceType = @ResourceType AND 
-                surveyId = @SurveyId AND 
-                languageCode = @LanguageCode AND 
-                ((resourceType = 'Question' AND questionId = @QuestionId) OR
-                 (resourceType = 'Option' AND optionId = @OptionId))";
+            WHERE ComputedID = @ComputedID AND LanguageCode=@languageCode";
+
+        // Construct the ComputedID
+        string computedId = (questionId.HasValue ? questionId.Value.ToString() : string.Empty) + "_" +
+                             (optionId.HasValue ? optionId.Value.ToString() : string.Empty);
 
         SqlCommand command = new SqlCommand(query, connection);
-        command.Parameters.AddWithValue("@ResourceType", resourceType);
-        command.Parameters.AddWithValue("@SurveyId", surveyId);
+        command.Parameters.AddWithValue("@ComputedID", computedId);
         command.Parameters.AddWithValue("@LanguageCode", languageCode);
-        command.Parameters.AddWithValue("@QuestionId", questionId.HasValue ? (object)questionId.Value : DBNull.Value);
-        command.Parameters.AddWithValue("@OptionId", optionId.HasValue ? (object)optionId.Value : DBNull.Value);
 
         connection.Open();
         var result = await command.ExecuteScalarAsync();
@@ -163,7 +160,8 @@ private async Task<string> GetTranslationAsync(string resourceType, int surveyId
 
         return result?.ToString();
     }
-}
+    }
+    }
 
 
     private async Task InsertTranslationAsync(string resourceType, int resourceId, string languageCode, string translatedText, int id)

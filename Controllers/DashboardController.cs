@@ -100,7 +100,7 @@ public class DashboardController : Controller
 
             // Replace parameters with actual values from the User object
            command.Parameters.AddWithValue("@firstname", User.firstname);
-            command.Parameters.AddWithValue("@lastname", User.lastname);  // Use hashed password
+            command.Parameters.AddWithValue("@lastname", User.lastname);  
             command.Parameters.AddWithValue("@gender", User.gender);
             command.Parameters.AddWithValue("@date_of_birth", User.date_of_birth.ToString());
             command.Parameters.AddWithValue("@phonenumber", lastNineDigits);

@@ -25,7 +25,7 @@ public class TranslationController : Controller
         var requestBody = new
         {
             @in = text,
-            lang = lang
+            lang ="en-"+lang
         };
 
         var jsonBody = JsonConvert.SerializeObject(requestBody);

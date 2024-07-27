@@ -21,7 +21,7 @@ public class TranslationService
         var requestBody = new
         {
             @in = text,  // '@' is used to escape the reserved keyword 'in'
-            lang = lang
+            lang = "en-"+ lang
         };
 
         var jsonBody = JsonConvert.SerializeObject(requestBody);
