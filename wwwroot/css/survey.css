@@ -280,3 +280,29 @@ h2{
         margin-right: 20px;
     }
 }
+
+#read-aloud{
+    padding-right: 1%;
+    width: 12%;
+    height: 30px;
+    background-color: #0090d4;
+    border-radius: 10px;
+    padding-left: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.record-answer{
+    padding-right: 1%;
+    width: 12%;
+    height: 30px;
+    background-color: #0090d4;
+    border-radius: 10px;
+    padding-left: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+}

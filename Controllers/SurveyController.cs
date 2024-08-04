@@ -19,7 +19,10 @@ public class SurveyController : Controller
 {
     string title = HttpContext.Session.GetString("Title");
     string survey = HttpContext.Session.GetString("Survey");
+    string ID = HttpContext.Session.GetString("UserID");
 
+    ViewBag.SId = id;
+    ViewBag.Id = ID;
     ViewBag.Title = title;
     ViewBag.Survey = survey;
 
