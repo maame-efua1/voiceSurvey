@@ -17,3 +17,6 @@ export PATH="$PATH:/opt/buildhome/.dotnet"
 # Restore and build the project
 dotnet restore
 dotnet publish -c Release -o out
+
+# Kill any remaining processes
+pkill -f dotnet
