@@ -4,21 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="~/css/about.css" asp-append-version="true"/>
-    <title>About</title>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <link rel="stylesheet" href="~/css/details.css" asp-append-version="true"/>
+    <title>Survey</title>
 </head>
 <body>
     <nav>
         <ul class="sidebar">
             <li onclick=hideSidebar()><a href="#"><svg class="menu" xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 -960 960 960" width="26"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
                 <p class="itm-1">SurveyApp</p>
-
-                    <li tabindex="0">
-                        <a href="../Home/Index">
-                            <svg class="icons" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M120-200q-33 0-56.5-23.5T40-280v-400q0-33 23.5-56.5T120-760h400q33 0 56.5 23.5T600-680v400q0 33-23.5 56.5T520-200H120Zm0-80h400v-400H120v400Zm560 80v-560h80v560h-80Zm160 0v-560h80v560h-80Zm-720-80v-400 400Z"/></svg>
-                            Home
-                        </a>
-                    </li>
+                <li tabindex="0">
+                    <a href="../Home/Index">
+                        <svg class="icons" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M120-200q-33 0-56.5-23.5T40-280v-400q0-33 23.5-56.5T120-760h400q33 0 56.5 23.5T600-680v400q0 33-23.5 56.5T520-200H120Zm0-80h400v-400H120v400Zm560 80v-560h80v560h-80Zm160 0v-560h80v560h-80Zm-720-80v-400 400Z"/></svg>
+                        Home
+                    </a>
+                </li>
                     <li tabindex="0">
                         <a href="../Dashboard/Index">
                             <svg class="icons" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M120-200q-33 0-56.5-23.5T40-280v-400q0-33 23.5-56.5T120-760h400q33 0 56.5 23.5T600-680v400q0 33-23.5 56.5T520-200H120Zm0-80h400v-400H120v400Zm560 80v-560h80v560h-80Zm160 0v-560h80v560h-80Zm-720-80v-400 400Z"/></svg>
@@ -64,8 +64,6 @@
         </ul>
         <ul class="header">
             <li class="appname" ><a href="../Home/Index">SurveyApp</a></li>
-            <li class="hideOnMobile"><a href="../About/Index">About</a></li>
-            <li class="hideOnMobile"><a href="../Contact/Index">Contact</a></li>
 
             <li class="menu-btn" onclick=showSidebar()>
                 <a href="#">
@@ -75,56 +73,16 @@
             
         </ul> 
         <ul class="logging-btns hideOnMobile">
-            <li class=" hideOnLogin"><a href="../Login/Index">Login</a></li>
+            <li class=" hideOnLogin"><a href="../Login/Index">Log Out</a></li>
         </ul>
     </nav>
 
-        <div class="title">
-            <div class="container">
-            <h1>About Us</h1>
-            <p>Unlocking data-driven decisions across Africa</p>
-            </div>
+    <div id="container">
+        <div id="chart">
         </div>
-        <div class="abt-us">
-            <div class="abt">
-                <p>SurveyApp is the premier Africa-focused data collection company with communities all over Africa. As part of our community, you are empowered to contribute to discussions that will help transform the products and services that matter to you. Share your opinion by answering our online surveys and inspire change in real-time.</p><br>
-                <p>The SurveyApp community has thousands of end-user and business consumer members across Africa, men and women of all the ages. As a member, you regularly receive invitation to take part in surveys. You can answer our paid surveys when and where it suits you, on your mobile, at home, work or on-the-go.</p>               
-            </div>
-            <div class="img"></div>
-        </div>
-        <div class="mission-cont">
-            <h1>Our Mission</h1>
-            <div class="mission">
-            <div class="m-1">
-                <h4>Creating impact and making a difference</h4>
-                <p>Our mission is to provide organisations with reliable information that enables them to make well-founded decisions. We collaborate with clients to achieve the best possible results. Making this possible is you; taking part in our surveys enables you to influence decisions which will affect your daily life.</p>
-            </div>
-            <div class="m-2">
-                <h4>Data protection and quality</h4>
-                <p>SurveyApp sets high standards when it comes to protecting the privacy of our members. We guarantee absolute anonymity and treat information with the utmost confidentiality.</p>
-            </div>
-            <div class="m-3">
-                <h4>Who are the partners</h4>
-                <p>SurveyApp works with both large and small clients, in Africa as well as globally.</p>
-            </div>
-            </div>
-        </div>
+    </div>
 
-        <div class="footer">
-            <div class="inner-div">
-                <h2>Be Heard</h2>
-                <p style="margin-top: 50px;">"SurveyApp is Ghana's premier survey platform, empowering you to shape products and services by sharing your opinions.
-                    Our inclusive platform supports local Ghanaian languages and features a read-aloud option, 
-                    ensuring accessibility for all. Join our diverse community and make a real-time impact. Your
-                     voice matters—join SurveyApp today and help shape the future of Ghana!"</p>
-                <div class="bottom-div">
-                    <h3>SurveyApp</h3>
-                    <p>© 2024 SurveyApp. All Rights Reserved.</p>
-                </div>
-            </div>
-        </div>
-
-
+   
     <script>
         function showSidebar() {
     const sidebar = document.querySelector('.sidebar');
@@ -178,6 +136,70 @@ function stopPropagation(event) {
             }
         }
 
+        const options = {
+          series: [{
+          name: "STOCK ABC",
+          data: [22, 32, 45, 23, 64, 45]
+        }],
+          chart: {
+          type: 'area',
+          height: 350,
+          zoom: {
+            enabled: false
+          }
+        },
+        dataLabels: {
+          enabled: false
+        },
+        stroke: {
+          curve: 'straight'
+        },
+        
+        title: {
+          text: 'Fundamental Analysis of Stocks',
+          align: 'left'
+        },
+        subtitle: {
+          text: 'Price Movements',
+          align: 'left'
+        },
+        labels: ["01 Jan", "02 Jan", "03 Jan", "04 Jan", "05 Jan", "06 Jan"],
+        xaxis: {
+          type: 'datetime',
+        },
+        yaxis: {
+          opposite: true
+        },
+        legend: {
+          horizontalAlign: 'left'
+        }
+        };
+
+        const chart = new ApexCharts(document.querySelector("#chart"), options);
+        chart.render();
+        
+
+        function submitForm() {
+            alert('Form submitted!');
+        }
+
     </script>
+
+    <style>
+        #chart {
+  width: 65%;
+  margin: 35px auto;
+}
+
+#container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    width: 80vw;
+}
+    </style>
 </body>
 </html>
+
+

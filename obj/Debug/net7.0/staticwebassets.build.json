@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "qh4ucLoY/JNF5LReFUQSk4v5qo8OMPV+rFOdoP97G5s=",
+  "Hash": "jeevlz4cLxioi/XLpkDBGe6x4IWS59nD49iALMbbDpo=",
   "Source": "SurveyApp",
   "BasePath": "_content/SurveyApp",
   "Mode": "Default",
@@ -34,6 +34,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\about.css"
+    },
+    {
+      "Identity": "D:\\surveyapp\\wwwroot\\css\\contact.css",
+      "SourceId": "SurveyApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\surveyapp\\wwwroot\\",
+      "BasePath": "_content/SurveyApp",
+      "RelativePath": "css/contact.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\contact.css"
     },
     {
       "Identity": "D:\\surveyapp\\wwwroot\\css\\dashboard.css",

@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\css\\about.css"
     },
     {
+      "Id": "D:\\surveyapp\\wwwroot\\css\\contact.css",
+      "PackagePath": "staticwebassets\\css\\contact.css"
+    },
+    {
       "Id": "D:\\surveyapp\\wwwroot\\css\\dashboard.css",
       "PackagePath": "staticwebassets\\css\\dashboard.css"
     },

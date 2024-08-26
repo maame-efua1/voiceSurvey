@@ -1,50 +1,49 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.Data.SqlClient;
 using TALKPOLL.Models;
-using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 public class SubmitResponsesController : Controller
 {
-[HttpPost]
-[Route("api/response/submit")]
-public async Task<IActionResult> SubmitResponses([FromBody] List<SurveyResponse> responses)
-{
-    string connectionString = "Server=LAPTOP-LIL017KH\\SQLEXPRESS;Database=TALKPOLL;Trusted_Connection=True;MultipleActiveResultSets=True;TrustServerCertificate=True";
-
-    using (SqlConnection connection = new SqlConnection(connectionString))
+    [HttpPost]
+    [Route("api/response/submit")]
+    public async Task<IActionResult> SubmitResponses(List<SurveyResponse> responses)
     {
-        connection.Open();
-        foreach (var response in responses)
+        string userId = HttpContext.Session.GetString("Userid");
+
+        // Ensure the user is authenticated
+        if (string.IsNullOrEmpty(userId))
         {
-            string query = @"
-                INSERT INTO Responses (surveyId, userid, questionId, text, selectedOptionId, responseDate)
-                VALUES (@SurveyId, @UserId, @QuestionId, @Text, @SelectedOptionId, GETDATE())";
+            return Unauthorized(new { message = "User not logged in" });
+        }
 
-            using (SqlCommand command = new SqlCommand(query, connection))
+        string connectionString = "Server=LAPTOP-LIL017KH\\SQLEXPRESS;Database=TALKPOLL;Trusted_Connection=True;MultipleActiveResultSets=True;TrustServerCertificate=True";
+
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            await connection.OpenAsync();
+            foreach (var response in responses)
             {
-                command.Parameters.AddWithValue("@SurveyId", response.SurveyId);
-                command.Parameters.AddWithValue("@UserId", response.UserId);
-                command.Parameters.AddWithValue("@QuestionId", response.QuestionId);
-                command.Parameters.AddWithValue("@Text", response.Text ?? (object)DBNull.Value);
-                command.Parameters.AddWithValue("@SelectedOptionId", response.SelectedOptionId ?? (object)DBNull.Value);
+                string query = @"
+                    INSERT INTO Responses (surveyId, userid, questionId, text, selectedOptionId, responseDate)
+                    VALUES (@SurveyId, @UserId, @QuestionId, @Text, @SelectedOptionId, GETDATE())";
 
-                await command.ExecuteNonQueryAsync();
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@SurveyId", response.SurveyId);
+                    command.Parameters.AddWithValue("@UserId", userId); // Use session userId
+                    command.Parameters.AddWithValue("@QuestionId", response.QuestionId);
+                    command.Parameters.AddWithValue("@Text", response.Text ?? (object)DBNull.Value);
+                    command.Parameters.AddWithValue("@SelectedOptionId", response.SelectedOptionId ?? (object)DBNull.Value);
+
+                    await command.ExecuteNonQueryAsync();
+                }
             }
         }
-        connection.Close();
+
+        return Ok(new { message = "Responses submitted successfully" });
     }
-
-    return Ok(new { message = "Responses submitted successfully" });
 }
 
-public class SurveyResponse
-{
-    public int SurveyId { get; set; }
-    public int UserId { get; set; }
-    public int QuestionId { get; set; }
-    public string Text { get; set; }
-    public int? SelectedOptionId { get; set; }
-}
 
-}

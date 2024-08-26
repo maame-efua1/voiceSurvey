@@ -56,6 +56,7 @@ public class DashboardController : Controller
             }
             connection.Close();
 
+            
             string firstName = HttpContext.Session.GetString("FirstName");
             string lastName = HttpContext.Session.GetString("LastName");
 
@@ -93,7 +94,7 @@ public class DashboardController : Controller
                     gender = @gender,
                 date_of_birth = @date_of_birth,
                     phonenumber = @phonenumber
-                 WHERE userid = @userid";
+                 WHERE userid = @userId";
 
 
             SqlCommand command = new SqlCommand(query, connection);
