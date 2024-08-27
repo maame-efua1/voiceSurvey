@@ -16,7 +16,6 @@ public class LoginController : Controller
 
     public IActionResult Index(Register user)
 {
-    // Check if the user submitted the login form
     if (!string.IsNullOrEmpty(user.email) && !string.IsNullOrEmpty(user.password))
     {
         string connectionString = "Server=LAPTOP-LIL017KH\\SQLEXPRESS;Database=TALKPOLL;Trusted_Connection=True;MultipleActiveResultSets=True;TrustServerCertificate=True";
@@ -36,10 +35,8 @@ public class LoginController : Controller
                     {
                         string hashedPassword = reader["password"].ToString();
                         
-                        // Verify the provided password against the hashed password retrieved from the database
                         if (hashedPassword != null && _passwordHasher.VerifyHashedPassword(user, hashedPassword, user.password) == PasswordVerificationResult.Success)
                         {
-                            // Store user details in session
                             HttpContext.Session.SetString("UserID", reader["userid"].ToString());
                             HttpContext.Session.SetString("FirstName", reader["firstname"].ToString());
                             HttpContext.Session.SetString("LastName", reader["lastname"].ToString());
@@ -51,7 +48,6 @@ public class LoginController : Controller
                         }
                         else
                         {
-                            // Passwords don't match, display error message
                             ModelState.AddModelError(string.Empty, "Invalid email or password");
                             return View();
                         }
@@ -66,7 +62,6 @@ public class LoginController : Controller
             catch (SqlException ex)
             {
                 Console.WriteLine("Error: " + ex.Message);
-                // Handle the exception or provide feedback to the user
                 ModelState.AddModelError(string.Empty, "An error occurred while processing your request.");
                 return View();
             }
@@ -82,10 +77,8 @@ public class LoginController : Controller
     [HttpPost]
     public async Task<IActionResult> Logout()
     {
-        // Sign out the user
         await HttpContext.SignOutAsync();
 
-        // Redirect to the login page
         return RedirectToAction("Index", "Login");
     }
 

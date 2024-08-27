@@ -101,10 +101,8 @@
         const sidebar = document.querySelector('.sidebar');
         sidebar.style.display = 'flex';
     
-        // Add event listener to close sidebar when clicking outside of it
         document.addEventListener('click', closeSidebarOnClickOutside);
     
-        // Prevent the click event on the button from propagating
         const button = document.querySelector('.menu-btn');
         button.addEventListener('click', stopPropagation);
     }
@@ -114,7 +112,6 @@
     
         if (!sidebar.contains(event.target)) {
             sidebar.style.display = 'none';
-            // Remove the event listener after hiding the sidebar
             document.removeEventListener('click', closeSidebarOnClickOutside);
         }
     }
@@ -133,7 +130,6 @@
                 submenu.style.display = 'block';
                 smul.style.display = 'block';
     
-                // Add event listener to document to close submenu when clicking outside of it
                 document.addEventListener('click', closeSubmenuOnClickOutside);
             }
     
@@ -141,107 +137,135 @@
                 const submenu = document.querySelector('.sub-menu');
                 const button = document.querySelector('.profile-icon');
     
-                // Check if the click target is not within the submenu or the button
                 if (!submenu.contains(event.target) && event.target !== button) {
                    submenu.style.display = 'none';
-                   // Remove the event listener after hiding the submenu
                    document.removeEventListener('click', closeSubmenuOnClickOutside);
                 }
             }
     
             const questions = @Html.Raw(JsonConvert.SerializeObject(
-        Model.Select(q => new { type = q.type, question = q.text, options = q.Options.Any() ? q.Options.Select(o => o.text).ToArray() : null}).ToList()));
-    
-    
-            const questionsPerPage = 2;
-            let currentPageIndex = 0;
-    
-            document.addEventListener("DOMContentLoaded", () => {
-                updatePage();
+    Model.Select(q => new { 
+        questionId = q.questionId, // Include questionId
+        type = q.type, 
+        question = q.text, 
+        options = q.Options.Any() 
+            ? q.Options.Select(o => new { optionId = o.optionId, text = o.text }).ToArray() // Include optionId and text
+            : null
+    }).ToList()));
+
+function updatePage() {
+    const formElement = document.getElementById("questionnaire-form");
+    formElement.innerHTML = '';
+
+    questions.forEach((questionObj, index) => {
+        const questionContainer = document.createElement('div');
+        questionContainer.className = 'question-container';
+
+        const questionElement = document.createElement('p');
+        questionElement.className = 'question';
+        questionElement.textContent = `${index + 1}. ${questionObj.question}`;
+        questionContainer.appendChild(questionElement);
+
+        if (questionObj.type === 'text') {
+            const textarea = document.createElement('textarea');
+            textarea.name = `question-${questionObj.questionId}`; // Use question ID for the name
+            questionContainer.appendChild(textarea);
+
+            const recordButton = document.createElement('button');
+            recordButton.textContent = 'Record Answer';
+            recordButton.onclick = () => startRecording(questionObj.questionId); // Pass question ID
+            questionContainer.appendChild(recordButton);
+
+        } else if (questionObj.type === 'radio') {
+            questionObj.options.forEach(option => {
+                const label = document.createElement('label');
+                const radio = document.createElement('input');
+                radio.type = 'radio';
+                radio.name = `question-${questionObj.questionId}`; // Use question ID for the name
+                radio.value = option.optionId; // Set value to option ID
+                label.appendChild(radio);
+                label.appendChild(document.createTextNode(option.text));
+                questionContainer.appendChild(label);
+                questionContainer.appendChild(document.createElement('br'));
             });
-    
-            function updatePage() {
-                const formElement = document.getElementById("questionnaire-form");
-                const pageCounterElement = document.getElementById("page-counter");
-                formElement.innerHTML = '';
-    
-                const start = currentPageIndex * questionsPerPage;
-                const end = start + questionsPerPage;
-                const currentQuestions = questions.slice(start, end);
-    
-                currentQuestions.forEach((questionObj, index) => {
-                    const questionContainer = document.createElement('div');
-                    questionContainer.className = 'question-container';
-    
-                    const questionElement = document.createElement('p');
-                    questionElement.className = 'question';
-                    questionElement.textContent = `${start + index + 1}. ${questionObj.question}`;
-                    questionContainer.appendChild(questionElement);
-    
-                    if (questionObj.type === 'text') {
-                        const textarea = document.createElement('textarea');
-                        textarea.name = `question-${start + index}`;
-                        textarea.value = `Twi , Ga, Dagbani, Yoruba, Ewe, Kikuyu`
-                        questionContainer.appendChild(textarea);
-                        
-                        const recordButton = document.createElement('button');
-                    recordButton.textContent = 'Record Answer';
-                    recordButton.onclick = () => startRecording(start + index);
-                    questionContainer.appendChild(recordButton);
-                        
-                    } else if (questionObj.type === 'radio') {
-                        questionObj.options.forEach(option => {
-                            const label = document.createElement('label');
-                            const radio = document.createElement('input');
-                            radio.type = 'radio';
-                            radio.name = `question-${start + index}`;
-                            radio.value = option;
-                            label.appendChild(radio);
-                            label.appendChild(document.createTextNode(option));
-                            questionContainer.appendChild(label);
-                            questionContainer.appendChild(document.createElement('br'));
-                        });
-                    } else if (questionObj.type === 'checkbox') {
-                        questionObj.options.forEach(option => {
-                            const label = document.createElement('label');
-                            const checkbox = document.createElement('input');
-                            checkbox.type = 'checkbox';
-                            checkbox.name = `question-${start + index}`;
-                            checkbox.value = option;
-                            label.appendChild(checkbox);
-                            label.appendChild(document.createTextNode(option));
-                            questionContainer.appendChild(label);
-                            questionContainer.appendChild(document.createElement('br'));
-                        });
-                    }
-    
-                    formElement.appendChild(questionContainer);
-                });
-    
-                pageCounterElement.textContent = `Page ${currentPageIndex + 1}/${Math.ceil(questions.length / questionsPerPage)}`;
-    
-                document.getElementById("prev").disabled = currentPageIndex === 0;
-                document.getElementById("next").style.display = currentPageIndex === Math.ceil(questions.length / questionsPerPage) - 1 ? 'none' : 'inline';
-                document.getElementById("submit").style.display = currentPageIndex === Math.ceil(questions.length / questionsPerPage) - 1 ? 'inline' : 'none';
-            }
-    
-            function prevPage() {
-                if (currentPageIndex > 0) {
-                    currentPageIndex--;
-                    updatePage();
-                }
-            }
-    
-            function nextPage() {
-                if (currentPageIndex < Math.ceil(questions.length / questionsPerPage) - 1) {
-                    currentPageIndex++;
-                    updatePage();
-                }
-            }
+        } else if (questionObj.type === 'checkbox') {
+            questionObj.options.forEach(option => {
+                const label = document.createElement('label');
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.name = `question-${questionObj.questionId}`; // Use question ID for the name
+                checkbox.value = option.optionId; // Set value to option ID
+                label.appendChild(checkbox);
+                label.appendChild(document.createTextNode(option.text));
+                questionContainer.appendChild(label);
+                questionContainer.appendChild(document.createElement('br'));
+            });
+        }
+
+        formElement.appendChild(questionContainer);
+    });
+
+    // Hide pagination buttons since all questions are on one page
+    document.getElementById("prev").style.display = 'none';
+    document.getElementById("next").style.display = 'none';
+    document.getElementById("submit").style.display = 'inline';
+}
+
+// Call updatePage once to render all questions
+updatePage();
+
+
     
             function submitForm() {
-                alert('Form submitted!');
-            }
+    const formData = [];
+
+    questions.forEach((questionObj, index) => {
+        const questionId = `question-${index}`;
+        const questionType = questionObj.type;
+        let answer;
+
+        if (questionType === 'text') {
+            // Collect the text input value
+            const textarea = document.querySelector(`textarea[name="${questionId}"]`);
+            answer = textarea ? textarea.value : '';
+        } else if (questionType === 'radio') {
+            // Collect the selected radio button value (option id)
+            const selectedOption = document.querySelector(`input[name="${questionId}"]:checked`);
+            answer = selectedOption ? selectedOption.value : '';
+        } else if (questionType === 'checkbox') {
+            // Collect all selected checkbox values (option ids)
+            const selectedOptions = document.querySelectorAll(`input[name="${questionId}"]:checked`);
+            answer = Array.from(selectedOptions).map(option => option.value);
+        }
+
+        formData.push({
+            questionId: questionObj.id, // Assuming `questionObj` contains an `id` property
+            answer: Array.isArray(answer) ? answer : [answer] // Ensure answer is an array
+        });
+    });
+
+    console.log('Form Data:', formData);
+
+    // You can then submit this data via an AJAX request or form submission
+    fetch('/api/response/submit', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+    })
+    .then(response => {
+        if (response.ok) {
+            alert('Survey submitted successfully!');
+        } else {
+            throw new Error('Submission failed');
+        }
+    })
+    .catch(error => {
+        console.error('There was a problem with the submission:', error);
+    });
+}
+
     
             
     function readAloud() {

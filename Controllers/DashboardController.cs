@@ -99,7 +99,6 @@ public class DashboardController : Controller
 
             SqlCommand command = new SqlCommand(query, connection);
 
-            // Replace parameters with actual values from the User object
            command.Parameters.AddWithValue("@firstname", User.firstname);
             command.Parameters.AddWithValue("@lastname", User.lastname);  
             command.Parameters.AddWithValue("@gender", User.gender);
@@ -117,7 +116,6 @@ public class DashboardController : Controller
             catch (SqlException ex)
             {
                 Console.WriteLine("Error: " + ex.Message);
-                // Handle the exception or provide feedback to the user
             }
             finally
             {
@@ -125,6 +123,11 @@ public class DashboardController : Controller
             }
         }
 
+        return View();
+    }
+
+    public IActionResult Security()
+    {
         return View();
     }
 }

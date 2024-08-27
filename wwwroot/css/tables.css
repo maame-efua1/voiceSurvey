@@ -1,0 +1,30 @@
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #0090d4;
+    text-align: center;
+    padding: 8px;
+}
+
+
+/* tr:nth-child(even) {
+            background-color: #dddddd;
+        } */
+#edit {
+    border-radius: 5px;
+    border: 1px solid #8E44AD;
+    margin-right: 2px;
+}
+
+#delete {
+    border-radius: 5px;
+    border: 1px solid #000;
+    width: 45%;
+    background-color: red;          
+}
+
+#del, #edi{color:black;}

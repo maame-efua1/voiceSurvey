@@ -51,7 +51,6 @@ public class TranslationController : Controller
                     throw new Exception("Error parsing translation response: " + ex.Message);
                 }
 
-                // Check if the 'translation' object and 'translation.translation' are not null
                 if (translation != null && translation.translation != null)
                 {
                     return (string)translation.translation;

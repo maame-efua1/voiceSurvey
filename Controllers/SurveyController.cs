@@ -96,7 +96,6 @@ public class SurveyController : Controller
         {
             foreach (var question in questionsList)
             {
-                // Check if the translation exists in the database
                 var existingQuestionTranslation = await GetTranslationAsync("Question", id, Convert.ToInt32(question.questionId), null, selectedLanguage);
                 if (existingQuestionTranslation != null)
                 {
@@ -104,18 +103,14 @@ public class SurveyController : Controller
                 }
                 else
                 {
-                    // Translate the question text
                     var translatedQuestionText = await _translationService.Translate(question.text, selectedLanguage);
                     question.text = translatedQuestionText;
 
-                    // Insert translated question into the Translation table
                     await InsertTranslationAsync("Question", Convert.ToInt32(question.questionId), selectedLanguage, translatedQuestionText, id);
                 }
 
-                // Translate the options text
                 foreach (var option in question.Options)
                 {
-                    // Check if the translation exists in the database
                     var existingOptionTranslation = await GetTranslationAsync("Option", id, null, Convert.ToInt32(option.optionId), selectedLanguage);
                     if (existingOptionTranslation != null)
                     {
@@ -126,7 +121,6 @@ public class SurveyController : Controller
                         var translatedOptionText = await _translationService.Translate(option.text, selectedLanguage);
                         option.text = translatedOptionText;
 
-                        // Insert translated option into the Translation table
                         await InsertTranslationAsync("Option", Convert.ToInt32(option.optionId), selectedLanguage, translatedOptionText, id);
                     }
                 }
@@ -149,7 +143,6 @@ private async Task<string> GetTranslationAsync(string resourceType, int surveyId
             FROM Translation
             WHERE ComputedID = @ComputedID AND LanguageCode=@languageCode";
 
-        // Construct the ComputedID
         string computedId = (questionId.HasValue ? questionId.Value.ToString() : string.Empty) + "_" +
                              (optionId.HasValue ? optionId.Value.ToString() : string.Empty);
 
@@ -181,7 +174,6 @@ private async Task<string> GetTranslationAsync(string resourceType, int surveyId
         command.Parameters.AddWithValue("@LanguageCode", languageCode);
         command.Parameters.AddWithValue("@ResourceType", resourceType);
 
-        // Set parameters based on the resource type
         if (resourceType == "Question")
         {
             command.Parameters.AddWithValue("@SurveyId", id);
@@ -228,7 +220,7 @@ private async Task<string> GetTranslationAsync(string resourceType, int surveyId
                 {
                     Survey survey = new Survey
                     {
-                        surveyId = reader["surveyId"].ToString(), // Adjust this based on the data type of surveyId in Survey class
+                        surveyId = reader["surveyId"].ToString(), 
                         title = reader["title"].ToString(),
                         description = reader["description"].ToString(),
                         creatorName = reader["creatorName"].ToString(),

@@ -141,10 +141,8 @@
     const sidebar = document.querySelector('.sidebar');
     sidebar.style.display = 'flex';
 
-    // Add event listener to close sidebar when clicking outside of it
     document.addEventListener('click', closeSidebarOnClickOutside);
 
-    // Prevent the click event on the button from propagating
     const button = document.querySelector('.menu-btn');
     button.addEventListener('click', stopPropagation);
 }
@@ -154,7 +152,6 @@ function closeSidebarOnClickOutside(event) {
 
     if (!sidebar.contains(event.target)) {
         sidebar.style.display = 'none';
-        // Remove the event listener after hiding the sidebar
         document.removeEventListener('click', closeSidebarOnClickOutside);
     }
 }
@@ -173,7 +170,6 @@ function stopPropagation(event) {
             submenu.style.display = 'block';
             smul.style.display = 'block';
 
-            // Add event listener to document to close submenu when clicking outside of it
             document.addEventListener('click', closeSubmenuOnClickOutside);
         }
 
@@ -181,10 +177,8 @@ function stopPropagation(event) {
             const submenu = document.querySelector('.sub-menu');
             const button = document.querySelector('.profile-icon');
 
-            // Check if the click target is not within the submenu or the button
             if (!submenu.contains(event.target) && event.target !== button) {
                submenu.style.display = 'none';
-               // Remove the event listener after hiding the submenu
                document.removeEventListener('click', closeSubmenuOnClickOutside);
             }
         }

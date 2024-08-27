@@ -18,6 +18,7 @@ namespace TALKPOLL.Models
         public string status { get; set; }
 
         public string language { get; set; }
+        public string responses { get; set; }
         
         public List<SurveyQuestions> Questions { get; set; }
         

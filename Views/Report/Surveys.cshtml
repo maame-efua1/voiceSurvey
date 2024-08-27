@@ -1,24 +1,29 @@
+@using TALKPOLL.Models
+@model List<TALKPOLL.Models.Survey>
+@using Newtonsoft.Json
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="~/css/contact.css" asp-append-version="true"/>
-    <title>Contact Us</U></title>
+    <link rel="stylesheet" href="~/css/surveylist.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/tables.css" asp-append-version="true"/>
+
+    <title>Report</title>
 </head>
 <body>
     <nav>
         <ul class="sidebar">
             <li onclick=hideSidebar()><a href="#"><svg class="menu" xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 -960 960 960" width="26"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
                 <p class="itm-1">SurveyApp</p>
-
-                    <li tabindex="0">
-                        <a href="../Home/Index">
-                            <svg class="icons" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M120-200q-33 0-56.5-23.5T40-280v-400q0-33 23.5-56.5T120-760h400q33 0 56.5 23.5T600-680v400q0 33-23.5 56.5T520-200H120Zm0-80h400v-400H120v400Zm560 80v-560h80v560h-80Zm160 0v-560h80v560h-80Zm-720-80v-400 400Z"/></svg>
-                            Home
-                        </a>
-                    </li>
+                <li tabindex="0">
+                    <a href="../Home/Index">
+                        <svg class="icons" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M120-200q-33 0-56.5-23.5T40-280v-400q0-33 23.5-56.5T120-760h400q33 0 56.5 23.5T600-680v400q0 33-23.5 56.5T520-200H120Zm0-80h400v-400H120v400Zm560 80v-560h80v560h-80Zm160 0v-560h80v560h-80Zm-720-80v-400 400Z"/></svg>
+                        Home
+                    </a>
+                </li>
                     <li tabindex="0">
                         <a href="../Dashboard/Index">
                             <svg class="icons" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M120-200q-33 0-56.5-23.5T40-280v-400q0-33 23.5-56.5T120-760h400q33 0 56.5 23.5T600-680v400q0 33-23.5 56.5T520-200H120Zm0-80h400v-400H120v400Zm560 80v-560h80v560h-80Zm160 0v-560h80v560h-80Zm-720-80v-400 400Z"/></svg>
@@ -65,7 +70,9 @@
         <ul class="header">
             <li class="appname" ><a href="../Home/Index">SurveyApp</a></li>
             <li class="hideOnMobile"><a href="../About/Index">About</a></li>
-            <li class="hideOnMobile"><a href="../Contact/Index">Contact</a></li>
+            <li class="hideOnMobile"><a href="#">Contact</a></li>
+            <li class="hideOnMobile"><a href="../Dashboard/Surveylist">Survey</a></li>
+            <li class="hideOnMobile"><a href="../Dashboard/Index">Dashboard</a></li>
 
             <li class="menu-btn" onclick=showSidebar()>
                 <a href="#">
@@ -75,111 +82,100 @@
             
         </ul> 
         <ul class="logging-btns hideOnMobile">
-            <li class=" hideOnLogin"><a href="../Login/Index">Login</a></li>
+            <li class=" hideOnLogin"><a href="../Login/Index">Login</a></li>          
         </ul>
     </nav>
 
-        <div class="title">
-            <div class="container">
-            <h1>Contact Us</h1>
-            <p>If you have any question regarding logging in, registering, rewards and other subjects, 
-                pleases check our Frequently Asked Questions (FAQ) section for an answer.</p>
+    <div class="dashboard">
+        <div class="panel hideOnMobile">
+            <p class="item-1">TALKPOLL</p>
+            <ul>
+                <li tabindex="0">
+                    <a href="../Report/Index">
+                        <svg class="icons" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M120-200q-33 0-56.5-23.5T40-280v-400q0-33 23.5-56.5T120-760h400q33 0 56.5 23.5T600-680v400q0 33-23.5 56.5T520-200H120Zm0-80h400v-400H120v400Zm560 80v-560h80v560h-80Zm160 0v-560h80v560h-80Zm-720-80v-400 400Z"/></svg>
+                        General Stats
+                    </a>
+                </li>
+                <li tabindex="0">
+                    <a href="../Report/Surveys">
+                        <svg class="icons" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M160-120q-33 0-56.5-23.5T80-200v-560q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v560q0 33-23.5 56.5T800-120H160Zm0-80h640v-560H160v560Zm40-80h200v-80H200v80Zm382-80 198-198-57-57-141 142-57-57-56 57 113 113Zm-382-80h200v-80H200v80Zm0-160h200v-80H200v80Zm-40 400v-560 560Z"/></svg>
+                        Surveys
+                    </a>
+                </li>
+                <li tabindex="0">
+                    <a href="../Report/Responses">
+                        <svg class="icons" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-80q-139-35-229.5-159.5T160-516v-244l320-120 320 120v244q0 152-90.5 276.5T480-80Zm0-84q97-30 162-118.5T718-480H480v-315l-240 90v207q0 7 2 18h238v316Z"/></svg>
+                        Responses
+                    </a>
+                </li>
+                <li tabindex="0">
+                    <a href="../Report/Users">
+                        <svg class="icons" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z"/></svg>
+                        Users
+                    </a>
+                </li>
+            </ul>
+            <div class="contact-us">
+                <h6>Have any problem with how to manage your dashboard?</h6>
+                <div>Contact Us</div>
             </div>
         </div>
-          
-            <div class="abt">
-                
-          <h1>Membership & Registration</h1>
-          <div>
-              <p><b>What does it mean to become a member?</b></p>
-              <p>Becoming a member allows you to participate in surveys. You'll receive regular invitations to complete surveys based on your profile.</p>
-          </div><br>
-          <div>
-              <p><b>How do I join?</b></p>
-              <p>Click "Join Now" and complete the registration form. Verify your email to finalize your registration.</p>
-          </div><br>
-          <div>
-              <p><b>Is registration free?</b></p>
-              <p>Yes, registration is completely free. </p>
-          </div><br>
-          <div>
-              <p><b>Can I sign up using my social media accounts?</b></p>
-              <p>Yes, you can register using your Facebook or Google account.</p>
-          </div><br>
-          <div>
-              <p><b>How can I edit my personal information?</b></p>
-              <p>Log in, go to "General", and update your information.</p>
-          </div><br>
-          <div>
-              <p><b>How do I delete my account?</b></p>
-              <p>Log in, go to security settings, and choose "Delete Account." Alternatively, you can email us for assistance.</p>
-          </div><br>
-          <div>
-              <p><b>I didn’t receive a verification email. What should I do?</b></p>
-              <p>Check your spam folder or log in to resend the verification email.</p>
-          </div><br>
-          <div>
-              <p><b>I forgot my password. How can I reset it?</b></p>
-              <p>Click "Forgot your Password" on the login page, enter your email, and follow the instructions to reset your password.</p>
-          </div><br><br>
-          
-          <h1>Participating in Surveys</h1>
-          <div>
-              <p><b>How do I participate in surveys?</b></p>
-              <p>Complete your profile and verify your email. You’ll receive survey invitations via email or see them in your Survey Center.</p>
-          </div><br>
-          <div>
-              <p><b>Why was the survey full when I just got the invitation?</b></p>
-              <p>Surveys can fill up quickly. If this happens, try again with another survey invitation.</p>
-          </div><br>
-          <div>
-              <p><b>How long does it take to complete a survey?</b></p>
-              <p>Survey duration varies but typically takes around 10 minutes.</p>
-          </div><br>
-          <div>
-              <p><b>Why don’t I qualify for some surveys?</b></p>
-              <p>Some surveys target specific groups. Completing your profile increases your chances of qualifying for more surveys.</p>
-          </div><br>
-          <div>
-              <p><b>Why haven’t I received any survey invitations?</b></p>
-              <p>Ensure our emails aren’t in your spam folder. Completing your profile surveys can increase your chances of receiving invitations.</p>
-          </div><br><br>
-          
-           
-          
-          <h1>Privacy & Data Protection</h1>
-          <div>
-              <p><b>How is my information used?</b></p>
-              <p>Your data is used to match you with surveys that fit your profile. All responses are anonymized and used solely for research purposes.</p>
-          </div><br>
-          <div>
-              <p><b>Can I control my data?</b></p>
-              <p>Yes, you can modify your data or opt-out at any time by logging into your account.</p>
-          </div><br>
-        </div>
-            
-        
-
-        <div class="footer">
-            <div class="inner-div">
-                <h2>Be Heard</h2>
-                <p style="margin-top: 50px;">"SurveyApp is Ghana's premier survey platform, empowering you to shape products and services by sharing your opinions.
-                    Our inclusive platform supports local Ghanaian languages and features a read-aloud option, 
-                    ensuring accessibility for all. Join our diverse community and make a real-time impact. Your
-                     voice matters—join SurveyApp today and help shape the future of Ghana!"</p>
-                <div class="bottom-div">
-                    <h3>SurveyApp</h3>
-                    <p>© 2024 SurveyApp. All Rights Reserved.</p>
+        <div class="details">
+            <div class="welcome">
+                <div class="wlc">
+                    <h1>SURVEYS</h1>
                 </div>
+                <a href="#">
+                    <svg class="notification" xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#e8eaed"><path d="M160-200v-80h80v-280q0-83 50-147.5T420-792v-28q0-25 17.5-42.5T480-880q25 0 42.5 17.5T540-820v28q80 20 130 84.5T720-560v280h80v80H160Zm320-300Zm0 420q-33 0-56.5-23.5T400-160h160q0 33-23.5 56.5T480-80ZM320-280h320v-280q0-66-47-113t-113-47q-66 0-113 47t-47 113v280Z"/></svg>
+                </a>
+         </div>
+         <div class="info">
+            <div class="container">
+              <div class="svl" id="surveyList">
+                <table>
+                    
+                    </div>
+                    <tr>
+                        <th>ID</th>
+                        <th>Title</th>
+                        <th>Creator Name</th>
+                        <th>Status</th>
+                        <th>Responses</th>
+                        <th>Actions</th>
+                       
+            
+                    </tr>
+            
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.surveyId</td>
+                            <td>@item.title</td>
+                            <td>@item.creatorName</td>
+                            <td>@item.status</td>
+                            <td>@item.responses</td>
+                            
+                            <td>
+                                <div style="text-align:center;">
+                                    <button id="delete"> <a href="/Report/DeleteSurvey?surveyId=@(item.surveyId)" id="del">Delete<i class="fas fa-trash"></i></a></button>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                    
+                </table>
+              </div>
             </div>
+
+         </div>
         </div>
 
+    </div>
 
     <script>
         function showSidebar() {
     const sidebar = document.querySelector('.sidebar');
     sidebar.style.display = 'flex';
-
     document.addEventListener('click', closeSidebarOnClickOutside);
 
     const button = document.querySelector('.menu-btn');
@@ -221,7 +217,6 @@ function stopPropagation(event) {
                document.removeEventListener('click', closeSubmenuOnClickOutside);
             }
         }
-
     </script>
 </body>
 </html>

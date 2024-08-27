@@ -41,6 +41,10 @@
       "PackagePath": "staticwebassets\\css\\surveylist.css"
     },
     {
+      "Id": "D:\\surveyapp\\wwwroot\\css\\tables.css",
+      "PackagePath": "staticwebassets\\css\\tables.css"
+    },
+    {
       "Id": "D:\\surveyapp\\wwwroot\\css\\template.css",
       "PackagePath": "staticwebassets\\css\\template.css"
     },

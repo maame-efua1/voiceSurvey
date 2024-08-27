@@ -19,11 +19,9 @@ public class TTSController : ControllerBase
         _httpClient.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", "d558be8089ad4bd3a603d4c88620d4c3");
         var uri = "https://translation-api.ghananlp.org/tts/v1/tts";
 
-        // Construct the request body
         var requestBody = new
         {
             text = data.Text,
-            language = "tw" // Assuming the language is always "tw"
         };
 
        var jsonRequestBody = JsonConvert.SerializeObject(requestBody); 

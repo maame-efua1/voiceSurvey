@@ -16,17 +16,12 @@ public class RegisterController : Controller
 
     string connectionString = "Server=LAPTOP-LIL017KH\\SQLEXPRESS;Database=TALKPOLL;Trusted_Connection=True;MultipleActiveResultSets=True;TrustServerCertificate=True";
     
-     // Create an instance of PasswordHasher
         var passwordHasher = new PasswordHasher<Register>();
 
-        // Hash the password
-        
         if (!string.IsNullOrEmpty(User.password))
         {
-            // Hash the password using the injected PasswordHasher
             string hashedPassword = passwordHasher.HashPassword(User, User.password);
 
-            // Extract the last 9 digits of the phone number
         string lastNineDigits = User.phonenumber.Length > 9
             ? User.phonenumber.Substring(User.phonenumber.Length - 9)
             : User.phonenumber;
@@ -37,11 +32,10 @@ public class RegisterController : Controller
 
             SqlCommand command = new SqlCommand(query, connection);
 
-            // Replace parameters with actual values from the User object
             command.Parameters.AddWithValue("@firstname", User.firstname);
             command.Parameters.AddWithValue("@lastname", User.lastname);
             command.Parameters.AddWithValue("@email", User.email);
-            command.Parameters.AddWithValue("@password", hashedPassword);  // Use hashed password
+            command.Parameters.AddWithValue("@password", hashedPassword);
             command.Parameters.AddWithValue("@gender", User.gender);
             command.Parameters.AddWithValue("@date_of_birth", User.date_of_birth);
             command.Parameters.AddWithValue("@phonenumber", lastNineDigits);
@@ -57,7 +51,6 @@ public class RegisterController : Controller
             catch (SqlException ex)
             {
                 Console.WriteLine("Error: " + ex.Message);
-                // Handle the exception or provide feedback to the user
             }
             finally
             {
