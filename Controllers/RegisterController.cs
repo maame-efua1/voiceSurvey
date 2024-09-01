@@ -14,7 +14,7 @@ public class RegisterController : Controller
     public IActionResult Index(Register User)
     {
 
-    string connectionString = "Server=LAPTOP-LIL017KH\\SQLEXPRESS;Database=TALKPOLL;Trusted_Connection=True;MultipleActiveResultSets=True;TrustServerCertificate=True";
+    string connectionString = "Server=ANTOINETTE;Database=SurveyApp;Trusted_Connection=True;MultipleActiveResultSets=True;TrustServerCertificate=True";
     
         var passwordHasher = new PasswordHasher<Register>();
 

@@ -14,15 +14,13 @@
     <nav>
         <ul class="sidebar">
             <li onclick=hideSidebar()><a href="#"><svg class="menu" xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 -960 960 960" width="26"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
-            <li><a href="../About/Index">About</a></li>
+            <li><a href="About/Index">About</a></li>
             <li><a href="#">Contact</a></li>
-            <li><a href="../Dashboard/Surveylist">Survey</a></li>
+            <li><a href=".../Login/Index">Survey</a></li>
             <li><a href="../Login/Index">Login</a></li>
         </ul>
         <ul class="header">
-            <li class="appname" ><a href="../Home/Index">SurveyApp</a></li>
-            <li class="hideOnMobile"><a href="../About/Index">About</a></li>
-            <li class="hideOnMobile"><a href="#">Contact</a></li>
+            <li class="appname" ><a href="../Home/Index">TALKPOLL</a></li>
             <li class="hideOnMobile hideOnLogin "><a href="../Dashboard/Surveylist">Survey</a></li>
 
             <li class="menu-btn" onclick=showSidebar()>
@@ -33,8 +31,7 @@
             
         </ul> 
         <ul class="logging-btns hideOnMobile">
-            <li class=" hideOnLogin "><a href="../Login/Index">Sign Up</a></li>
-            <li class=" hideOnLogin"><a href="../Login/Index">Login</a></li>
+            <li class=" hideOnLogin"><a href="Login/Index">Log Out</a></li>
             <li class="profile hideOnLogOut" onclick=showSubmenu()>
                 <a  href="#">
                     <svg class="profile-icon" xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#e8eaed"><path d="M234-276q51-39 114-61.5T480-360q69 0 132 22.5T726-276q35-41 54.5-93T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 59 19.5 111t54.5 93Zm246-164q-59 0-99.5-40.5T340-580q0-59 40.5-99.5T480-720q59 0 99.5 40.5T620-580q0 59-40.5 99.5T480-440Zm0 360q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q53 0 100-15.5t86-44.5q-39-29-86-44.5T480-280q-53 0-100 15.5T294-220q39 29 86 44.5T480-160Zm0-360q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17Zm0-60Zm0 360Z"/></svg>
@@ -68,13 +65,13 @@
                     </a>
                 </li>
                 <li tabindex="0">
-                    <a href="../Dashboard/Security">
+                    <a href="#">
                         <svg class="icons" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-80q-139-35-229.5-159.5T160-516v-244l320-120 320 120v244q0 152-90.5 276.5T480-80Zm0-84q97-30 162-118.5T718-480H480v-315l-240 90v207q0 7 2 18h238v316Z"/></svg>
                         Security
                     </a>
                 </li>
                 <li tabindex="0">
-                    <a href="../Login/Index">
+                    <a href="#">
                         <svg class="icons" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z"/></svg>
                         Logout
                     </a>
@@ -86,64 +83,93 @@
             </div>
         </div>
 
-<div class="details">
-    <div class="welcome">
-        <div class="wlc">
-            <p>Welcome Back,</p>
-            <h1>@Model.firstname @Model.lastname</h1>
+        <div class="details">
+            <div class="welcome">
+                <div class="wlc">
+                    <p>Welcome Back,</p>
+                    <h1 id="name">@Model.firstname @Model.lastname</h1>
+                </div>
+                <a href="#">
+                    <svg class="notification" xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#e8eaed">
+                        <path d="M160-200v-80h80v-280q0-83 50-147.5T420-792v-28q0-25 17.5-42.5T480-880q25 0 42.5 17.5T540-820v28q80 20 130 84.5T720-560v280h80v80H160Zm320-300Zm0 420q-33 0-56.5-23.5T400-160h160q0 33-23.5 56.5T480-80ZM320-280h320v-280q0-66-47-113t-113-47q-66 0-113 47t-47 113v280Z"/>
+                    </svg>
+                </a>
+            </div>
+            <div class="info">
+                <div class="container">
+                    <div class="detail">First name</div>
+                    <div class="response" id="firstname-text">@Model.firstname</div>
+                    <input type="text" id="firstname-input" value="@Model.firstname" class="edit-input" style="display:none; width: 100%; height: 100%; border-radius: 5px; outline: none; border: 1.5px solid #0090d4; margin-bottom: 10px; padding-left: 5px;" />
+                    <div class="detail">Last name</div>
+                    <div class="response" id="lastname-text">@Model.lastname</div>
+                    <input type="text" id="lastname-input" value="@Model.lastname" class="edit-input" style="display:none; width: 100%; height: 100%; border-radius: 5px; outline: none; border: 1.5px solid #0090d4; margin-bottom: 10px; padding-left: 5px;" />
+                    <div class="detail">Date of birth</div>
+                    <div class="response" id="dob-text">@Model.date_of_birth.ToShortDateString()</div>
+                    <input type="date" id="dob-input" value="@Model.date_of_birth.ToString("yyyy-MM-dd")" class="edit-input" style="display:none; width: 100%; height: 100%; border-radius: 5px; outline: none; border: 1.5px solid #0090d4; margin-bottom: 10px; padding-left: 5px;" />
+                    <div class="detail">Gender</div>
+                    <div class="response" id="gender-text">@Model.gender</div>
+                    <input type="text" id="gender-input" value="@Model.gender" class="edit-input" style="display:none; width: 100%; height: 100%; border-radius: 5px; outline: none; border: 1.5px solid #0090d4; margin-bottom: 10px; padding-left: 5px;" /> 
+                    <div class="detail">Country</div>
+                    <div class="response">Ghana</div>
+                    <input type="text" id="country-input" value="Ghana" class="edit-input" style="display:none;width: 100%; height: 100%; border-radius: 5px; outline: none; border: 1.5px solid #0090d4; margin-bottom: 10px; padding-left: 5px;" /> 
+                    <div class="detail">Language</div>
+                    <div class="response">English</div>
+                    <input type="text" id="language-input" value="English" class="edit-input" style="display:none;width: 100%; height: 100%; border-radius: 5px; outline: none; border: 1.5px solid #0090d4; margin-bottom: 10px; padding-left: 5px;" />
+                    <div class="detail">Mobile number(with country code)</div>
+                    <div class="response" id="phonenumber-text">+233 @Model.phonenumber</div>
+                    <input type="text" id="phonenumber-input" value="@Model.phonenumber" class="edit-input" style="display:none; width: 100%; height: 100%; border-radius: 5px; outline: none; border: 1.5px solid #0090d4; margin-bottom: 10px; padding-left: 5px;" />
+                </div>
+        
+                <div class="edit" onclick="toggleEdit()">Edit</div>
+                <div class="save" onclick="saveChanges()" style="display:none;">Save</div>
+             </div>
         </div>
-        <a href="#">
-            <svg class="notification" xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#e8eaed">
-                <path d="M160-200v-80h80v-280q0-83 50-147.5T420-792v-28q0-25 17.5-42.5T480-880q25 0 42.5 17.5T540-820v28q80 20 130 84.5T720-560v280h80v80H160Zm320-300Zm0 420q-33 0-56.5-23.5T400-160h160q0 33-23.5 56.5T480-80ZM320-280h320v-280q0-66-47-113t-113-47q-66 0-113 47t-47 113v280Z"/>
-            </svg>
-        </a>
-    </div>
-    <div class="info">
-        <div class="container">
-            <div class="detail">First name</div>
-            <div class="response">@Model.firstname</div>
-            <div class="detail">Last name</div>
-            <div class="response">@Model.lastname</div>
-            <div class="detail">Date of birth</div>
-            <div class="response">@Model.date_of_birth.ToShortDateString()</div>
-            <div class="detail">Gender</div>
-            <div class="response">@Model.gender</div>
-            <div class="detail">Country</div>
-            <div class="response">Ghana</div>
-            <div class="detail">Language</div>
-            <div class="response">English</div>
-            <div class="detail">Mobile number(with country code)</div>
-            <div class="response">+233 @Model.phonenumber</div>
-        </div>
-
-        <div class="edit">Edit</div>
-     </div>
-</div>
-    </div>
-
-    
-
-<script>
-    document.getElementById('logout-link').addEventListener('click', function(event) {
-        event.preventDefault(); // Prevent the default link behavior
-
-        // Send a POST request to the logout action
-        fetch('/Login/Logout', { 
-            method: 'POST', 
-            headers: {
-                'Content-Type': 'application/json',
-                'RequestVerificationToken': document.querySelector('input[name="__RequestVerificationToken"]').value // Anti-forgery token for security
+        
+        <script>
+            function toggleEdit() {
+                // Hide the static text fields
+                document.querySelectorAll('.response').forEach(function (element) {
+                    element.style.display = 'none';
+                });
+        
+                // Show the input fields
+                document.querySelectorAll('.edit-input').forEach(function (element) {
+                    element.style.display = 'block';
+                });
+        
+                // Show the Save button and hide the Edit button
+                document.querySelector('.edit').style.display = 'none';
+                document.querySelector('.save').style.display = 'block';
             }
-        })
-        .then(() => {
-            // Redirect to the login page
-            window.location.href = '/Login/Index';
-        })
-        .catch(error => {
-            console.error('Logout failed:', error);
-        });
-    });
-</script>
+        
+            function saveChanges() {
+                // Hide the input fields
+                document.querySelectorAll('.edit-input').forEach(function (element) {
+                    element.style.display = 'none';
+                });
+        
+                // Show the static text fields
+                document.querySelectorAll('.response').forEach(function (element) {
+                    element.style.display = 'block';
+                });
+        
+                // Update the static text fields with the input values
+                document.getElementById('firstname-text').innerText = document.getElementById('firstname-input').value;
+                document.getElementById('lastname-text').innerText = document.getElementById('lastname-input').value;
+                document.getElementById('dob-text').innerText = new Date(document.getElementById('dob-input').value).toLocaleDateString();
+                document.getElementById('gender-text').innerText = document.getElementById('gender-input').value;
+                document.getElementById('phonenumber-text').innerText = '+233 ' + document.getElementById('phonenumber-input').value;
+        
+                // Show the Edit button and hide the Save button
+                document.querySelector('.edit').style.display = 'block';
+                document.querySelector('.save').style.display = 'none';
+        
+                // TODO: Add code to save the updated values to the server 
+            }
+        </script>
+        
 
+
+    </div>
 </body>
 </html>

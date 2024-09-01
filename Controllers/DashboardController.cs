@@ -31,7 +31,7 @@ public class DashboardController : Controller
 
     public IActionResult Surveylist()
     {
-        string connectionString = "Server=LAPTOP-LIL017KH\\SQLEXPRESS;Database=TALKPOLL;Trusted_Connection=True;MultipleActiveResultSets=True;TrustServerCertificate=True";
+        string connectionString = "Server=ANTOINETTE;Database=SurveyApp;Trusted_Connection=True;MultipleActiveResultSets=True;TrustServerCertificate=True";
         
             SqlConnection connection = new SqlConnection(connectionString);
 
@@ -81,7 +81,7 @@ public class DashboardController : Controller
         ViewBag.Gender = gender;
         ViewBag.DOB = dob;
 
-        string connectionString = "Server=LAPTOP-LIL017KH\\SQLEXPRESS;Database=TALKPOLL;Trusted_Connection=True;MultipleActiveResultSets=True;TrustServerCertificate=True";
+        string connectionString = "Server=ANTOINETTE;Database=SurveyApp;Trusted_Connection=True;MultipleActiveResultSets=True;TrustServerCertificate=True";
       
         string lastNineDigits = phonenumber.Length > 9
         ? phonenumber.Substring(phonenumber.Length - 9)

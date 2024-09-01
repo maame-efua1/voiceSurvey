@@ -15,19 +15,22 @@ public class TranscriptionController : ControllerBase
         _clientFactory = clientFactory;
     }
 
+    
     [HttpPost("transcribe")]
-    public async Task<IActionResult> Transcribe()
+    public async Task<IActionResult> Transcribe([FromForm] IFormFile audio)
     {
+        string language = HttpContext.Session.GetString("selectedLanguage");
         var client = _clientFactory.CreateClient();
         client.DefaultRequestHeaders.CacheControl = new CacheControlHeaderValue { NoCache = true };
-        client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", "e6e04ddf17df4aa6a3120f7e5f20c1be");
+        client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", "d558be8089ad4bd3a603d4c88620d4c3");
 
-        var uri = "https://translation-api.ghananlp.org/asr/v1/transcribe?language=tw";
+        var uri = $"https://translation-api.ghananlp.org/asr/v1/transcribe?language={language}";
 
         using (var content = new MultipartFormDataContent())
         {
             var audioStream = new MemoryStream();
             await Request.Body.CopyToAsync(audioStream);
+            // await audio.CopyToAsync(audioStream);
             audioStream.Seek(0, SeekOrigin.Begin);
 
             content.Add(new StreamContent(audioStream), "audio", "audio.mpeg");

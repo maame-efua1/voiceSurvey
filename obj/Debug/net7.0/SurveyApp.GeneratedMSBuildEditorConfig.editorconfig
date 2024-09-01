@@ -9,71 +9,69 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = SurveyApp
 build_property.RootNamespace = SurveyApp
-build_property.ProjectDir = D:\surveyapp\
-build_property.EnableComHosting = 
-build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.ProjectDir = C:\Users\Nana\Desktop\surveyapp\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\surveyapp
+build_property.MSBuildProjectDirectory = C:\Users\Nana\Desktop\surveyapp
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/surveyapp/Views/About/Index.cshtml]
+[C:/Users/Nana/Desktop/surveyapp/Views/About/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJvdXRcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/surveyapp/Views/Contact/Index.cshtml]
+[C:/Users/Nana/Desktop/surveyapp/Views/Contact/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/surveyapp/Views/Dashboard/Edit.cshtml]
+[C:/Users/Nana/Desktop/surveyapp/Views/Dashboard/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/surveyapp/Views/Dashboard/Index.cshtml]
+[C:/Users/Nana/Desktop/surveyapp/Views/Dashboard/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/surveyapp/Views/Dashboard/Security.cshtml]
+[C:/Users/Nana/Desktop/surveyapp/Views/Dashboard/Security.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXFNlY3VyaXR5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/surveyapp/Views/Dashboard/Surveylist.cshtml]
+[C:/Users/Nana/Desktop/surveyapp/Views/Dashboard/Surveylist.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXFN1cnZleWxpc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/surveyapp/Views/Home/Index.cshtml]
+[C:/Users/Nana/Desktop/surveyapp/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/surveyapp/Views/Login/Index.cshtml]
+[C:/Users/Nana/Desktop/surveyapp/Views/Login/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/surveyapp/Views/Register/Index.cshtml]
+[C:/Users/Nana/Desktop/surveyapp/Views/Register/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVnaXN0ZXJcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/surveyapp/Views/Report/Index.cshtml]
+[C:/Users/Nana/Desktop/surveyapp/Views/Report/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/surveyapp/Views/Report/Surveys.cshtml]
+[C:/Users/Nana/Desktop/surveyapp/Views/Report/Surveys.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0XFN1cnZleXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/surveyapp/Views/Report/Users.cshtml]
+[C:/Users/Nana/Desktop/surveyapp/Views/Report/Users.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0XFVzZXJzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/surveyapp/Views/Survey/Details.cshtml]
+[C:/Users/Nana/Desktop/surveyapp/Views/Survey/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3VydmV5XERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/surveyapp/Views/Survey/Index.cshtml]
+[C:/Users/Nana/Desktop/surveyapp/Views/Survey/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3VydmV5XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/surveyapp/Views/Survey/template.cshtml]
+[C:/Users/Nana/Desktop/surveyapp/Views/Survey/template.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3VydmV5XHRlbXBsYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

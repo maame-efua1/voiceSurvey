@@ -18,7 +18,7 @@ public class LoginController : Controller
 {
     if (!string.IsNullOrEmpty(user.email) && !string.IsNullOrEmpty(user.password))
     {
-        string connectionString = "Server=LAPTOP-LIL017KH\\SQLEXPRESS;Database=TALKPOLL;Trusted_Connection=True;MultipleActiveResultSets=True;TrustServerCertificate=True";
+        string connectionString = "Server=ANTOINETTE;Database=SurveyApp;Trusted_Connection=True;MultipleActiveResultSets=True;TrustServerCertificate=True";
 
         using (SqlConnection connection = new SqlConnection(connectionString))
         {

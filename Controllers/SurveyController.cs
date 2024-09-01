@@ -20,13 +20,16 @@ public class SurveyController : Controller
     string title = HttpContext.Session.GetString("Title");
     string survey = HttpContext.Session.GetString("Survey");
     string ID = HttpContext.Session.GetString("UserID");
+    HttpContext.Session.SetString("selectedLanguage", selectedLanguage);
+
+    HttpContext.Session.SetString("SID", id.ToString());
 
     ViewBag.SId = id;
     ViewBag.Id = ID;
     ViewBag.Title = title;
     ViewBag.Survey = survey;
 
-    string connectionString = "Server=LAPTOP-LIL017KH\\SQLEXPRESS;Database=TALKPOLL;Trusted_Connection=True;MultipleActiveResultSets=True;TrustServerCertificate=True";
+    string connectionString = "Server=ANTOINETTE;Database=SurveyApp;Trusted_Connection=True;MultipleActiveResultSets=True;TrustServerCertificate=True";
 
     using (SqlConnection connection = new SqlConnection(connectionString))
     {
@@ -133,7 +136,7 @@ public class SurveyController : Controller
 
 private async Task<string> GetTranslationAsync(string resourceType, int surveyId, int? questionId, int? optionId, string languageCode)
 {
-    string connectionString = "Server=LAPTOP-LIL017KH\\SQLEXPRESS;Database=TALKPOLL;Trusted_Connection=True;MultipleActiveResultSets=True;TrustServerCertificate=True";
+    string connectionString = "Server=ANTOINETTE;Database=SurveyApp;Trusted_Connection=True;MultipleActiveResultSets=True;TrustServerCertificate=True";
 
     using (SqlConnection connection = new SqlConnection(connectionString))
     {
@@ -162,7 +165,7 @@ private async Task<string> GetTranslationAsync(string resourceType, int surveyId
 
     private async Task InsertTranslationAsync(string resourceType, int resourceId, string languageCode, string translatedText, int id)
     {
-    string connectionString = "Server=LAPTOP-LIL017KH\\SQLEXPRESS;Database=TALKPOLL;Trusted_Connection=True;MultipleActiveResultSets=True;TrustServerCertificate=True";
+    string connectionString = "Server=ANTOINETTE;Database=SurveyApp;Trusted_Connection=True;MultipleActiveResultSets=True;TrustServerCertificate=True";
 
     using (SqlConnection connection = new SqlConnection(connectionString))
     {
@@ -202,7 +205,7 @@ private async Task<string> GetTranslationAsync(string resourceType, int surveyId
 
     public IActionResult Details(int id)
 {
-    string connectionString = "Server=LAPTOP-LIL017KH\\SQLEXPRESS;Database=TALKPOLL;Trusted_Connection=True;MultipleActiveResultSets=True;TrustServerCertificate=True";
+    string connectionString = "Server=ANTOINETTE;Database=SurveyApp;Trusted_Connection=True;MultipleActiveResultSets=True;TrustServerCertificate=True";
 
     using (SqlConnection connection = new SqlConnection(connectionString))
     {

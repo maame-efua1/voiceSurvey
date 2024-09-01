@@ -1,10 +1,10 @@
 namespace TALKPOLL.Models
 {
-    public class SurveyResponse
+public class SurveyResponse
 {
-    public int SurveyId { get; set; }
     public int QuestionId { get; set; }
-    public string Text { get; set; }
-    public int? SelectedOptionId { get; set; }
+    public string? Answer_Text { get; set; }
+    public string? Answer_Option { get; set; }
+    public string? Answer_Options { get; set; }
 }
 }

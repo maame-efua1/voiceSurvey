@@ -11,7 +11,7 @@ public class ReportController : Controller
 
     public IActionResult Users(Register user)
     {
-        string connectionString = "Server=LAPTOP-LIL017KH\\SQLEXPRESS;Database=TALKPOLL;Trusted_Connection=True;MultipleActiveResultSets=True;TrustServerCertificate=True";
+        string connectionString = "Server=ANTOINETTE;Database=SurveyApp;Trusted_Connection=True;MultipleActiveResultSets=True;TrustServerCertificate=True";
         
             SqlConnection connection = new SqlConnection(connectionString);
 
@@ -46,7 +46,7 @@ public class ReportController : Controller
 
     public IActionResult DeleteUser(string userId)
     {
-        string connectionString = "Server=LAPTOP-LIL017KH\\SQLEXPRESS;Database=TALKPOLL;Trusted_Connection=True;MultipleActiveResultSets=True;TrustServerCertificate=True";
+        string connectionString = "Server=ANTOINETTE;Database=SurveyApp;Trusted_Connection=True;MultipleActiveResultSets=True;TrustServerCertificate=True";
 
             SqlConnection connection = new SqlConnection(connectionString);
 
@@ -62,13 +62,16 @@ public class ReportController : Controller
 
     public IActionResult Surveys()
     {
-        string connectionString = "Server=LAPTOP-LIL017KH\\SQLEXPRESS;Database=TALKPOLL;Trusted_Connection=True;MultipleActiveResultSets=True;TrustServerCertificate=True";
+        string connectionString = "Server=ANTOINETTE;Database=SurveyApp;Trusted_Connection=True;MultipleActiveResultSets=True;TrustServerCertificate=True";
         
             SqlConnection connection = new SqlConnection(connectionString);
 
-            string query = "SELECT s.surveyId, s.title, CONCAT(u.firstname, ' ', u.lastname) AS creatorName, s.status,(SELECT COUNT(*) "+
-                           "FROM Response r WHERE r.surveyId = s.surveyId) AS responses " +
-                       "FROM Survey s JOIN [User] u ON s.creatorId = u.userid ";
+            string query = "SELECT s.surveyId, s.title, CONCAT(u.firstname, ' ', u.lastname) AS creatorName, " + 
+                           "s.status, COALESCE(u_response.uniqueUsers, 0) AS responses "+
+                            "FROM Survey s " +
+                            "JOIN [User] u ON s.creatorId = u.userid "+
+                            "LEFT JOIN (SELECT r.surveyId, COUNT(DISTINCT r.userid) AS uniqueUsers "+
+                            "FROM Response r GROUP BY r.surveyId) u_response ON s.surveyId = u_response.surveyId";
 
             SqlCommand command = new SqlCommand(query, connection);
 
@@ -98,7 +101,7 @@ public class ReportController : Controller
 
     public IActionResult DeleteSurvey(string surveyId)
 {
-    string connectionString = "Server=LAPTOP-LIL017KH\\SQLEXPRESS;Database=TALKPOLL;Trusted_Connection=True;MultipleActiveResultSets=True;TrustServerCertificate=True";
+    string connectionString = "Server=ANTOINETTE;Database=SurveyApp;Trusted_Connection=True;MultipleActiveResultSets=True;TrustServerCertificate=True";
 
     using (SqlConnection connection = new SqlConnection(connectionString))
     {
@@ -141,7 +144,7 @@ public class ReportController : Controller
 
     public IActionResult Responses(Register user)
     {
-        string connectionString = "Server=LAPTOP-LIL017KH\\SQLEXPRESS;Database=TALKPOLL;Trusted_Connection=True;MultipleActiveResultSets=True;TrustServerCertificate=True";
+        string connectionString = "Server=ANTOINETTE;Database=SurveyApp;Trusted_Connection=True;MultipleActiveResultSets=True;TrustServerCertificate=True";
         
             SqlConnection connection = new SqlConnection(connectionString);
 
@@ -176,7 +179,7 @@ public class ReportController : Controller
 
     public IActionResult DeleteResponse(string userId)
     {
-        string connectionString = "Server=LAPTOP-LIL017KH\\SQLEXPRESS;Database=TALKPOLL;Trusted_Connection=True;MultipleActiveResultSets=True;TrustServerCertificate=True";
+        string connectionString = "Server=ANTOINETTE;Database=SurveyApp;Trusted_Connection=True;MultipleActiveResultSets=True;TrustServerCertificate=True";
 
             SqlConnection connection = new SqlConnection(connectionString);
 

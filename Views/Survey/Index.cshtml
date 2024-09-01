@@ -8,7 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="~/css/survey.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css">
     <title>Survey</title>
+    <link rel="stylesheet" href="~/css/recording.css"/>
 </head>
 <body>
     <nav>
@@ -85,9 +87,9 @@
         <div id="questionnaire-form">
              Questions will be dynamically inserted here 
         </div>
-        <div class="counter">
+        <!--<div class="counter">
             <span id="page-counter">Page 1/3</span>
-        </div>
+        </div> -->
         <div class="navigation">
             <button id="prev" onclick="prevPage()">Prev</button>
             <button id="next" onclick="nextPage()">Next</button>
@@ -160,6 +162,7 @@ function updatePage() {
     questions.forEach((questionObj, index) => {
         const questionContainer = document.createElement('div');
         questionContainer.className = 'question-container';
+        questionContainer.setAttribute('question-id', questionObj.questionId)
 
         const questionElement = document.createElement('p');
         questionElement.className = 'question';
@@ -168,13 +171,35 @@ function updatePage() {
 
         if (questionObj.type === 'text') {
             const textarea = document.createElement('textarea');
-            textarea.name = `question-${questionObj.questionId}`; // Use question ID for the name
+            textarea.name = `question-${questionObj.questionId}`;// Use question ID for the name
             questionContainer.appendChild(textarea);
 
+            // const recordButton = document.createElement('button');
+            // recordButton.textContent = 'Record Answer';
+            // recordButton.onclick = () => startRecording(questionObj.questionId); // Pass question ID
+            // questionContainer.appendChild(recordButton);
+
+            const record_div = document.createElement('div')
+            record_div.classList.add('record_div')
+
             const recordButton = document.createElement('button');
-            recordButton.textContent = 'Record Answer';
-            recordButton.onclick = () => startRecording(questionObj.questionId); // Pass question ID
-            questionContainer.appendChild(recordButton);
+            recordButton.classList.add('mic-toggle')
+            recordButton.setAttribute('id', 'mic')
+            recordButton.onclick = ToggleMic; // Pass question ID
+            
+            const spanEl = document.createElement('i');
+            spanEl.classList.add('ri-mic-line');
+            recordButton.appendChild(spanEl)
+            
+            const audio_element = document.createElement('audio')
+            audio_element.classList.add('playback')
+            audio_element.setAttribute('controls', true)
+
+            record_div.appendChild(recordButton)
+            record_div.appendChild(audio_element)
+
+
+            questionContainer.appendChild(record_div);
 
         } else if (questionObj.type === 'radio') {
             questionObj.options.forEach(option => {
@@ -182,7 +207,7 @@ function updatePage() {
                 const radio = document.createElement('input');
                 radio.type = 'radio';
                 radio.name = `question-${questionObj.questionId}`; // Use question ID for the name
-                radio.value = option.optionId; // Set value to option ID
+                radio.value = `${option.optionId}`; // Set value to option ID
                 label.appendChild(radio);
                 label.appendChild(document.createTextNode(option.text));
                 questionContainer.appendChild(label);
@@ -194,7 +219,7 @@ function updatePage() {
                 const checkbox = document.createElement('input');
                 checkbox.type = 'checkbox';
                 checkbox.name = `question-${questionObj.questionId}`; // Use question ID for the name
-                checkbox.value = option.optionId; // Set value to option ID
+                checkbox.value = `${option.optionId}`; // Set value to option ID
                 label.appendChild(checkbox);
                 label.appendChild(document.createTextNode(option.text));
                 questionContainer.appendChild(label);
@@ -220,39 +245,43 @@ updatePage();
     const formData = [];
 
     questions.forEach((questionObj, index) => {
-        const questionId = `question-${index}`;
+        const questionId = `${index}`;
         const questionType = questionObj.type;
-        let answer;
+        let answer_text;
+        let answer_option;
+        let answer_options;
 
         if (questionType === 'text') {
             // Collect the text input value
-            const textarea = document.querySelector(`textarea[name="${questionId}"]`);
-            answer = textarea ? textarea.value : '';
+            const textarea = document.querySelector(`textarea[name="question-${questionObj.questionId}"]`);
+            answer_text = textarea ? textarea.value : ``;
         } else if (questionType === 'radio') {
             // Collect the selected radio button value (option id)
-            const selectedOption = document.querySelector(`input[name="${questionId}"]:checked`);
-            answer = selectedOption ? selectedOption.value : '';
+            const selectedOption = document.querySelector(`input[name="question-${questionObj.questionId}"]:checked`);
+            answer_option = selectedOption ? selectedOption.value : `${questionObj.options.optionId}`;
         } else if (questionType === 'checkbox') {
             // Collect all selected checkbox values (option ids)
-            const selectedOptions = document.querySelectorAll(`input[name="${questionId}"]:checked`);
-            answer = Array.from(selectedOptions).map(option => option.value);
+            const selectedOptions = document.querySelectorAll(`input[name="question-${questionObj.questionId}"]:checked`);
+            answer_options = Array.from(selectedOptions).map(option => option.value);
+            answer_options = JSON.stringify(answer_options);
         }
 
         formData.push({
-            questionId: questionObj.id, // Assuming `questionObj` contains an `id` property
-            answer: Array.isArray(answer) ? answer : [answer] // Ensure answer is an array
+            questionId: questionObj.questionId, // Assuming `questionObj` contains an `questionId` property
+            answer_text: answer_text ,
+            answer_option: answer_option ,
+            //answer_options: answer_options// Ensure answer is an array
         });
     });
 
     console.log('Form Data:', formData);
 
-    // You can then submit this data via an AJAX request or form submission
     fetch('/api/response/submit', {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json' // Set the content type to JSON
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify(formData) 
     })
     .then(response => {
         if (response.ok) {
@@ -304,29 +333,76 @@ updatePage();
         });
     }
 
-    async function startRecording(questionIndex) {
-            const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-            const mediaRecorder = new MediaRecorder(stream);
-            const recordedChunks = [];
+    // ===========================================================
+            
+        // const mic_btn = document.querySelector('#mic')
+        const playback = document.querySelector('.playback')
 
-            mediaRecorder.ondataavailable = event => {
-                if (event.data.size > 0) {
-                    recordedChunks.push(event.data);
+        // mic_btn.addEventListener('click', ToggleMic)
+        let can_record = false;
+        let is_recording = false;
+        let recorder = null;
+        let chunks = [];
+        let currentQuestionId = 0;
+
+        (function SetupAudio(){
+            
+
+            if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia){
+                navigator.mediaDevices.getUserMedia({audio : true})
+                .then(SetupStream)
+                .catch(err=>console.log(err))
+            }
+        })()
+
+        function SetupStream(stream){
+            recorder = new MediaRecorder(stream);
+
+            recorder.ondataavailable = e=>{
+                chunks.push(e.data);
+            }
+
+            recorder.onstop = async(e)=>{
+                const blob = new Blob(chunks, { type: 'audio/mpeg' })
+                chunks = [];
+                const audioURL = window.URL.createObjectURL(blob)
+
+                let question_container = document.querySelector(`.question-container[question-id="${currentQuestionId}"]`)
+                question_container.querySelector('.playback').src = audioURL;
+
+                if(currentQuestionId != 0){
+                    await transcribeAudio(blob, currentQuestionId);
                 }
-            };
+            }
 
-            mediaRecorder.onstop = async () => {
-                const audioBlob = new Blob(recordedChunks, { type: 'audio/mpeg' });
-                await transcribeAudio(audioBlob, questionIndex);
-            };
-
-            mediaRecorder.start();
-            setTimeout(() => {
-                mediaRecorder.stop();
-            }, 5000); // Stop recording after 5 seconds
+            can_record = true;
         }
+    
+        function ToggleMic(ev){
+            let question_container = ev.target.closest('.question-container')
+
+            if(!can_record) return;
+
+            // is_recording = !is_recording;
+
+            currentQuestionId = question_container.getAttribute('question-id');
+            if(!is_recording){
+                recorder.start();
+                is_recording = true;
+                ev.target.classList.add('is-recording');
+            }else{
+                recorder.stop();
+                is_recording = false;
+                ev.target.classList.remove('is-recording')
+            }
+        }
+    // ===========================================================
+
+    
 
         async function transcribeAudio(audioBlob, questionIndex) {
+            console.log(questionIndex)
+            console.log(audioBlob)
             const formData = new FormData();
             formData.append('audio', audioBlob);
 
@@ -337,10 +413,11 @@ updatePage();
 
             if (response.ok) {
                 const result = await response.json();
-                document.getElementById(`question-${questionIndex}`).value = result.transcription;
+                document.getElementById(`question-${questionObj.questionId}`).value = result.transcription;
             } else {
                 console.error('Transcription failed:', response.statusText);
             }
+            currentQuestionId = 0;
         }
         </script> 
 </body>
