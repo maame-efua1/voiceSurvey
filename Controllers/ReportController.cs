@@ -15,7 +15,9 @@ public class ReportController : Controller
         
             SqlConnection connection = new SqlConnection(connectionString);
 
-            string query = "SELECT * FROM [User]";
+            string query = "SELECT  u.userid, u.firstname, u.lastname, u.email, u.gender, u.date_of_birth,"+
+                            " u.datecreated, u.phonenumber, ut.typeName AS usertype FROM [User] "+
+                            "u JOIN UserType ut ON u.userType = ut.typeId";
 
             SqlCommand command = new SqlCommand(query, connection);
 
@@ -34,7 +36,8 @@ public class ReportController : Controller
                 users.lastname = reader["lastname"].ToString();
                 users.email = reader["email"].ToString();
                 users.gender = reader["gender"].ToString();
-                users.phonenumber = reader["phonenumber"].ToString(); 
+                users.phonenumber = reader["phonenumber"].ToString();
+                users.usertype = reader["usertype"].ToString();
 
                 userlist.Add(users);
             }
@@ -192,4 +195,75 @@ public class ReportController : Controller
 
             return RedirectToAction("Users");
     }
+
+    public IActionResult CreateSurvey()
+    {
+        return View();
+    }
+
+    [HttpPost]
+    public IActionResult CreateSurvey(CreateSurvey model)
+{
+    // Connection string for your SQL Server
+    string connectionString = "Server=ANTOINETTE;Database=SurveyApp;Trusted_Connection=True;MultipleActiveResultSets=True;TrustServerCertificate=True";
+
+    using (SqlConnection connection = new SqlConnection(connectionString))
+    {
+        connection.Open();
+
+        // Insert the survey into the Survey table
+        string surveyQuery = "INSERT INTO Survey (title, description, creatorId, expiryDate, language) " +
+                             "OUTPUT INSERTED.surveyId " +
+                             "VALUES (@Title, @Description, @CreatorId, @ExpiryDate, @Language)";
+
+        SqlCommand surveyCommand = new SqlCommand(surveyQuery, connection);
+        surveyCommand.Parameters.AddWithValue("@Title", model.Title);
+        surveyCommand.Parameters.AddWithValue("@Description", model.Description);
+        surveyCommand.Parameters.AddWithValue("@CreatorId", "2"); // Method to get current user id
+        surveyCommand.Parameters.AddWithValue("@ExpiryDate", (object)model.ExpiryDate ?? DBNull.Value);
+        surveyCommand.Parameters.AddWithValue("@Language", model.Language);
+
+        // Execute the query and get the generated surveyId
+        int surveyId = (int)surveyCommand.ExecuteScalar();
+
+        // Loop through each question in the model and insert it into the Question table
+        foreach (var questionModel in model.Questions)
+        {
+            string questionQuery = "INSERT INTO Question (surveyId, text, type, position, isRequired) " +
+                                   "OUTPUT INSERTED.questionId " +
+                                   "VALUES (@SurveyId, @Text, @Type, @Position, @IsRequired)";
+
+            SqlCommand questionCommand = new SqlCommand(questionQuery, connection);
+            questionCommand.Parameters.AddWithValue("@SurveyId", surveyId);
+            questionCommand.Parameters.AddWithValue("@Text", questionModel.Text);
+            questionCommand.Parameters.AddWithValue("@Type", questionModel.Type);
+            questionCommand.Parameters.AddWithValue("@Position", model.Questions.IndexOf(questionModel) + 1);
+            questionCommand.Parameters.AddWithValue("@IsRequired", questionModel.IsRequired);
+
+            // Execute the query and get the generated questionId
+            int questionId = (int)questionCommand.ExecuteScalar();
+
+            // Loop through each option (if any) and insert it into the Option table
+            if (questionModel.Options != null)
+            {
+                foreach (var optionModel in questionModel.Options)
+                {
+                    string optionQuery = "INSERT INTO [Option] (questionId, text, position) " +
+                                         "VALUES (@QuestionId, @Text, @Position)";
+
+                    SqlCommand optionCommand = new SqlCommand(optionQuery, connection);
+                    optionCommand.Parameters.AddWithValue("@QuestionId", questionId);
+                    optionCommand.Parameters.AddWithValue("@Text", optionModel.Text);
+                    optionCommand.Parameters.AddWithValue("@Position", questionModel.Options.IndexOf(optionModel) + 1);
+
+                    optionCommand.ExecuteNonQuery();
+                }
+            }
+        }
+
+        connection.Close();
+    }
+
+    return RedirectToAction("Index"); //Redirect to survey list
+}
 }

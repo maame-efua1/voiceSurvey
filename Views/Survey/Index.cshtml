@@ -16,7 +16,7 @@
     <nav>
         <ul class="sidebar">
             <li onclick=hideSidebar()><a href="#"><svg class="menu" xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 -960 960 960" width="26"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
-                <p class="itm-1">SurveyApp</p>
+                <p class="itm-1">TALKPOLL</p>
                 <li tabindex="0">
                     <a href="../Home/Index">
                         <svg class="icons" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M120-200q-33 0-56.5-23.5T40-280v-400q0-33 23.5-56.5T120-760h400q33 0 56.5 23.5T600-680v400q0 33-23.5 56.5T520-200H120Zm0-80h400v-400H120v400Zm560 80v-560h80v560h-80Zm160 0v-560h80v560h-80Zm-720-80v-400 400Z"/></svg>
@@ -67,7 +67,7 @@
 
         </ul>
         <ul class="header">
-            <li class="appname" ><a href="../Home/Index">SurveyApp</a></li>
+            <li class="appname" ><a href="../Home/Index">TALKPOLL</a></li>
 
             <li class="menu-btn" onclick=showSidebar()>
                 <a href="#">
@@ -174,10 +174,6 @@ function updatePage() {
             textarea.name = `question-${questionObj.questionId}`;// Use question ID for the name
             questionContainer.appendChild(textarea);
 
-            // const recordButton = document.createElement('button');
-            // recordButton.textContent = 'Record Answer';
-            // recordButton.onclick = () => startRecording(questionObj.questionId); // Pass question ID
-            // questionContainer.appendChild(recordButton);
 
             const record_div = document.createElement('div')
             record_div.classList.add('record_div')
@@ -252,22 +248,19 @@ updatePage();
         let answer_options;
 
         if (questionType === 'text') {
-            // Collect the text input value
             const textarea = document.querySelector(`textarea[name="question-${questionObj.questionId}"]`);
             answer_text = textarea ? textarea.value : ``;
         } else if (questionType === 'radio') {
-            // Collect the selected radio button value (option id)
             const selectedOption = document.querySelector(`input[name="question-${questionObj.questionId}"]:checked`);
             answer_option = selectedOption ? selectedOption.value : `${questionObj.options.optionId}`;
         } else if (questionType === 'checkbox') {
-            // Collect all selected checkbox values (option ids)
             const selectedOptions = document.querySelectorAll(`input[name="question-${questionObj.questionId}"]:checked`);
             answer_options = Array.from(selectedOptions).map(option => option.value);
             answer_options = JSON.stringify(answer_options);
         }
 
         formData.push({
-            questionId: questionObj.questionId, // Assuming `questionObj` contains an `questionId` property
+            questionId: questionObj.questionId, 
             answer_text: answer_text ,
             answer_option: answer_option ,
             //answer_options: answer_options// Ensure answer is an array
@@ -286,6 +279,7 @@ updatePage();
     .then(response => {
         if (response.ok) {
             alert('Survey submitted successfully!');
+            window.location.href = '../Dashboard/Surveylist';
         } else {
             throw new Error('Submission failed');
         }
@@ -400,11 +394,11 @@ updatePage();
 
     
 
-        async function transcribeAudio(audioBlob, questionIndex) {
-            console.log(questionIndex)
-            console.log(audioBlob)
+        async function transcribeAudio(blob, currentQuestionId) {
+            console.log(currentQuestionId)
+            console.log(blob)
             const formData = new FormData();
-            formData.append('audio', audioBlob);
+            formData.append('audio', blob);
 
             const response = await fetch('/api/transcription/transcribe', {
                 method: 'POST',

@@ -11,13 +11,13 @@
     <link rel="stylesheet" href="~/css/surveylist.css" asp-append-version="true"/>
     <link rel="stylesheet" href="~/css/tables.css" asp-append-version="true"/>
 
-    <title>Report</title>
+    <title>Report|Surveys</title>
 </head>
 <body>
     <nav>
         <ul class="sidebar">
             <li onclick=hideSidebar()><a href="#"><svg class="menu" xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 -960 960 960" width="26"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
-                <p class="itm-1">SurveyApp</p>
+                <p class="itm-1">TALKPOLL</p>
                 <li tabindex="0">
                     <a href="../Home/Index">
                         <svg class="icons" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M120-200q-33 0-56.5-23.5T40-280v-400q0-33 23.5-56.5T120-760h400q33 0 56.5 23.5T600-680v400q0 33-23.5 56.5T520-200H120Zm0-80h400v-400H120v400Zm560 80v-560h80v560h-80Zm160 0v-560h80v560h-80Zm-720-80v-400 400Z"/></svg>
@@ -25,13 +25,13 @@
                     </a>
                 </li>
                     <li tabindex="0">
-                        <a href="../Dashboard/Index">
+                        <a href="../Report/Index">
                             <svg class="icons" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M120-200q-33 0-56.5-23.5T40-280v-400q0-33 23.5-56.5T120-760h400q33 0 56.5 23.5T600-680v400q0 33-23.5 56.5T520-200H120Zm0-80h400v-400H120v400Zm560 80v-560h80v560h-80Zm160 0v-560h80v560h-80Zm-720-80v-400 400Z"/></svg>
-                            General info
+                            General Stats
                         </a>
                     </li>
                     <li tabindex="0">
-                        <a href="../Dashboard/Surveylist">
+                        <a href="../Report/Surveys">
                             <svg class="icons" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M160-120q-33 0-56.5-23.5T80-200v-560q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v560q0 33-23.5 56.5T800-120H160Zm0-80h640v-560H160v560Zm40-80h200v-80H200v80Zm382-80 198-198-57-57-141 142-57-57-56 57 113 113Zm-382-80h200v-80H200v80Zm0-160h200v-80H200v80Zm-40 400v-560 560Z"/></svg>
                             Surveys
                         </a>
@@ -39,13 +39,13 @@
                     <li tabindex="0">
                         <a href="#">
                             <svg class="icons" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-80q-139-35-229.5-159.5T160-516v-244l320-120 320 120v244q0 152-90.5 276.5T480-80Zm0-84q97-30 162-118.5T718-480H480v-315l-240 90v207q0 7 2 18h238v316Z"/></svg>
-                            Security
+                            Responses
                         </a>
                     </li>
                     <li tabindex="0">
-                        <a href="../About/Index">
+                        <a href="../Report/Users">
                             <svg class="icons" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z"/></svg>
-                            About Us
+                            Users
                         </a>
                     </li>
                     <li tabindex="0">
@@ -68,11 +68,9 @@
 
         </ul>
         <ul class="header">
-            <li class="appname" ><a href="../Home/Index">SurveyApp</a></li>
+            <li class="appname" ><a href="../Home/Index">TALKPOLL</a></li>
             <li class="hideOnMobile"><a href="../About/Index">About</a></li>
-            <li class="hideOnMobile"><a href="#">Contact</a></li>
-            <li class="hideOnMobile"><a href="../Dashboard/Surveylist">Survey</a></li>
-            <li class="hideOnMobile"><a href="../Dashboard/Index">Dashboard</a></li>
+            <li class="hideOnMobile"><a href="../Contact/Index">Contact</a></li>
 
             <li class="menu-btn" onclick=showSidebar()>
                 <a href="#">
@@ -81,8 +79,7 @@
             </li>
             
         </ul> 
-        <ul class="logging-btns hideOnMobile">
-            <li class=" hideOnLogin"><a href="../Login/Index">Login</a></li>          
+        <ul class="logging-btns hideOnMobile">       
         </ul>
     </nav>
 
@@ -125,9 +122,14 @@
                 <div class="wlc">
                     <h1>SURVEYS</h1>
                 </div>
-                <a href="#">
-                    <svg class="notification" xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#e8eaed"><path d="M160-200v-80h80v-280q0-83 50-147.5T420-792v-28q0-25 17.5-42.5T480-880q25 0 42.5 17.5T540-820v28q80 20 130 84.5T720-560v280h80v80H160Zm320-300Zm0 420q-33 0-56.5-23.5T400-160h160q0 33-23.5 56.5T480-80ZM320-280h320v-280q0-66-47-113t-113-47q-66 0-113 47t-47 113v280Z"/></svg>
-                </a>
+                
+                    <svg class="svg-button" width="150" height="50" xmlns="http://www.w3.org/2000/svg">
+                        <a href="../Report/CreateSurvey" target="_blank">
+                        <rect width="150" height="50" rx="10" ry="10" fill="#0090d4"/>
+                        <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle">Add Survey</text>
+                    </a>
+                    </svg>
+                
          </div>
          <div class="info">
             <div class="container">

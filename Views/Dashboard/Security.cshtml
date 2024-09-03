@@ -20,7 +20,7 @@
             <li><a href="../Login/Index">Login</a></li>
         </ul>
         <ul class="header">
-            <li class="appname" ><a href="../Home/Index">SurveyApp</a></li>
+            <li class="appname" ><a href="../Home/Index">TALKPOLL</a></li>
             <li class="hideOnMobile"><a href="../About/Index">About</a></li>
             <li class="hideOnMobile"><a href="#">Contact</a></li>
             <li class="hideOnMobile hideOnLogin "><a href="../Dashboard/Surveylist">Survey</a></li>
@@ -53,7 +53,7 @@
 
     <div class="dashboard">
         <div class="panel">
-            <p class="item-1">SurveyApp</p>
+            <p class="item-1">TALKPOLL</p>
             <ul>
                 <li tabindex="0">
                     <a href="../Dashboard/Index">
@@ -90,7 +90,7 @@
     <div class="welcome">
         <div class="wlc">
             <p>Welcome Back,</p>
-            <h1>@Model.firstname @Model.lastname</h1>
+            <h1>@ViewBag.FirstName @ViewBag.LastName</h1>
         </div>
         <a href="#">
             <svg class="notification" xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#e8eaed">
@@ -99,11 +99,15 @@
         </a>
     </div>
     <div class="info">
-        <div class="container">
-            <button>Delete Account</button>
+        <div class="container"><svg width="200" height="50" xmlns="http://www.w3.org/2000/svg">
+            <a asp-action="Security" method="post" target="_blank">
+              <rect width="200" height="50" fill="red" />
+              <text x="100" y="30" font-size="20" text-anchor="middle" fill="white">Delete Account</text>
+            </a>
+          </svg>
+          
         </div>
 
-        <div class="edit">Edit</div>
      </div>
 </div>
     </div>

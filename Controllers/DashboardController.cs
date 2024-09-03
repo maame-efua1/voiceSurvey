@@ -31,13 +31,17 @@ public class DashboardController : Controller
 
     public IActionResult Surveylist()
     {
+        string userId = HttpContext.Session.GetString("Userid");
         string connectionString = "Server=ANTOINETTE;Database=SurveyApp;Trusted_Connection=True;MultipleActiveResultSets=True;TrustServerCertificate=True";
         
             SqlConnection connection = new SqlConnection(connectionString);
 
-            string query = "SELECT * FROM Survey WHERE status='Active' ";
+            string query = "SELECT S.* FROM Survey S LEFT JOIN Response R ON S.surveyId = R.surveyId AND R.userid = @userId "+ 
+                           "WHERE S.status = 'Active' AND R.userid IS NULL;";
 
             SqlCommand command = new SqlCommand(query, connection);
+            
+           command.Parameters.AddWithValue("@userId", userId);
 
             connection.Open();
 
@@ -66,68 +70,103 @@ public class DashboardController : Controller
             return View(surveyList);
     }
 
-    public IActionResult Edit(Register User)
+    [HttpPost]
+    public IActionResult Edit([FromForm] Register user)
+    {
+    if (!ModelState.IsValid)
+    {
+        return Json(new { success = false, message = "Invalid input." });
+    }
+
+    string userId = HttpContext.Session.GetString("Userid");
+    string connectionString = "Server=ANTOINETTE;Database=SurveyApp;Trusted_Connection=True;MultipleActiveResultSets=True;TrustServerCertificate=True";
+
+    // Extract the last nine digits of the phone number
+    string lastNineDigits = user.phonenumber.Length > 9
+        ? user.phonenumber.Substring(user.phonenumber.Length - 9)
+        : user.phonenumber;
+
+    using (SqlConnection connection = new SqlConnection(connectionString))
+    {
+        string query = @"UPDATE [User] SET 
+                            firstname = @firstname,
+                            lastname = @lastname,
+                            gender = @gender,
+                            date_of_birth = @date_of_birth,
+                            phonenumber = @phonenumber
+                         WHERE userid = @userId";
+
+        SqlCommand command = new SqlCommand(query, connection);
+
+        // Use parameterized queries to prevent SQL injection
+        command.Parameters.AddWithValue("@firstname", user.firstname);
+        command.Parameters.AddWithValue("@lastname", user.lastname);
+        command.Parameters.AddWithValue("@gender", user.gender);
+        command.Parameters.AddWithValue("@date_of_birth", user.date_of_birth.ToString("yyyy-MM-dd"));
+        command.Parameters.AddWithValue("@phonenumber", lastNineDigits);
+        command.Parameters.AddWithValue("@userId", userId);
+
+        try
+        {
+            connection.Open();
+            command.ExecuteNonQuery();
+
+            // Return a JSON response indicating success
+            return Json(new { success = true });
+        }
+        catch (SqlException ex)
+        {
+            // Log the error (add error logging functionality as needed)
+            Console.WriteLine("SQL Error: " + ex.Message);
+            return Json(new { success = false, message = "Database error. Please try again later." });
+        }
+        finally
+        {
+            connection.Close();
+        }
+        }
+        return View();
+      }
+
+        public IActionResult Security()
+    {
+        string firstName = HttpContext.Session.GetString("FirstName");
+            string lastName = HttpContext.Session.GetString("LastName");
+
+            ViewBag.FirstName = firstName;
+            ViewBag.LastName = lastName;
+            
+        return View();
+    }
+
+    public IActionResult DeleteUser()
     {
         string userId = HttpContext.Session.GetString("Userid");
-        string firstName = HttpContext.Session.GetString("FirstName");
-        string lastName = HttpContext.Session.GetString("LastName");
-        string phonenumber = HttpContext.Session.GetString("Phonenumber");
-        string gender = HttpContext.Session.GetString("Gender");
-        string dob = HttpContext.Session.GetString("DateOfBirth");
+    string connectionString = "Server=LAPTOP-LIL017KH\\SQLEXPRESS;Database=TALKPOLL;Trusted_Connection=True;MultipleActiveResultSets=True;TrustServerCertificate=True";
 
-        ViewBag.FirstName = firstName;
-        ViewBag.LastName = lastName;
-        ViewBag.PNumber = phonenumber;
-        ViewBag.Gender = gender;
-        ViewBag.DOB = dob;
-
-        string connectionString = "Server=ANTOINETTE;Database=SurveyApp;Trusted_Connection=True;MultipleActiveResultSets=True;TrustServerCertificate=True";
-      
-        string lastNineDigits = phonenumber.Length > 9
-        ? phonenumber.Substring(phonenumber.Length - 9)
-        : phonenumber;
-
-        using (SqlConnection connection = new SqlConnection(connectionString))
-        {
-            string query = @"UPDATE [User] SET firstname = @firstname,
-                    lastname = @lastname,
-                    gender = @gender,
-                date_of_birth = @date_of_birth,
-                    phonenumber = @phonenumber
-                 WHERE userid = @userId";
-
-
-            SqlCommand command = new SqlCommand(query, connection);
-
-           command.Parameters.AddWithValue("@firstname", User.firstname);
-            command.Parameters.AddWithValue("@lastname", User.lastname);  
-            command.Parameters.AddWithValue("@gender", User.gender);
-            command.Parameters.AddWithValue("@date_of_birth", User.date_of_birth.ToString());
-            command.Parameters.AddWithValue("@phonenumber", lastNineDigits);
-
-            try
-            {
-                connection.Open();
-                command.ExecuteNonQuery();
-                
-                return RedirectToAction("Index", "Dashboard");
-                
-            }
-            catch (SqlException ex)
-            {
-                Console.WriteLine("Error: " + ex.Message);
-            }
-            finally
-            {
-                connection.Close();
-            }
-        }
-
-        return View();
-    }
-
-    public IActionResult Security()
+    using (SqlConnection connection = new SqlConnection(connectionString))
     {
-        return View();
+        connection.Open();
+        
+        string query = @"DELETE from [User] WHERE userid = @userId";
+        string query1 = @"DELETE from Responses WHERE userid = @userId";
+
+        using (SqlCommand command = new SqlCommand(query1, connection))
+        {
+            command.Parameters.AddWithValue("@userId", userId);
+            command.ExecuteNonQuery();
+        }
+    
+        using (SqlCommand command1 = new SqlCommand(query, connection))
+        {
+            command1.Parameters.AddWithValue("@userId", userId);
+            command1.ExecuteNonQuery();
+        }
+        
+            connection.Close();
+         
     }
+         return RedirectToAction("Home", "Index");
+    }
+    
 }

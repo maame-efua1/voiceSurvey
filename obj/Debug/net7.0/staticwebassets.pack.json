@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\css\\contact.css"
     },
     {
+      "Id": "C:\\Users\\Nana\\Desktop\\surveyapp\\wwwroot\\css\\csurvey.css",
+      "PackagePath": "staticwebassets\\css\\csurvey.css"
+    },
+    {
       "Id": "C:\\Users\\Nana\\Desktop\\surveyapp\\wwwroot\\css\\dashboard.css",
       "PackagePath": "staticwebassets\\css\\dashboard.css"
     },
@@ -35,6 +39,10 @@
     {
       "Id": "C:\\Users\\Nana\\Desktop\\surveyapp\\wwwroot\\css\\register.css",
       "PackagePath": "staticwebassets\\css\\register.css"
+    },
+    {
+      "Id": "C:\\Users\\Nana\\Desktop\\surveyapp\\wwwroot\\css\\security.css",
+      "PackagePath": "staticwebassets\\css\\security.css"
     },
     {
       "Id": "C:\\Users\\Nana\\Desktop\\surveyapp\\wwwroot\\css\\survey.css",

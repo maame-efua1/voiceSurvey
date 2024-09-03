@@ -15,6 +15,8 @@ namespace TALKPOLL.Models
         public string gender { get; set; }
 
         public string phonenumber { get; set; }
+
+        public string usertype { get; set; }
         public DateTime date_of_birth { get; set; }
     }
 }

@@ -28,7 +28,7 @@ public class RegisterController : Controller
         
         using (SqlConnection connection = new SqlConnection(connectionString))
         {
-            string query = "INSERT INTO [User] (firstname, lastname, email, password, gender, date_of_birth, phonenumber) VALUES (@firstname, @lastname, @email, @password, @gender, @date_of_birth, @phonenumber)";
+            string query = "INSERT INTO [User] (firstname, lastname, email, password, gender, date_of_birth, phonenumber, usertype) VALUES (@firstname, @lastname, @email, @password, @gender, @date_of_birth, @phonenumber, @usertype)";
 
             SqlCommand command = new SqlCommand(query, connection);
 
@@ -39,6 +39,7 @@ public class RegisterController : Controller
             command.Parameters.AddWithValue("@gender", User.gender);
             command.Parameters.AddWithValue("@date_of_birth", User.date_of_birth);
             command.Parameters.AddWithValue("@phonenumber", lastNineDigits);
+            command.Parameters.AddWithValue("@usertype", "2");
 
             try
             {
@@ -58,6 +59,6 @@ public class RegisterController : Controller
             }
         }
         }
-    return View();
-    }
+        return View();
+        }
 }

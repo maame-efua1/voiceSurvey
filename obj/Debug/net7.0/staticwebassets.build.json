@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "n6J1pxKaTqK/601pvlv+us3iRNpvSzObmaru+f9A2bg=",
+  "Hash": "rJiTIM8cnbwZQy8HQ0RlU6PHYDzLg6cwzjSIGMm+yhQ=",
   "Source": "SurveyApp",
   "BasePath": "_content/SurveyApp",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\contact.css"
+    },
+    {
+      "Identity": "C:\\Users\\Nana\\Desktop\\surveyapp\\wwwroot\\css\\csurvey.css",
+      "SourceId": "SurveyApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Nana\\Desktop\\surveyapp\\wwwroot\\",
+      "BasePath": "_content/SurveyApp",
+      "RelativePath": "css/csurvey.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\csurvey.css"
     },
     {
       "Identity": "C:\\Users\\Nana\\Desktop\\surveyapp\\wwwroot\\css\\dashboard.css",
@@ -168,6 +185,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\register.css"
+    },
+    {
+      "Identity": "C:\\Users\\Nana\\Desktop\\surveyapp\\wwwroot\\css\\security.css",
+      "SourceId": "SurveyApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Nana\\Desktop\\surveyapp\\wwwroot\\",
+      "BasePath": "_content/SurveyApp",
+      "RelativePath": "css/security.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\security.css"
     },
     {
       "Identity": "C:\\Users\\Nana\\Desktop\\surveyapp\\wwwroot\\css\\survey.css",

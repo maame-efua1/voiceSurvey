@@ -50,7 +50,7 @@
 
     <div class="dashboard">
         <div class="panel">
-            <p class="item-1">SurveyApp</p>
+            <p class="item-1">TALKPOLL</p>
             <ul>
                 <li tabindex="0">
                     <a href="../Dashboard/Index">
@@ -65,7 +65,7 @@
                     </a>
                 </li>
                 <li tabindex="0">
-                    <a href="#">
+                    <a href="../Dashboard/Security">
                         <svg class="icons" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-80q-139-35-229.5-159.5T160-516v-244l320-120 320 120v244q0 152-90.5 276.5T480-80Zm0-84q97-30 162-118.5T718-480H480v-315l-240 90v207q0 7 2 18h238v316Z"/></svg>
                         Security
                     </a>
@@ -141,31 +141,61 @@
                 document.querySelector('.edit').style.display = 'none';
                 document.querySelector('.save').style.display = 'block';
             }
-        
+            
             function saveChanges() {
-                // Hide the input fields
-                document.querySelectorAll('.edit-input').forEach(function (element) {
-                    element.style.display = 'none';
-                });
-        
-                // Show the static text fields
-                document.querySelectorAll('.response').forEach(function (element) {
-                    element.style.display = 'block';
-                });
-        
-                // Update the static text fields with the input values
-                document.getElementById('firstname-text').innerText = document.getElementById('firstname-input').value;
-                document.getElementById('lastname-text').innerText = document.getElementById('lastname-input').value;
-                document.getElementById('dob-text').innerText = new Date(document.getElementById('dob-input').value).toLocaleDateString();
-                document.getElementById('gender-text').innerText = document.getElementById('gender-input').value;
-                document.getElementById('phonenumber-text').innerText = '+233 ' + document.getElementById('phonenumber-input').value;
-        
-                // Show the Edit button and hide the Save button
-                document.querySelector('.edit').style.display = 'block';
-                document.querySelector('.save').style.display = 'none';
-        
-                // TODO: Add code to save the updated values to the server 
-            }
+    // Hide the input fields
+    document.querySelectorAll('.edit-input').forEach(function (element) {
+        element.style.display = 'none';
+    });
+
+    // Show the static text fields
+    document.querySelectorAll('.response').forEach(function (element) {
+        element.style.display = 'block';
+    });
+
+    // Update the static text fields with the input values
+    document.getElementById('firstname-text').innerText = document.getElementById('firstname-input').value;
+    document.getElementById('lastname-text').innerText = document.getElementById('lastname-input').value;
+    document.getElementById('dob-text').innerText = new Date(document.getElementById('dob-input').value).toLocaleDateString();
+    document.getElementById('gender-text').innerText = document.getElementById('gender-input').value;
+    document.getElementById('phonenumber-text').innerText = '+233 ' + document.getElementById('phonenumber-input').value;
+
+    // Show the Edit button and hide the Save button
+    document.querySelector('.edit').style.display = 'block';
+    document.querySelector('.save').style.display = 'none';
+
+    // Prepare the data to send to the server
+    const data = new URLSearchParams({
+        firstname: document.getElementById('firstname-input').value,
+        lastname: document.getElementById('lastname-input').value,
+        date_of_birth: document.getElementById('dob-input').value,
+        gender: document.getElementById('gender-input').value,
+        phonenumber: document.getElementById('phonenumber-input').value
+    });
+
+        console.log('Data', data);
+    // Send the data to the server
+    fetch('/Dashboard/Edit', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: data.toString()
+    })
+    .then(response => {
+        if (response.ok) {
+            // Handle success, e.g., show a success message
+            console.log('Data saved successfully!');
+        } else {
+            // Handle error, e.g., show an error message
+            console.error('Failed to save data.');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+}
+
         </script>
         
 
