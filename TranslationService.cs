@@ -11,7 +11,7 @@ public class TranslationService
     public TranslationService(HttpClient httpClient)
     {
         _httpClient = httpClient;
-        _httpClient.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", "d558be8089ad4bd3a603d4c88620d4c3");
+        _httpClient.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", "942881ecfe4a449b85bc1dc319ff45c9");
     }
 
     public async Task<string> Translate(string text, string lang)

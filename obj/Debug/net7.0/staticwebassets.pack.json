@@ -45,6 +45,10 @@
       "PackagePath": "staticwebassets\\css\\security.css"
     },
     {
+      "Id": "C:\\Users\\Nana\\Desktop\\surveyapp\\wwwroot\\css\\styles.css",
+      "PackagePath": "staticwebassets\\css\\styles.css"
+    },
+    {
       "Id": "C:\\Users\\Nana\\Desktop\\surveyapp\\wwwroot\\css\\survey.css",
       "PackagePath": "staticwebassets\\css\\survey.css"
     },
@@ -231,6 +235,14 @@
     {
       "Id": "C:\\Users\\Nana\\Desktop\\surveyapp\\wwwroot\\images\\sv.jpg",
       "PackagePath": "staticwebassets\\images\\sv.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Nana\\Desktop\\surveyapp\\wwwroot\\js\\data.js",
+      "PackagePath": "staticwebassets\\js\\data.js"
+    },
+    {
+      "Id": "C:\\Users\\Nana\\Desktop\\surveyapp\\wwwroot\\js\\scripts.js",
+      "PackagePath": "staticwebassets\\js\\scripts.js"
     },
     {
       "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.SurveyApp.Microsoft.AspNetCore.StaticWebAssets.props",

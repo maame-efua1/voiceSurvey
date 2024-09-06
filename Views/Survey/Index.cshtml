@@ -237,7 +237,7 @@ updatePage();
 
 
     
-            function submitForm() {
+        function submitForm() {
     const formData = [];
 
     questions.forEach((questionObj, index) => {
@@ -368,17 +368,12 @@ updatePage();
                     await transcribeAudio(blob, currentQuestionId);
                 }
             }
-
             can_record = true;
         }
-    
         function ToggleMic(ev){
             let question_container = ev.target.closest('.question-container')
 
             if(!can_record) return;
-
-            // is_recording = !is_recording;
-
             currentQuestionId = question_container.getAttribute('question-id');
             if(!is_recording){
                 recorder.start();

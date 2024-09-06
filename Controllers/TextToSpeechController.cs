@@ -16,7 +16,7 @@ public class TTSController : ControllerBase
     public async Task<IActionResult> Speak([FromBody] SurveyData data)
     {
          
-        _httpClient.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", "d558be8089ad4bd3a603d4c88620d4c3");
+        _httpClient.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", "942881ecfe4a449b85bc1dc319ff45c9");
         var uri = "https://translation-api.ghananlp.org/tts/v1/tts";
 
         var requestBody = new

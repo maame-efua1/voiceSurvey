@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "rJiTIM8cnbwZQy8HQ0RlU6PHYDzLg6cwzjSIGMm+yhQ=",
+  "Hash": "aJkWxTgIJUklwEbDpOzEXt66f61DM8Tx7ZwbV1bPs1E=",
   "Source": "SurveyApp",
   "BasePath": "_content/SurveyApp",
   "Mode": "Default",
@@ -202,6 +202,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\security.css"
+    },
+    {
+      "Identity": "C:\\Users\\Nana\\Desktop\\surveyapp\\wwwroot\\css\\styles.css",
+      "SourceId": "SurveyApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Nana\\Desktop\\surveyapp\\wwwroot\\",
+      "BasePath": "_content/SurveyApp",
+      "RelativePath": "css/styles.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\styles.css"
     },
     {
       "Identity": "C:\\Users\\Nana\\Desktop\\surveyapp\\wwwroot\\css\\survey.css",
@@ -1001,6 +1018,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\sv.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Nana\\Desktop\\surveyapp\\wwwroot\\js\\data.js",
+      "SourceId": "SurveyApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Nana\\Desktop\\surveyapp\\wwwroot\\",
+      "BasePath": "_content/SurveyApp",
+      "RelativePath": "js/data.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\data.js"
+    },
+    {
+      "Identity": "C:\\Users\\Nana\\Desktop\\surveyapp\\wwwroot\\js\\scripts.js",
+      "SourceId": "SurveyApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Nana\\Desktop\\surveyapp\\wwwroot\\",
+      "BasePath": "_content/SurveyApp",
+      "RelativePath": "js/scripts.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\scripts.js"
     }
   ]
 }
